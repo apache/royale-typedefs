@@ -19,35 +19,20 @@
 
 -->
 
-<project name="google_maps" default="main" basedir=".">
-    
-    <property name="google_maps.version" value="3.11" />
+<project name="js" default="main" basedir=".">
     
     <target name="main" depends="preprocess, externc, postprocess, compc" />
-    
-    <!-- we need to insert a line near the beginning of the file to make the
-         compiler happy. -->
-    <target name="preprocess">
-        <antcall target="preprocessfile" >
-            <param name="file" value="google_maps_api_v3_11.js" />
-        </antcall>
-    </target>
-    
-    <target name="preprocessfile" >
-        <basename property="file.base" file="${file}" suffix=".js"/>
-        <echo>file.base is ${file.base}</echo>
-        <replace file="${basedir}/target/downloads/${file}" token="// Namespace" value="/** @const */" />
-        <replace file="${basedir}/target/downloads/${file}">
-        	<replacetoken>google.maps = {};</replacetoken>
-        	<replacevalue><![CDATA[
-/** @const */
-var google = {};
 
-/** @const */
-google.maps = {};]]></replacevalue>
-        </replace>
+    <target name="preprocess" >
+        <!-- preprocessing .js files -->
+        <replaceregexp file="${basedir}/target/downloads/svg.js" match="@type \{function\(new:.*" replace="" flags="g" />
+        <replaceregexp file="${basedir}/target/downloads/svg.js" match="Window\.prototype\..*" replace="" flags="g" />
+        <replace file="${basedir}/target/downloads/svg.js" token="EventListener|(function(Event)" value="EventListener|(function(!Event)" />
+        <replaceregexp file="${basedir}/target/downloads/es3.js" match="(The constructor of the current object(?:(?!\*/).)*?)@type \{Function\}((?:(?!\*/).)*?\*/[\r\n]+Object\.prototype\.constructor)([^;]*?);" replace="\1@type {Class}\2;" flags="s" />
+        <replaceregexp file="${basedir}/target/downloads/es3.js" match="(Transposes the elements of an array in place(?:(?!\*/).)*?[\r\n]+ \*)([\r\n]+)( \* @this)" replace="\1\2 * @return {!Array&lt;?&gt;}\2\3" flags="s" />
+        <replaceregexp file="${basedir}/target/downloads/es3.js" match="(Sorts the elements of an array in place(?:(?!\*/).)*?[\r\n]+ \*)([\r\n]+)( \* @param)" replace="\1\2 * @return {!Array&lt;?&gt;}\2\3" flags="s" />
     </target>
-    
+
     <target name="externc" >
         <java jar="${basedir}/../../compiler-jx/lib/externc.jar" fork="true"
             failonerror="false">
@@ -58,18 +43,20 @@ google.maps = {};]]></replacevalue>
     </target>
     
     <target name="postprocess" >
+        <replace file="${basedir}/target/generated-sources/externc/functions/parseInt.as" >
+            <replacefilter token="base:Number)" value="base:Number = 10)" />
+        </replace>
     </target>
     
     <target name="compc" >
         <copy file="${basedir}/src/main/config/compile-as-config.xml"
-        todir="${basedir}/target" />
+            todir="${basedir}/target" />
         <java jar="${basedir}/../../compiler/lib/falcon-compc.jar" fork="true"
             failonerror="true">
             <arg value="+flexlib=externs/frameworks" />
             <arg value="-debug" />
-            <arg value="-external-library-path+=${basedir}/../js/target/js.swc" />
             <arg value="-load-config=${basedir}/target/compile-as-config.xml" />
-            <arg value="-output=${basedir}/target/google_maps.swc" />
+            <arg value="-output=${basedir}/target/js.swc" />
         </java>
     </target>
     
