@@ -1,7 +1,7 @@
-diff --git a/externs/google_Maps/target/downloads/google_maps_api_v3_11.js b/externs/google_Maps/target/downloads/google_maps_api_v3_11.js
+diff --git a/google_Maps/target/downloads/google_maps_api_v3_11.js b/google_Maps/target/downloads/google_maps_api_v3_11.js
 index ac91685..5dbb628 100644
---- a/externs/google_Maps/target/downloads/google_maps_api_v3_11.js
-+++ b/externs/google_Maps/target/downloads/google_maps_api_v3_11.js
+--- a/google_Maps/target/downloads/google_maps_api_v3_11.js
++++ b/google_Maps/target/downloads/google_maps_api_v3_11.js
 @@ -20,6 +20,11 @@
   * @externs
   */

@@ -22,16 +22,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache.flex.flexjs.externs</groupId>
-    <artifactId>flexjs-externs</artifactId>
+    <groupId>org.apache.flex.flexjs.typedefs</groupId>
+    <artifactId>flexjs-typedefs</artifactId>
     <version>0.7.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>flexjs-externs-js</artifactId>
+  <artifactId>flexjs-typedefs-js</artifactId>
   <version>0.7.0-SNAPSHOT</version>
   <packaging>swc</packaging>
 
-  <name>Apache Flex - FlexJS: Externs: JS</name>
+  <name>Apache Flex - FlexJS: TypeDefs: JS</name>
 
   <build>
     <sourceDirectory>src/main/flex</sourceDirectory>
@@ -59,7 +59,7 @@
       <plugin>
         <groupId>org.apache.flex.flexjs.compiler</groupId>
         <artifactId>compiler-build-tools</artifactId>
-        <version>${compiler-build-tools.version}</version>
+        <version>${flexjs.build-tools.version}</version>
         <executions>
           <execution>
             <id>unpack-closure-externs</id>
@@ -91,7 +91,7 @@
         <version>1.5.0</version>
         <configuration>
           <executable>${git.executable}</executable>
-          <workingDirectory>${basedir}/../..</workingDirectory>
+          <workingDirectory>${basedir}/..</workingDirectory>
           <arguments>
             <argument>apply</argument>
             <argument>--ignore-whitespace</argument>
@@ -117,7 +117,7 @@
       <plugin>
         <groupId>org.apache.flex.flexjs.compiler</groupId>
         <artifactId>flexjs-maven-plugin</artifactId>
-        <version>0.7.0-SNAPSHOT</version>
+        <version>${flexjs.compiler.version}</version>
         <extensions>true</extensions>
         <configuration>
           <includeSources>true</includeSources>
@@ -214,7 +214,7 @@
           <dependency>
             <groupId>org.apache.flex.flexjs.compiler</groupId>
             <artifactId>compiler-jx</artifactId>
-            <version>0.7.0-SNAPSHOT</version>
+            <version>${flexjs.compiler.version}</version>
           </dependency>
         </dependencies>
       </plugin>

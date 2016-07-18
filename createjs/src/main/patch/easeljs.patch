@@ -1,9 +1,9 @@
 
 Generated from Ant script
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/Event.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/Event.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/Event.js b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/Event.js
 index 3ce0025..e8a377d 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/Event.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/Event.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/Event.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/Event.js
 @@ -1,262 +1,80 @@
 -/*
 -* Event
@@ -336,10 +336,10 @@ index 3ce0025..e8a377d 100644
  
 -	createjs.Event = Event;
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/EventDispatcher.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/EventDispatcher.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/EventDispatcher.js b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/EventDispatcher.js
 index 0ae4781..a03fd10 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/EventDispatcher.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/EventDispatcher.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/EventDispatcher.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/EventDispatcher.js
 @@ -1,407 +1,202 @@
 -/*
 -* EventDispatcher
@@ -950,10 +950,10 @@ index 0ae4781..a03fd10 100644
 +     */
 +createjs.EventDispatcher.prototype.hasEventListener = function (type) {  return null; }
 +
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/Ticker.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/Ticker.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/Ticker.js b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/Ticker.js
 index 3c5c4a6..6adbfb6 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/Ticker.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/Ticker.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/Ticker.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/Ticker.js
 @@ -1,632 +1,183 @@
 -/*
 -* Ticker
@@ -1767,10 +1767,10 @@ index 3c5c4a6..6adbfb6 100644
 -
 -	createjs.Ticker = Ticker;
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/extend.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/extend.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/extend.js b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/extend.js
 index 690de15..9bf84cb 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/extend.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/extend.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/extend.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/extend.js
 @@ -31,7 +31,7 @@
   */
  
@@ -1794,10 +1794,10 @@ index 690de15..9bf84cb 100644
  
  	function o() { this.constructor = subclass; }
  	o.prototype = superclass.prototype;
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/indexOf.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/indexOf.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/indexOf.js b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/indexOf.js
 index 9719d4d..18b0bf0 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/indexOf.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/indexOf.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/indexOf.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/indexOf.js
 @@ -31,7 +31,7 @@
   */
  
@@ -1821,10 +1821,10 @@ index 9719d4d..18b0bf0 100644
  
  	for (var i = 0,l=array.length; i < l; i++) {
  		if (searchElement === array[i]) {
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/promote.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/promote.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/promote.js b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/promote.js
 index d09a381..5da6df7 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/promote.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/promote.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/promote.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/utils/promote.js
 @@ -31,7 +31,7 @@
   */
  
@@ -1848,10 +1848,10 @@ index d09a381..5da6df7 100644
  
  	var subP = subclass.prototype, supP = (Object.getPrototypeOf&&Object.getPrototypeOf(subP))||subP.__proto__;
  	if (supP) {
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js
 index eecac1a..4fbd265 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js
 @@ -1,214 +1,36 @@
 -/*
 -* Bitmap
@@ -2096,10 +2096,10 @@ index eecac1a..4fbd265 100644
 -	
 -	createjs.Bitmap = createjs.promote(Bitmap, "DisplayObject");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js
 index b028d9b..c1d2309 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js
 @@ -1,343 +1,60 @@
 -/*
 -* BitmapText
@@ -2504,10 +2504,10 @@ index b028d9b..c1d2309 100644
 -	createjs.BitmapText = createjs.promote(BitmapText, "Container");
 -}());
 \ No newline at end of file
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js
 index b6bac78..b23762f 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js
 @@ -1,690 +1,310 @@
 -/*
 -* Container
@@ -3510,10 +3510,10 @@ index b6bac78..b23762f 100644
 +     */
 +createjs.Container.prototype._cloneChildren = function (o) {  }
 +
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js
 index f6eab31..b9817b4 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js
 @@ -1,273 +1,55 @@
 -/*
 -* DOMElement
@@ -3827,10 +3827,10 @@ index f6eab31..b9817b4 100644
  
 -	createjs.DOMElement = createjs.promote(DOMElement, "DisplayObject");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js
 index 3ce9e90..24325e2 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js
 @@ -1,1364 +1,493 @@
 -/*
 -* DisplayObject
@@ -5689,10 +5689,10 @@ index 3ce9e90..24325e2 100644
 +createjs.DisplayObject.prototype.getMatrix = function (matrix) {  return null; }
 +
 +
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Graphics.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Graphics.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Graphics.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Graphics.js
 index 690a649..44be6fa 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Graphics.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Graphics.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Graphics.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Graphics.js
 @@ -1,2177 +1,721 @@
 -/*
 -* Graphics
@@ -8586,10 +8586,10 @@ index 690a649..44be6fa 100644
  
 -	createjs.Graphics = Graphics;
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js
 index a8f4654..0bbc718 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js
 @@ -1,661 +1,144 @@
 -/*
 -* MovieClip
@@ -9393,10 +9393,10 @@ index a8f4654..0bbc718 100644
 -
 -	MovieClipPlugin.install();
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shadow.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shadow.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shadow.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shadow.js
 index 407ccb1..f7b7666 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shadow.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shadow.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shadow.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shadow.js
 @@ -1,137 +1,36 @@
 -/*
 -* Shadow
@@ -9568,10 +9568,10 @@ index 407ccb1..f7b7666 100644
 -
 -	createjs.Shadow = Shadow;
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js
 index 26f2341..39dd780 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js
 @@ -1,135 +1,32 @@
 -/*
 -* Shape
@@ -9733,10 +9733,10 @@ index 26f2341..39dd780 100644
  
 -	createjs.Shape = createjs.promote(Shape, "DisplayObject");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js
 index 453f909..d8ae4b0 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js
 @@ -1,472 +1,100 @@
 -/*
 -* Sprite
@@ -10307,10 +10307,10 @@ index 453f909..d8ae4b0 100644
 -
 -	createjs.Sprite = createjs.promote(Sprite, "DisplayObject");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js
 index 9bc7003..a8c66fe 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js
 @@ -1,185 +1,36 @@
 -/*
 -* SpriteContainer
@@ -10529,10 +10529,10 @@ index 9bc7003..a8c66fe 100644
 -
 -	createjs.SpriteContainer = createjs.promote(SpriteContainer, "Container");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js
 index 2e53d42..7a2fc1b 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js
 @@ -1,555 +1,221 @@
 -/*
 - * SpriteSheet
@@ -11305,10 +11305,10 @@ index 2e53d42..7a2fc1b 100644
  
 -	createjs.SpriteSheet = createjs.promote(SpriteSheet, "EventDispatcher");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js
 index 6eada6f..1e77464 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js
 @@ -1,988 +1,174 @@
 -/*
 -* SpriteStage
@@ -12468,10 +12468,10 @@ index 6eada6f..1e77464 100644
  
 -	createjs.SpriteStage = createjs.promote(SpriteStage, "Stage");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js
 index 9cb6625..f3d912d 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js
 @@ -1,880 +1,276 @@
 -/*
 -* Stage
@@ -13626,10 +13626,10 @@ index 9cb6625..f3d912d 100644
 -
 -	createjs.Stage = createjs.promote(Stage, "Container");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js
 index 52df706..e99a3fa 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js
 @@ -1,421 +1,127 @@
 -/*
 -* Text
@@ -14174,10 +14174,10 @@ index 52df706..e99a3fa 100644
  
 -	createjs.Text = createjs.promote(Text, "DisplayObject");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js
 index 2b4e1b3..098a753 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js
 @@ -1,187 +1,46 @@
 -/*
 -* MouseEvent
@@ -14404,10 +14404,10 @@ index 2b4e1b3..098a753 100644
  
 -	createjs.MouseEvent = createjs.promote(MouseEvent, "Event");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js
 index a37a7bf..61906e6 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js
 @@ -1,168 +1,42 @@
 -/*
 - * AlphaMapFilter
@@ -14611,10 +14611,10 @@ index a37a7bf..61906e6 100644
  
 -	createjs.AlphaMapFilter = createjs.promote(AlphaMapFilter, "Filter");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js
 index d3ee792..e5ba9f8 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js
 @@ -1,134 +1,37 @@
 -/*
 - * AlphaMaskFilter
@@ -14780,10 +14780,10 @@ index d3ee792..e5ba9f8 100644
  
 -	createjs.AlphaMaskFilter = createjs.promote(AlphaMaskFilter, "Filter");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js
 index d6f63ff..ee7e3fa 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js
 @@ -1,354 +1,35 @@
 -/*
 - * BlurFilter
@@ -15166,10 +15166,10 @@ index d6f63ff..ee7e3fa 100644
  
 -	createjs.BlurFilter = createjs.promote(BlurFilter, "Filter");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js
 index aac7be3..34b9e65 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js
 @@ -1,167 +1,37 @@
 -/*
 -* ColorFilter
@@ -15369,10 +15369,10 @@ index aac7be3..34b9e65 100644
  
 -	createjs.ColorFilter = createjs.promote(ColorFilter, "Filter");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrix.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrix.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrix.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrix.js
 index aa0f5ba..863c2db 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrix.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrix.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrix.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrix.js
 @@ -1,386 +1,161 @@
 -/*
 -* ColorMatrix
@@ -15918,10 +15918,10 @@ index aa0f5ba..863c2db 100644
 -
 -	createjs.ColorMatrix = ColorMatrix;
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js
 index 67c17f6..0f5e679 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js
 @@ -1,121 +1,33 @@
 -/*
 -* ColorMatrixFilter
@@ -16071,10 +16071,10 @@ index 67c17f6..0f5e679 100644
  
 -	createjs.ColorMatrixFilter = createjs.promote(ColorMatrixFilter, "Filter");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/Filter.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/Filter.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/Filter.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/Filter.js
 index 4f4f36e..3a3c66a 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/Filter.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/Filter.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/Filter.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/Filter.js
 @@ -1,157 +1,83 @@
 -/*
 -* Filter
@@ -16308,10 +16308,10 @@ index 4f4f36e..3a3c66a 100644
  
 -	createjs.Filter = Filter;
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/DisplayProps.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/DisplayProps.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/DisplayProps.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/DisplayProps.js
 index a0fc663..d123bc9 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/DisplayProps.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/DisplayProps.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/DisplayProps.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/DisplayProps.js
 @@ -1,185 +1,79 @@
 -/*
 -* DisplayProps
@@ -16569,10 +16569,10 @@ index a0fc663..d123bc9 100644
  
 -	createjs.DisplayProps = DisplayProps;
 -})();
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Matrix2D.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Matrix2D.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Matrix2D.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Matrix2D.js
 index f329330..90d8140 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Matrix2D.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Matrix2D.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Matrix2D.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Matrix2D.js
 @@ -1,544 +1,266 @@
 -/*
 -* Matrix2D
@@ -17381,10 +17381,10 @@ index f329330..90d8140 100644
 -
 -	createjs.Matrix2D = Matrix2D;
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Point.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Point.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Point.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Point.js
 index 821e971..c7bb826 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Point.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Point.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Point.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Point.js
 @@ -1,135 +1,52 @@
 -/*
 -* Point
@@ -17570,10 +17570,10 @@ index 821e971..c7bb826 100644
 -	
 -	createjs.Point = Point;
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Rectangle.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Rectangle.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Rectangle.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Rectangle.js
 index 8982c18..2d5552b 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Rectangle.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Rectangle.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Rectangle.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/geom/Rectangle.js
 @@ -1,250 +1,128 @@
 -/*
 -* Rectangle
@@ -17943,10 +17943,10 @@ index 8982c18..2d5552b 100644
 -	
 -	createjs.Rectangle = Rectangle;
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/ButtonHelper.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/ButtonHelper.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/ButtonHelper.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/ButtonHelper.js
 index 3873806..c5d9639 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/ButtonHelper.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/ButtonHelper.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/ButtonHelper.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/ButtonHelper.js
 @@ -1,256 +1,72 @@
 -/*
 -* ButtonHelper
@@ -18268,10 +18268,10 @@ index 3873806..c5d9639 100644
  
 -	createjs.ButtonHelper = ButtonHelper;
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/Touch.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/Touch.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/Touch.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/Touch.js
 index 6a93aa0..4b1cd5f 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/Touch.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/Touch.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/Touch.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/ui/Touch.js
 @@ -31,10 +31,10 @@
   */
  
@@ -18507,10 +18507,10 @@ index 6a93aa0..4b1cd5f 100644
 -}());
 +
 +
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js
 index 44ff76c..5ef05dd 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js
 @@ -1,533 +1,146 @@
 -/*
 -* SpriteSheetBuilder
@@ -19188,10 +19188,10 @@ index 44ff76c..5ef05dd 100644
 -
 -	createjs.SpriteSheetBuilder = createjs.promote(SpriteSheetBuilder, "EventDispatcher");
 -}());
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetUtils.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetUtils.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetUtils.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetUtils.js
 index b009f95..2da1e43 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetUtils.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetUtils.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetUtils.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetUtils.js
 @@ -31,10 +31,10 @@
   */
  
@@ -19312,10 +19312,10 @@ index b009f95..2da1e43 100644
 -}());
 +
 +
-diff --git a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/UID.js b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/UID.js
+diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/UID.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/UID.js
 index c0eb04b..4865c2b 100644
---- a/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/UID.js
-+++ b/externs/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/UID.js
+--- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/UID.js
++++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/UID.js
 @@ -31,20 +31,20 @@
   */
  

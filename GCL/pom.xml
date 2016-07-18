@@ -22,16 +22,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache.flex.flexjs.externs</groupId>
-    <artifactId>flexjs-externs</artifactId>
+    <groupId>org.apache.flex.flexjs.typedefs</groupId>
+    <artifactId>flexjs-typedefs</artifactId>
     <version>0.7.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>flexjs-externs-gcl</artifactId>
+  <artifactId>flexjs-typedefs-gcl</artifactId>
   <version>0.7.0-SNAPSHOT</version>
   <packaging>swc</packaging>
 
-  <name>Apache Flex - FlexJS: Externs: GCL</name>
+  <name>Apache Flex - FlexJS: TypeDefs: GCL</name>
 
   <build>
     <sourceDirectory>src/main/flex</sourceDirectory>
@@ -39,7 +39,7 @@
       <plugin>
         <groupId>org.apache.flex.flexjs.compiler</groupId>
         <artifactId>flexjs-maven-plugin</artifactId>
-        <version>0.7.0-SNAPSHOT</version>
+        <version>${flexjs.compiler.version}</version>
         <extensions>true</extensions>
         <configuration>
           <includeSources>true</includeSources>
@@ -49,7 +49,7 @@
           <dependency>
             <groupId>org.apache.flex.flexjs.compiler</groupId>
             <artifactId>compiler-jx</artifactId>
-            <version>0.7.0-SNAPSHOT</version>
+            <version>${flexjs.compiler.version}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -58,8 +58,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.flex.flexjs.externs</groupId>
-      <artifactId>flexjs-externs-js</artifactId>
+      <groupId>org.apache.flex.flexjs.typedefs</groupId>
+      <artifactId>flexjs-typedefs-js</artifactId>
       <version>0.7.0-SNAPSHOT</version>
       <type>swc</type>
       <classifier>extern</classifier>

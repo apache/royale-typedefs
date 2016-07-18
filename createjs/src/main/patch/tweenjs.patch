@@ -1,9 +1,9 @@
 
 Generated from Ant script
-diff --git a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/CSSPlugin.js b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/CSSPlugin.js
+diff --git a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/CSSPlugin.js b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/CSSPlugin.js
 index 52e0206..0fe6341 100644
---- a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/CSSPlugin.js
-+++ b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/CSSPlugin.js
+--- a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/CSSPlugin.js
++++ b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/CSSPlugin.js
 @@ -31,16 +31,16 @@
  */
  
@@ -100,10 +100,10 @@ index 52e0206..0fe6341 100644
 -}());
 +
 +
-diff --git a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Ease.js b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Ease.js
+diff --git a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Ease.js b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Ease.js
 index e3a0809..c69b895 100644
---- a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Ease.js
-+++ b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Ease.js
+--- a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Ease.js
++++ b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Ease.js
 @@ -1,462 +1,188 @@
 -/*
 -* Ease
@@ -752,10 +752,10 @@ index e3a0809..c69b895 100644
 -	createjs.Ease = Ease;
 -
 -}());
-diff --git a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/MotionGuidePlugin.js b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/MotionGuidePlugin.js
+diff --git a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/MotionGuidePlugin.js b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/MotionGuidePlugin.js
 index 48fe018..7d12309 100644
---- a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/MotionGuidePlugin.js
-+++ b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/MotionGuidePlugin.js
+--- a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/MotionGuidePlugin.js
++++ b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/MotionGuidePlugin.js
 @@ -31,17 +31,17 @@
   */
  
@@ -933,10 +933,10 @@ index 48fe018..7d12309 100644
 -}());
 +
 +
-diff --git a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/SamplePlugin.js b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/SamplePlugin.js
+diff --git a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/SamplePlugin.js b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/SamplePlugin.js
 index 371baa7..4bfca8c 100644
---- a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/SamplePlugin.js
-+++ b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/SamplePlugin.js
+--- a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/SamplePlugin.js
++++ b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/SamplePlugin.js
 @@ -31,10 +31,10 @@
   */
  
@@ -1046,10 +1046,10 @@ index 371baa7..4bfca8c 100644
 -}());
 +
 +
-diff --git a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Timeline.js b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Timeline.js
+diff --git a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Timeline.js b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Timeline.js
 index 5546bc2..e65320d 100644
---- a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Timeline.js
-+++ b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Timeline.js
+--- a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Timeline.js
++++ b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Timeline.js
 @@ -1,444 +1,154 @@
 -/*
 -* Timeline
@@ -1646,10 +1646,10 @@ index 5546bc2..e65320d 100644
 -	createjs.Timeline = createjs.promote(Timeline, "EventDispatcher");
 -
 -}());
-diff --git a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Tween.js b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Tween.js
+diff --git a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Tween.js b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Tween.js
 index 8945830..0cfda90 100644
---- a/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Tween.js
-+++ b/externs/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Tween.js
+--- a/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Tween.js
++++ b/createjs/target/downloads/TweenJS-0.6.2/src/tweenjs/Tween.js
 @@ -1,941 +1,283 @@
 -/*
 -* Tween

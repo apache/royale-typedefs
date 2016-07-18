@@ -22,16 +22,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache.flex.flexjs.externs</groupId>
-    <artifactId>flexjs-externs</artifactId>
+    <groupId>org.apache.flex.flexjs.typedefs</groupId>
+    <artifactId>flexjs-typedefs</artifactId>
     <version>0.7.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>flexjs-externs-goolemaps</artifactId>
+  <artifactId>flexjs-typedefs-goolemaps</artifactId>
   <version>0.7.0-SNAPSHOT</version>
   <packaging>swc</packaging>
 
-  <name>Apache Flex - FlexJS: Externs: GoogleMaps</name>
+  <name>Apache Flex - FlexJS: TypeDefs: GoogleMaps</name>
 
   <properties>
     <googlemaps.version>v3_11</googlemaps.version>
@@ -66,7 +66,7 @@
         <version>1.5.0</version>
         <configuration>
           <executable>${git.executable}</executable>
-          <workingDirectory>${basedir}/../..</workingDirectory>
+          <workingDirectory>${basedir}/..</workingDirectory>
           <arguments>
             <argument>apply</argument>
             <argument>--ignore-whitespace</argument>
@@ -92,7 +92,7 @@
       <plugin>
         <groupId>org.apache.flex.flexjs.compiler</groupId>
         <artifactId>flexjs-maven-plugin</artifactId>
-        <version>0.7.0-SNAPSHOT</version>
+        <version>${flexjs.compiler.version}</version>
         <extensions>true</extensions>
         <configuration>
           <includeSources>true</includeSources>
@@ -116,7 +116,7 @@
           <dependency>
             <groupId>org.apache.flex.flexjs.compiler</groupId>
             <artifactId>compiler-jx</artifactId>
-            <version>0.7.0-SNAPSHOT</version>
+            <version>${flexjs.compiler.version}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -125,8 +125,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.flex.flexjs.externs</groupId>
-      <artifactId>flexjs-externs-js</artifactId>
+      <groupId>org.apache.flex.flexjs.typedefs</groupId>
+      <artifactId>flexjs-typedefs-js</artifactId>
       <version>0.7.0-SNAPSHOT</version>
       <type>swc</type>
       <classifier>extern</classifier>
