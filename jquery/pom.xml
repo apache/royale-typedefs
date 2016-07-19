@@ -23,7 +23,7 @@
 
   <parent>
     <groupId>org.apache.flex.flexjs.typedefs</groupId>
-    <artifactId>flexjs-typedefs</artifactId>
+    <artifactId>flexjs-typedefs-parent</artifactId>
     <version>0.7.0-SNAPSHOT</version>
   </parent>
 
