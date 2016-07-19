@@ -21,11 +21,68 @@
 
 <project name="js" default="main" basedir=".">
     
+    <property name="FLEXJS_HOME" value="${basedir}/.." />
+    
+    <condition property="FALCON_HOME" value="${env.FALCON_HOME}">
+        <and>
+            <not>
+                <isset property="FALCON_HOME" />
+            </not>
+            <available file="${env.FALCON_HOME}/lib/falcon-mxmlc.jar" type="file" />
+        </and>
+    </condition>
+    
+    <condition property="FALCON_HOME" value="${FLEXJS_HOME}/../flex-falcon/compiler/lib">
+        <and>
+            <not>
+                <isset property="FALCON_HOME" />
+            </not>
+            <available file="${FLEXJS_HOME}/../flex-falcon/compiler/lib/falcon-mxmlc.jar" type="file" />
+        </and>
+    </condition>
+    
+    <condition property="FALCON_HOME" value="${FLEXJS_HOME}">
+        <and>
+            <not>
+                <isset property="FALCON_HOME" />
+            </not>
+            <available file="${FLEXJS_HOME}/lib/falcon-mxmlc.jar" type="file" />
+        </and>
+    </condition>
+    
+    <condition property="FALCONJX_HOME" value="${env.FALCONJX_HOME}">
+        <and>
+            <not>
+                <isset property="FALCONJX_HOME" />
+            </not>
+            <available file="${env.FALCONJX_HOME}/lib/jsc.jar" type="file" />
+        </and>
+    </condition>
+    
+    <condition property="FALCONJX_HOME" value="${FLEXJS_HOME}/js">
+        <and>
+            <not>
+                <isset property="FALCONJX_HOME" />
+            </not>
+            <available file="${FLEXJS_HOME}/js/lib/jsc.jar" type="file" />
+        </and>
+    </condition>
+    
+    <condition property="FALCONJX_HOME" value="${FLEXJS_HOME}/../flex-falcon/compiler-jx">
+        <and>
+            <not>
+                <isset property="FALCONJX_HOME" />
+            </not>
+            <available file="${FLEXJS_HOME}/../flex-falcon/compiler-jx/lib/jsc.jar" type="file" />
+        </and>
+    </condition>
+    
     <target name="main" depends="preprocess, externc, postprocess, compc" />
 
     <target name="download" >
+        <echo>${FLEXJS_HOME}</echo>
         <mkdir dir="${basedir}/target/temp/externs" />
-        <unjar src="${basedir}/../../compiler-jx/lib/google/closure-compiler/compiler.jar"
+        <unjar src="${FALCONJX_HOME}/lib/google/closure-compiler/compiler.jar"
             dest="${basedir}/target/temp/externs">
             <patternset>
                 <include name="externs.zip"/>
@@ -54,19 +111,26 @@
     <target name="diff" >
         <delete dir="${basedir}/src/main/patch" />
         <mkdir dir="${basedir}/src/main/patch" />
-        <exec executable="git" output="${basedir}/src/main/patch/js.patch" >
+        <exec executable="git" output="${basedir}/src/main/patch/js.temp.patch" >
             <arg value="diff"/>
             <arg value="--no-index"/>
             <arg value="--"/>
             <arg value="${basedir}/target/reference"/>
             <arg value="${basedir}/target/downloads"/>
         </exec>
-        <replace file="${basedir}/src/main/patch/js.patch" token="target/reference" value="target/downloads" />
-        <replace file="${basedir}/src/main/patch/js.patch" token="${basedir}/target/downloads" value="/externs/js/target/downloads" />
+        <replace file="${basedir}/src/main/patch/js.temp.patch" token="target/reference" value="target/downloads" />
+        <replace file="${basedir}/src/main/patch/js.temp.patch" token="${basedir}/target/downloads" value="/js/target/downloads" />
+        <concat destfile="${basedir}/src/main/patch/js.patch" >
+            <header filtering="no" trimleading="yes">
+                Generated from Ant script
+            </header>
+            <filelist dir="${basedir}/src/main/patch" files="js.temp.patch"/>
+        </concat>
+        <delete file="${basedir}/src/main/patch/js.temp.patch" />
     </target>
 
     <target name="preprocess" depends="download">
-        <exec executable="git" dir="${basedir}/../..">
+        <exec executable="git" dir="${basedir}/..">
             <arg value="apply"/>
             <arg value="--ignore-whitespace"/>
             <arg value="--whitespace=nowarn"/>
@@ -75,7 +139,7 @@
     </target>
 
     <target name="externc" >
-        <java jar="${basedir}/../../compiler-jx/lib/externc.jar" fork="true"
+        <java jar="${FALCONJX_HOME}/lib/externc.jar" fork="true"
             failonerror="false">
             <arg value="+flexlib=externs" />
             <arg value="-debug" />
@@ -92,7 +156,7 @@
     <target name="compc" >
         <copy file="${basedir}/src/main/config/compile-as-config.xml"
             todir="${basedir}/target" />
-        <java jar="${basedir}/../../compiler/lib/falcon-compc.jar" fork="true"
+        <java jar="${FALCON_HOME}/falcon-compc.jar" fork="true"
             failonerror="true">
             <arg value="+flexlib=externs/frameworks" />
             <arg value="-debug" />

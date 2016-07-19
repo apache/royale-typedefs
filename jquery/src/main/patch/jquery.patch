@@ -1,3 +1,5 @@
+
+Generated from Ant script
 diff --git a/jquery/target/downloads/jquery-1.9.js b/jquery/target/downloads/jquery-1.9.js
 index d00166a..1d85908 100644
 --- a/jquery/target/downloads/jquery-1.9.js

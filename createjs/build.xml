@@ -24,6 +24,62 @@
     <property name="createjs.version" value="0.8.0" />
     <property name="tweenjs.version" value="0.6.2" />
     
+    <property name="FLEXJS_HOME" value="${basedir}/.." />
+    
+    <condition property="FALCON_HOME" value="${env.FALCON_HOME}">
+        <and>
+            <not>
+                <isset property="FALCON_HOME" />
+            </not>
+            <available file="${env.FALCON_HOME}/lib/falcon-mxmlc.jar" type="file" />
+        </and>
+    </condition>
+    
+    <condition property="FALCON_HOME" value="${FLEXJS_HOME}/../flex-falcon/compiler/lib">
+        <and>
+            <not>
+                <isset property="FALCON_HOME" />
+            </not>
+            <available file="${FLEXJS_HOME}/../flex-falcon/compiler/lib/falcon-mxmlc.jar" type="file" />
+        </and>
+    </condition>
+    
+    <condition property="FALCON_HOME" value="${FLEXJS_HOME}">
+        <and>
+            <not>
+                <isset property="FALCON_HOME" />
+            </not>
+            <available file="${FLEXJS_HOME}/lib/falcon-mxmlc.jar" type="file" />
+        </and>
+    </condition>
+    
+    <condition property="FALCONJX_HOME" value="${env.FALCONJX_HOME}">
+        <and>
+            <not>
+                <isset property="FALCONJX_HOME" />
+            </not>
+            <available file="${env.FALCONJX_HOME}/lib/jsc.jar" type="file" />
+        </and>
+    </condition>
+    
+    <condition property="FALCONJX_HOME" value="${FLEXJS_HOME}/js">
+        <and>
+            <not>
+                <isset property="FALCONJX_HOME" />
+            </not>
+            <available file="${FLEXJS_HOME}/js/lib/jsc.jar" type="file" />
+        </and>
+    </condition>
+    
+    <condition property="FALCONJX_HOME" value="${FLEXJS_HOME}/../flex-falcon/compiler-jx">
+        <and>
+            <not>
+                <isset property="FALCONJX_HOME" />
+            </not>
+            <available file="${FLEXJS_HOME}/../flex-falcon/compiler-jx/lib/jsc.jar" type="file" />
+        </and>
+    </condition>
+    
     <target name="main" depends="download, download_tween, preprocess, externc, postprocess, compc" />
     
     <target name="download" >
@@ -260,9 +316,9 @@
             <arg value="${basedir}/target/downloads/TweenJS-${tweenjs.version}"/>
         </exec>
         <replace file="${basedir}/src/main/patch/easeljs.temp.patch" token="target/reference" value="target/downloads" />
-        <replace file="${basedir}/src/main/patch/easeljs.temp.patch" token="${basedir}/target/downloads" value="/externs/createjs/target/downloads" />
+        <replace file="${basedir}/src/main/patch/easeljs.temp.patch" token="${basedir}/target/downloads" value="/createjs/target/downloads" />
         <replace file="${basedir}/src/main/patch/tweenjs.temp.patch" token="target/reference" value="target/downloads" />
-        <replace file="${basedir}/src/main/patch/tweenjs.temp.patch" token="${basedir}/target/downloads" value="/externs/createjs/target/downloads" />
+        <replace file="${basedir}/src/main/patch/tweenjs.temp.patch" token="${basedir}/target/downloads" value="/createjs/target/downloads" />
         <concat destfile="${basedir}/src/main/patch/tweenjs.patch" >
             <header filtering="no" trimleading="yes">
                 Generated from Ant script
@@ -280,13 +336,13 @@
     </target>
     
     <target name="preprocess" depends="expandzip, expandzip_tween">
-        <exec executable="git" dir="${basedir}/../..">
+        <exec executable="git" dir="${basedir}/..">
             <arg value="apply"/>
             <arg value="--ignore-whitespace"/>
             <arg value="--whitespace=nowarn"/>
             <arg value="${basedir}/src/main/patch/easeljs.patch"/>
         </exec>
-        <exec executable="git" dir="${basedir}/../..">
+        <exec executable="git" dir="${basedir}/..">
             <arg value="apply"/>
             <arg value="--ignore-whitespace"/>
             <arg value="--whitespace=nowarn"/>
@@ -404,7 +460,7 @@
         <!-- this step removes function bodies and otherwise makes the files
              look like typical GCC externs files that GCC expects -->
         <delete dir="${basedir}/target/generated-sources/externs" />
-        <java jar="${basedir}/../../compiler-jx/lib/externc.jar" fork="true"
+        <java jar="${FALCONJX_HOME}/lib/externc.jar" fork="true"
             failonerror="false">
             <arg value="+flexlib=externs" />
             <arg value="-debug" />
@@ -484,7 +540,7 @@
     
     <target name="externc" >
         <delete dir="${basedir}/target/generated-sources/externs" />
-        <java jar="${basedir}/../../compiler-jx/lib/externc.jar" fork="true"
+        <java jar="${FALCONJX_HOME}/lib/externc.jar" fork="true"
             failonerror="false">
             <arg value="+flexlib=externs" />
             <arg value="-debug" />
@@ -498,7 +554,7 @@
     <target name="compc" >
         <copy file="${basedir}/src/main/config/compile-as-config.xml"
         todir="${basedir}/target" />
-        <java jar="${basedir}/../../compiler/lib/falcon-compc.jar" fork="true"
+        <java jar="${FALCON_HOME}/falcon-compc.jar" fork="true"
             failonerror="true">
             <arg value="+flexlib=externs/frameworks" />
             <arg value="-debug" />
