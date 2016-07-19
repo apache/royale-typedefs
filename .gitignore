@@ -1,0 +1,45 @@
+# eclipse conf file
+.settings
+.classpath
+.project
+.manager
+.scala_dependencies
+.cache
+
+# idea conf files
+.idea
+*.iml
+*.ipr
+*.iws
+*.eml
+
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+/jenkins/
+
+# Maven files
+target/
+
+local.properties
+env.properties
+
+out/
+temp/
+rat.report
+
+# files copied from flex-sdk
+swfutils/
+
+# files copied from google closure compiler
+externs/js/externs
+externs/jquery/externs
+externs/jasmine/externs
+externs/createjs/externs
+externs/createjs/in
+externs/google_maps/externs
+externs/node/externs
+
+# debugger output folders
+debugger/bin/
+debugger/generated/
