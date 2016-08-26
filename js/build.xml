@@ -90,7 +90,7 @@
         </unjar>
         <mkdir dir="${basedir}/target/downloads" />
         <unzip src="${basedir}/target/temp/externs/externs.zip" dest="${basedir}/target/downloads" />
-        <get src="https://closureidl.googlecode.com/files/svg.js" dest="${basedir}/target/downloads/svg.js"/>
+        <get src="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/closureidl/svg.js" dest="${basedir}/target/downloads/svg.js"/>
     </target>
     
     <target name="make_patch" depends="download">
