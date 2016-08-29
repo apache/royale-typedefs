@@ -49,7 +49,7 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://closureidl.googlecode.com/files/svg.js</url>
+              <url>https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/closureidl/svg.js</url>
               <outputFileName>svg.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
             </configuration>
