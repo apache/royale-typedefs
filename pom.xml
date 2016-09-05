@@ -35,9 +35,10 @@
   <name>Apache Flex - FlexJS: TypeDefs: Parent</name>
 
   <scm>
-    <connection>scm:git://git.apache.org/flex-typedefs.git</connection>
-    <developerConnection>scm:git://git.apache.org/flex-typedefs.git</developerConnection>
+    <connection>scm:git:https://git-wip-us.apache.org/repos/asf/flex-typedefs.git</connection>
+    <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/flex-typedefs.git</developerConnection>
     <url>https://github.com/apache/flex-typedefs</url>
+    <tag>HEAD</tag>
   </scm>
 
   <properties>
@@ -45,8 +46,8 @@
     <project.reporting.outputencoding>UTF-8</project.reporting.outputencoding>
     <maven.version>3.3.1</maven.version>
 
-    <flexjs.compiler.version>0.7.0-SNAPSHOT</flexjs.compiler.version>
-    <flexjs.build-tools.version>0.7.0-SNAPSHOT</flexjs.build-tools.version>
+    <flexjs.compiler.version>0.7.0</flexjs.compiler.version>
+    <flexjs.build-tools.version>1.0.0</flexjs.build-tools.version>
 
     <git.executable>git</git.executable>
   </properties>
