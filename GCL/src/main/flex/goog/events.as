@@ -14,8 +14,8 @@
 
 package goog {
 public class events {
-    public static function get fireListener():Function{return null;}
-    public static function set fireListener(value:Function):void{}
+	// fireListener is a static function, but we want to re-assign it from FlexJS so we declare it as a var
+    public static var fireListener:Function;
 	public static function hasListener(object:Object, type:String = null, capture:Boolean = false):Boolean{return false};
 	public static function listen(object:Object, type:String, handler:Function, capture:Boolean = false, scope:Object = null):Boolean{return false}; 
 	public static function unlisten(object:Object, type:String, handler:Function, capture:Boolean = false, scope:Object = null):Boolean{return false}; 
