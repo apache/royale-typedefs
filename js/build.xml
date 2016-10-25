@@ -90,7 +90,16 @@
         </unjar>
         <mkdir dir="${basedir}/target/downloads" />
         <unzip src="${basedir}/target/temp/externs/externs.zip" dest="${basedir}/target/downloads" />
-        <get src="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/closureidl/svg.js" dest="${basedir}/target/downloads/svg.js"/>
+        <get src="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/closureidl/svg.js" dest="${basedir}/target/downloads/svg.js" ignoreerrors="true"/>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="svg.js" />
+            <param name="destFile" value="svg.js" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+        <antcall target="fail-if-not-found" >
+            <param name="destFile" value="svg.js" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
     </target>
     
     <target name="make_patch" depends="download">
@@ -180,6 +189,32 @@
                 <include name="**/**"/>
             </fileset>
         </delete>
+    </target>
+
+    <target name="fail-if-not-found">
+        <fail message="${destDir}/${destFile} could not be downloaded or found in cache">
+            <condition>
+                <not>
+                    <available file="${destDir}/${destFile}" />
+                </not>
+            </condition>
+        </fail>
+    </target>
+
+    <target name="double-check-file" >
+        <echo>${env.FLEX_DOWNLOAD_CACHE}</echo>
+        <condition property="still-no-file" value="true">
+            <and>
+                <not>
+                    <available file="${destDir}/${destFile}" />
+                </not>
+                <isset property="env.FLEX_DOWNLOAD_CACHE" />
+            </and>
+        </condition>
+        <echo>Need file: ${still_no_file}</echo>
+    </target>
+    <target name="get-from-cache-if-needed" depends="double-check-file" if="still-no-file">
+        <copy file="${env.FLEX_DOWNLOAD_CACHE}/${srcFile}" tofile="${destDir}/${destFile}" />
     </target>
 
 </project>

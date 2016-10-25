@@ -85,13 +85,31 @@
     <target name="download" >
         <mkdir dir="${basedir}/target/downloads" />
         <get src="https://github.com/CreateJS/EaselJS/archive/${createjs.version}.zip"
-            dest="${basedir}/target/downloads/easel-${createjs.version}.zip" skipexisting="true"/>
+            dest="${basedir}/target/downloads/easel-${createjs.version}.zip" skipexisting="true" ignoreerrors="true"/>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="easel-${createjs.version}.zip" />
+            <param name="destFile" value="easel-${createjs.version}.zip" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+        <antcall target="fail-if-not-found" >
+            <param name="destFile" value="easel-${createjs.version}.zip" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
     </target>
     
     <target name="download_tween" >
         <mkdir dir="${basedir}/target/downloads" />
         <get src="https://github.com/CreateJS/TweenJS/archive/${tweenjs.version}.zip"
-            dest="${basedir}/target/downloads/tween-${tweenjs.version}.zip" skipexisting="true"/>
+            dest="${basedir}/target/downloads/tween-${tweenjs.version}.zip" skipexisting="true" ignoreerrors="true"/>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="tween-${tweenjs.version}.zip" />
+            <param name="destFile" value="tween-${tweenjs.version}.zip" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+        <antcall target="fail-if-not-found" >
+            <param name="destFile" value="tween-${tweenjs.version}.zip" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
     </target>
 
     <!-- createjs files have certain patterns that fool our compilers.
@@ -577,4 +595,29 @@
         <delete dir="${basedir}/target" />
     </target>
 
+    <target name="fail-if-not-found">
+        <fail message="${destDir}/${destFile} could not be downloaded or found in cache">
+            <condition>
+                <not>
+                    <available file="${destDir}/${destFile}" />
+                </not>
+            </condition>
+        </fail>
+    </target>
+
+    <target name="double-check-file" >
+        <echo>${env.FLEX_DOWNLOAD_CACHE}</echo>
+        <condition property="still-no-file" value="true">
+            <and>
+                <not>
+                    <available file="${destDir}/${destFile}" />
+                </not>
+                <isset property="env.FLEX_DOWNLOAD_CACHE" />
+            </and>
+        </condition>
+        <echo>Need file: ${still_no_file}</echo>
+    </target>
+    <target name="get-from-cache-if-needed" depends="double-check-file" if="still-no-file">
+        <copy file="${env.FLEX_DOWNLOAD_CACHE}/${srcFile}" tofile="${destDir}/${destFile}" />
+    </target>
 </project>

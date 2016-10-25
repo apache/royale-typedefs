@@ -103,7 +103,16 @@
 
     <target name="download" >
         <mkdir dir="${basedir}/target/downloads" />
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/maps/google_maps_api_v3_11.js" dest="${basedir}/target/downloads/google_maps_api_v3_11.js" />
+        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/maps/google_maps_api_v3_11.js" dest="${basedir}/target/downloads/google_maps_api_v3_11.js" ignoreerrors="true"/>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="google_maps_api_v3_11.js" />
+            <param name="destFile" value="google_maps_api_v3_11.js" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+        <antcall target="fail-if-not-found" >
+            <param name="destFile" value="google_maps_api_v3_11.js" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
     </target>
     
     <target name="preprocessfile" >
@@ -184,4 +193,29 @@ google.maps = {};]]></replacevalue>
         </delete>
     </target>
 
+    <target name="fail-if-not-found">
+        <fail message="${destDir}/${destFile} could not be downloaded or found in cache">
+            <condition>
+                <not>
+                    <available file="${destDir}/${destFile}" />
+                </not>
+            </condition>
+        </fail>
+    </target>
+
+    <target name="double-check-file" >
+        <echo>${env.FLEX_DOWNLOAD_CACHE}</echo>
+        <condition property="still-no-file" value="true">
+            <and>
+                <not>
+                    <available file="${destDir}/${destFile}" />
+                </not>
+                <isset property="env.FLEX_DOWNLOAD_CACHE" />
+            </and>
+        </condition>
+        <echo>Need file: ${still_no_file}</echo>
+    </target>
+    <target name="get-from-cache-if-needed" depends="double-check-file" if="still-no-file">
+        <copy file="${env.FLEX_DOWNLOAD_CACHE}/${srcFile}" tofile="${destDir}/${destFile}" />
+    </target>
 </project>

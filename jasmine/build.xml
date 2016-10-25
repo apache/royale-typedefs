@@ -81,7 +81,16 @@
 
     <target name="preprocess">
         <mkdir dir="${basedir}/target/downloads" />
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/jasmine-2.0.js" dest="${basedir}/target/downloads/jasmine-2.0.js" skipexisting="true"/>
+        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/jasmine-2.0.js" dest="${basedir}/target/downloads/jasmine-2.0.js" skipexisting="true" ignoreerrors="true"/>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="jasmine-2.0.js" />
+            <param name="destFile" value="jasmine-2.0.js" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+        <antcall target="fail-if-not-found" >
+            <param name="destFile" value="jasmine-2.0.js" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
     </target>
     
     <target name="externc" >
@@ -125,4 +134,31 @@
             </fileset>
         </delete>
     </target>
+
+    <target name="fail-if-not-found">
+        <fail message="${destDir}/${destFile} could not be downloaded or found in cache">
+            <condition>
+                <not>
+                    <available file="${destDir}/${destFile}" />
+                </not>
+            </condition>
+        </fail>
+    </target>
+
+    <target name="double-check-file" >
+        <echo>${env.FLEX_DOWNLOAD_CACHE}</echo>
+        <condition property="still-no-file" value="true">
+            <and>
+                <not>
+                    <available file="${destDir}/${destFile}" />
+                </not>
+                <isset property="env.FLEX_DOWNLOAD_CACHE" />
+            </and>
+        </condition>
+        <echo>Need file: ${still_no_file}</echo>
+    </target>
+    <target name="get-from-cache-if-needed" depends="double-check-file" if="still-no-file">
+        <copy file="${env.FLEX_DOWNLOAD_CACHE}/${srcFile}" tofile="${destDir}/${destFile}" />
+    </target>
+
 </project>

@@ -79,36 +79,136 @@
         
     <target name="main" depends="preprocess, externc, postprocess, compc" />
 
+    <property name="srcServer" value="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs" />
+    <property name="destDir" value="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs" />
+    
+    <target name="getfile" >
+        <get src="${srcServer}/${srcFile}" dest="${destDir}/${destFile}" skipexisting="true" ignoreerrors="true"/>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="${srcFile}" />
+            <param name="destFile" value="${srcFile}" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+        <antcall target="fail-if-not-found" >
+            <param name="destFile" value="${srcFile}" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+    </target>
+    
     <target name="preprocess">
         <mkdir dir="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs" />
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/assert.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/assert.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/buffer.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/buffer.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/child_process.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/child_process.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/cluster.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/cluster.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/crypto.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/crypto.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/dgram.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/dgram.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/dns.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/dns.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/domain.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/domain.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/events.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/events.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/fs.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/fs.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/globals.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/globals.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/http.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/http.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/https.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/https.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/net.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/net.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/os.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/os.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/path.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/path.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/punycode.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/punycode.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/querystring.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/querystring.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/readline.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/readline.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/repl.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/repl.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/stream.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/stream.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/string_decoder.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/string_decoder.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/tls.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/tls.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/tty.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/tty.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/url.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/url.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/util.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/util.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/vm.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/vm.js" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs/zlib.js" dest="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs/zlib.js" skipexisting="true"/>
+        <antcall target="getfile">
+            <param name="srcFile" value="assert.js" />
+            <param name="destFile" value="assert.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="buffer.js" />
+            <param name="destFile" value="buffer.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="child_process.js" />
+            <param name="destFile" value="child_process.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="cluster.js" />
+            <param name="destFile" value="cluster.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="crypto.js" />
+            <param name="destFile" value="crypto.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="dgram.js" />
+            <param name="destFile" value="dgram.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="dns.js" />
+            <param name="destFile" value="dns.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="domain.js" />
+            <param name="destFile" value="domain.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="events.js" />
+            <param name="destFile" value="events.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="fs.js" />
+            <param name="destFile" value="fs.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="globals.js" />
+            <param name="destFile" value="globals.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="http.js" />
+            <param name="destFile" value="http.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="https.js" />
+            <param name="destFile" value="https.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="net.js" />
+            <param name="destFile" value="net.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="os.js" />
+            <param name="destFile" value="os.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="path.js" />
+            <param name="destFile" value="path.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="punycode.js" />
+            <param name="destFile" value="punycode.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="querystring.js" />
+            <param name="destFile" value="querystring.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="readline.js" />
+            <param name="destFile" value="readline.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="repl.js" />
+            <param name="destFile" value="repl.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="stream.js" />
+            <param name="destFile" value="stream.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="string_decoder.js" />
+            <param name="destFile" value="string_decoder.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="tls.js" />
+            <param name="destFile" value="tls.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="tty.js" />
+            <param name="destFile" value="tty.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="url.js" />
+            <param name="destFile" value="url.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="util.js" />
+            <param name="destFile" value="util.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="vm.js" />
+            <param name="destFile" value="vm.js"/>
+        </antcall>
+        <antcall target="getfile">
+            <param name="srcFile" value="zlib.js" />
+            <param name="destFile" value="zlib.js"/>
+        </antcall>
     </target>
     
     <target name="externc" >
@@ -152,4 +252,31 @@
             </fileset>
         </delete>
     </target>
+
+    <target name="fail-if-not-found">
+        <fail message="${destDir}/${destFile} could not be downloaded or found in cache">
+            <condition>
+                <not>
+                    <available file="${destDir}/${destFile}" />
+                </not>
+            </condition>
+        </fail>
+    </target>
+
+    <target name="double-check-file" >
+        <echo>${env.FLEX_DOWNLOAD_CACHE}</echo>
+        <condition property="still-no-file" value="true">
+            <and>
+                <not>
+                    <available file="${destDir}/${destFile}" />
+                </not>
+                <isset property="env.FLEX_DOWNLOAD_CACHE" />
+            </and>
+        </condition>
+        <echo>Need file: ${still_no_file}</echo>
+    </target>
+    <target name="get-from-cache-if-needed" depends="double-check-file" if="still-no-file">
+        <copy file="${env.FLEX_DOWNLOAD_CACHE}/${srcFile}" tofile="${destDir}/${destFile}" />
+    </target>
+
 </project>
