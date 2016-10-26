@@ -87,11 +87,11 @@
         <antcall target="get-from-cache-if-needed" >
             <param name="srcFile" value="${srcFile}" />
             <param name="destFile" value="${srcFile}" />
-            <param name="destDir" value="${basedir}/target/downloads" />
+            <param name="destDir" value="${destDir}" />
         </antcall>
         <antcall target="fail-if-not-found" >
             <param name="destFile" value="${srcFile}" />
-            <param name="destDir" value="${basedir}/target/downloads" />
+            <param name="destDir" value="${destDir}" />
         </antcall>
     </target>
     
