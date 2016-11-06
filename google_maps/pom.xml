@@ -26,7 +26,7 @@
     <version>0.8.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>flexjs-typedefs-goolemaps</artifactId>
+  <artifactId>flexjs-typedefs-googlemaps</artifactId>
   <version>0.8.0-SNAPSHOT</version>
   <packaging>swc</packaging>
 
