@@ -88,7 +88,7 @@
         
     <target name="externc" >
         <java jar="${FALCONJX_HOME}/lib/externc.jar" fork="true"
-            failonerror="false">
+            failonerror="true">
             <arg value="+flexlib=externs" />
             <arg value="-debug" />
             <arg value="-load-config=${basedir}/src/main/config/externc-config.xml" />
