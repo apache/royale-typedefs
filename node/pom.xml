@@ -139,6 +139,10 @@
               <path>downloads/closure-compiler-master/contrib/nodejs/fs.js</path>
             </include-file>
             <include-file>
+              <name>externs/globals.js</name>
+              <path>downloads/closure-compiler-master/contrib/nodejs/globals.js</path>
+            </include-file>
+            <include-file>
               <name>externs/http.js</name>
               <path>downloads/closure-compiler-master/contrib/nodejs/http.js</path>
             </include-file>
