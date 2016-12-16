@@ -23,10 +23,6 @@
         
         <locale/>
         
-        <source-path>
-            <path-element>src/main/javascript</path-element>
-        </source-path>
-        
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
     

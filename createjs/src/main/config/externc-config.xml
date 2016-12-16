@@ -52,10 +52,6 @@
         </namespaces>
         -->
         
-        <source-path>
-            <path-element>../javascript</path-element>
-        </source-path>
-        
         <warn-no-constructor>true</warn-no-constructor>
     </compiler>
     
