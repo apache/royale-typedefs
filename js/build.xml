@@ -120,6 +120,7 @@
         <replace file="${basedir}/target/downloads/es3.js" >
             <replacefilter token="param {number|undefined} base" value="param {number=} base" />
         </replace>
+        <replaceregexp file="${basedir}/target/downloads/es6.js" match="@constructor(. \* @extends \{Array&lt;string&gt;\})" replace="@interface" flags="s" />
         <antcall target="diff" />
     </target>
 
@@ -145,7 +146,7 @@
     </target>
 
     <target name="preprocess" depends="download">
-        <exec executable="git" dir="${basedir}/..">
+        <exec executable="git" dir="${basedir}/.." failonerror="true">
             <arg value="apply"/>
             <arg value="--ignore-whitespace"/>
             <arg value="--whitespace=nowarn"/>
