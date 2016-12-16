@@ -52,10 +52,6 @@
         </namespaces>
         -->
         
-        <source-path>
-            <path-element>src</path-element>
-        </source-path>
-        
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
     
@@ -74,7 +70,7 @@
         <path-element>../../../target/downloads/browser/w3c_dom2.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_dom3.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_elementtraversal.js</path-element>
-        <path-element>../../../target/downloads/browser/w3c_encoding.js</path-element>
+        <path-element>../../../target/downloads/browser/whatwg_encoding.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_event.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_event3.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_geolocation.js</path-element>
