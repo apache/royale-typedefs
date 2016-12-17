@@ -148,6 +148,7 @@
               </includes>
               <excludes>
                 <exclude>es6_collections.js</exclude>
+                <exclude>browser/w3c_dom4.js</exclude>
                 <exclude>browser/w3c_serviceworker.js</exclude>
                 <exclude>browser/w3c_webcrypto.js</exclude>
                 <exclude>browser/gecko_css.js</exclude>
