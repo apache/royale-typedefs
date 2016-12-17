@@ -144,6 +144,7 @@
                 <include>browser/html5.js</include>
                 <include>browser/webgl.js</include>
                 <include>browser/webstorage.js</include>
+                <include>browser/whatwg_encoding.js</include>
               </includes>
               <excludes>
                 <exclude>es6_collections.js</exclude>
