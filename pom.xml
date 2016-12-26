@@ -49,6 +49,11 @@
     <flexjs.build-tools.version>1.0.0</flexjs.build-tools.version>
 
     <git.executable>git</git.executable>
+
+    <!-- URL of the ASF SonarQube server -->
+    <sonar.host.url>https://builds.apache.org/analysis</sonar.host.url>
+    <!-- Exclude all generated code -->
+    <sonar.exclusions>file:**/generated-sources/**</sonar.exclusions>
   </properties>
 
   <!-- Only configure the site distribution as the rest is handled by the apache parent -->
@@ -95,6 +100,12 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.2</version>
+      </plugin>
+
       <!-- Check if all source files have the required apache license headers -->
       <plugin>
         <groupId>org.apache.rat</groupId>
