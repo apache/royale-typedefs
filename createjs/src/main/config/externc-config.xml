@@ -59,9 +59,11 @@
         <path-element>../javascript/missing.js</path-element>
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/createjs/events/Event.js</path-element>
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/createjs/events/EventDispatcher.js</path-element>
+        <!-- externc with jsroot doesn't support the patterns in these files
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/createjs/utils/extend.js</path-element>
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/createjs/utils/indexOf.js</path-element>
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/createjs/utils/promote.js</path-element>
+        -->
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/createjs/utils/Ticker.js</path-element>
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js</path-element>
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js</path-element>
@@ -91,9 +93,13 @@
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/easeljs/geom/Point.js</path-element>
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/easeljs/geom/Rectangle.js</path-element>
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/easeljs/ui/ButtonHelper.js</path-element>
+        <!--  externc with jsroot doesn't support the patterns in these files
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/easeljs/ui/Touch.js</path-element>
+         -->
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js</path-element>
+        <!--  externc with jsroot doesn't support the patterns in these files
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetUtils.js</path-element>
+         -->
         <path-element>../../../target/downloads/EaselJS-0.8.0/src/easeljs/utils/UID.js</path-element>
         <path-element>../../../target/downloads/TweenJS-0.6.2/src/tweenjs/Ease.js</path-element>
         <path-element>../../../target/downloads/TweenJS-0.6.2/src/tweenjs/Timeline.js</path-element>

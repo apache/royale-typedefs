@@ -1,19 +1,4 @@
 
-  Licensed to the Apache Software Foundation (ASF) under one or more
-  contributor license agreements.  See the NOTICE file distributed with
-  this work for additional information regarding copyright ownership.
-  The ASF licenses this file to You under the Apache License, Version 2.0
-  (the "License"); you may not use this file except in compliance with
-  the License.  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
-
 Generated from Ant script
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/Event.js b/createjs/target/downloads/EaselJS-0.8.0/src/createjs/events/Event.js
 index 3ce0025..e8a377d 100644
@@ -1864,10 +1849,10 @@ index d09a381..5da6df7 100644
  	var subP = subclass.prototype, supP = (Object.getPrototypeOf&&Object.getPrototypeOf(subP))||subP.__proto__;
  	if (supP) {
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js
-index eecac1a..4fbd265 100644
+index eecac1a..87b27d7 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Bitmap.js
-@@ -1,214 +1,36 @@
+@@ -1,214 +1,37 @@
 -/*
 -* Bitmap
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -1926,6 +1911,7 @@ index eecac1a..4fbd265 100644
 + * @param {(HTMLCanvasElement|HTMLVideoElement|Image|string|null)} imageOrUri The source object or URI to an image to display. This can be either an Image, Canvas, or Video object, or a string URI to an image file to load and use. If it is a URI, a new Image object will be constructed and assigned to the .image property.
 + * @constructor
 + * @extends createjs.DisplayObject
++
 + */
 +createjs.Bitmap = function (imageOrUri) {}
  
@@ -2112,10 +2098,10 @@ index eecac1a..4fbd265 100644
 -	createjs.Bitmap = createjs.promote(Bitmap, "DisplayObject");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js
-index b028d9b..c1d2309 100644
+index b028d9b..60e513c 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/BitmapText.js
-@@ -1,343 +1,60 @@
+@@ -1,343 +1,61 @@
 -/*
 -* BitmapText
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -2160,6 +2146,7 @@ index b028d9b..c1d2309 100644
 + * @param {createjs.SpriteSheet=} opt_spriteSheet The spritesheet that defines the character glyphs.
 + * @constructor
 + * @extends createjs.DisplayObject
++
 + */
 +createjs.BitmapText = function (opt_text, opt_spriteSheet) {}
 +
@@ -2520,10 +2507,10 @@ index b028d9b..c1d2309 100644
 -}());
 \ No newline at end of file
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js
-index b6bac78..b23762f 100644
+index b6bac78..2aff2ed 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Container.js
-@@ -1,690 +1,310 @@
+@@ -1,690 +1,311 @@
 -/*
 -* Container
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -3238,6 +3225,7 @@ index b6bac78..b23762f 100644
 + * @see [Container]
 + * @constructor
 + * @extends createjs.DisplayObject
++
 + */
 +createjs.Container = function () {}
 +
@@ -3526,10 +3514,10 @@ index b6bac78..b23762f 100644
 +createjs.Container.prototype._cloneChildren = function (o) {  }
 +
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js
-index f6eab31..b9817b4 100644
+index f6eab31..9768a43 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DOMElement.js
-@@ -1,273 +1,55 @@
+@@ -1,273 +1,56 @@
 -/*
 -* DOMElement
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -3558,11 +3546,12 @@ index f6eab31..b9817b4 100644
 -* OTHER DEALINGS IN THE SOFTWARE.
 -*/
 -
+-/**
+- * @module EaselJS
 +/** @fileoverview Auto-generated Externs files
 + * @externs
-+ */
- /**
-- * @module EaselJS
+  */
++/**
 + * <b>This class is still experimental, and more advanced use is likely to be buggy. Please report bugs.</b>
 + * 
 + * A DOMElement allows you to associate a HTMLElement with the display list. It will be transformed
@@ -3593,8 +3582,6 @@ index f6eab31..b9817b4 100644
 + * @param {(HTMLElement|null)} htmlElement A reference or id for the DOM element to manage.
 + * @constructor
 + * @extends createjs.DisplayObject
-  */
-+createjs.DOMElement = function (htmlElement) {}
  
 -// namespace:
 -this.createjs = this.createjs||{};
@@ -3722,7 +3709,9 @@ index f6eab31..b9817b4 100644
 -	 * @method hitTest
 -	 */
 -	p.hitTest = function() {};
--
++ */
++createjs.DOMElement = function (htmlElement) {}
+ 
 -	/**
 -	 * Not applicable to DOMElement.
 -	 * @method localToGlobal
@@ -3843,10 +3832,10 @@ index f6eab31..b9817b4 100644
 -	createjs.DOMElement = createjs.promote(DOMElement, "DisplayObject");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js
-index 3ce9e90..24325e2 100644
+index 3ce9e90..8bc32a3 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/DisplayObject.js
-@@ -1,1364 +1,493 @@
+@@ -1,1364 +1,494 @@
 -/*
 -* DisplayObject
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -5224,6 +5213,7 @@ index 3ce9e90..24325e2 100644
 + * @see [DisplayObject]
 + * @constructor
 + * @extends createjs.EventDispatcher
++
 + */
 +createjs.DisplayObject = function () {}
 +
@@ -8602,10 +8592,10 @@ index 690a649..44be6fa 100644
 -	createjs.Graphics = Graphics;
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js
-index a8f4654..0bbc718 100644
+index a8f4654..079516c 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/MovieClip.js
-@@ -1,661 +1,144 @@
+@@ -1,661 +1,145 @@
 -/*
 -* MovieClip
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -8634,11 +8624,12 @@ index a8f4654..0bbc718 100644
 -* OTHER DEALINGS IN THE SOFTWARE.
 -*/
 -
+-/**
+- * @module EaselJS
 +/** @fileoverview Auto-generated Externs files
 + * @externs
-+ */
- /**
-- * @module EaselJS
+  */
++/**
 + * The MovieClip class associates a TweenJS Timeline with an EaselJS {{#crossLink "Container"}}{{/crossLink}}. It allows
 + * you to create objects which encapsulate timeline animations, state changes, and synched actions. Due to the
 + * complexities inherent in correctly setting up a MovieClip, it is largely intended for tool output and is not included
@@ -8684,100 +8675,6 @@ index a8f4654..0bbc718 100644
 + * @param {Object=} opt_labels A hash of labels to pass to the timeline instance associated with this createjs.MovieClip. Labels only need to be passed if they need to be used.
 + * @constructor
 + * @extends createjs.Container
-  */
-+createjs.MovieClip = function (opt_mode, opt_startPosition, opt_loop, opt_labels) {}
-+
-+    /**
-+     * Sets paused to true.
-+     *
-+     * @see [MovieClip]
-+     */
-+createjs.MovieClip.prototype.stop = function () {  }
-+
-+
-+    /**
-+     * Advances this movie clip to the specified position or label and sets paused to true.
-+     *
-+     * @param {(number|string|null)} positionOrLabel The animation or frame name to go to.
-+     * @see [MovieClip]
-+     */
-+createjs.MovieClip.prototype.gotoAndStop = function (positionOrLabel) {  }
-+
-+    /**
-+     * Use the {{#crossLink "MovieClip/currentLabel:property"}}{{/crossLink}} property instead.
-+     *
-+     * @see [MovieClip]
-+     * @returns {string} 
-+     */
-+createjs.MovieClip.prototype.getCurrentLabel = function () { return ''; }
-+
-+    /**
-+     * Sets paused to false.
-+     *
-+     * @see [MovieClip]
-+     */
-+createjs.MovieClip.prototype.play = function () {  }
-+
-+    /**
-+     * @param {(Array|null)} state 
-+     * @param {(number|null)} offset 
-+     * @see [MovieClip]
-+     */
-+createjs.MovieClip.prototype._setState = function (state, offset) {  }
-+
-+    /**
-+     * @see [MovieClip]
-+     */
-+createjs.MovieClip.prototype._reset = function () {  }
-+
-+
-+    /**
-+     * Adds a child to the timeline, and sets it up as a managed child.
-+     *
-+     * @param {(createjs.MovieClip|null)} child The child MovieClip to manage
-+     * @param {(number|null)} offset 
-+     * @see [MovieClip]
-+     */
-+createjs.MovieClip.prototype._addManagedChild = function (child, offset) {  }
-+
-+
-+
-+
-+    /**
-+     * @param {(number|string|null)} positionOrLabel The animation name or frame number to go to.
-+     * @see [MovieClip]
-+     */
-+createjs.MovieClip.prototype._goto = function (positionOrLabel) {  }
-+
-+    /**
-+     * Use the {{#crossLink "MovieClip/labels:property"}}{{/crossLink}} property instead.
-+     *
-+     * @see [MovieClip]
-+     * @returns {(Array|null)} 
-+     */
-+createjs.MovieClip.prototype.getLabels = function () {  return null; }
-+
-+    /**
-+     * @see [MovieClip]
-+     */
-+createjs.MovieClip.prototype._updateTimeline = function () {  }
-+
-+
-+    /**
-+     * Advances this movie clip to the specified position or label and sets paused to false.
-+     *
-+     * @param {(number|string|null)} positionOrLabel The animation name or frame number to go to.
-+     * @see [MovieClip]
-+     */
-+createjs.MovieClip.prototype.gotoAndPlay = function (positionOrLabel) {  }
-+
-+    /**
-+     * Advances the playhead. This occurs automatically each tick by default.
-+     *
-+     * @param {(number|null)} time The amount of time in ms to advance by. Only applicable if framerate is set.
-+     * @see [MovieClip]
-+     */
-+createjs.MovieClip.prototype.advance = function (time) {  }
  
 -// namespace:
 -this.createjs = this.createjs||{};
@@ -9405,7 +9302,101 @@ index a8f4654..0bbc718 100644
 -		if (!(tween.target instanceof MovieClip)) { return value; }
 -		return (ratio == 1 ? endValues[prop] : startValues[prop]);
 -	};
--
++ */
++createjs.MovieClip = function (opt_mode, opt_startPosition, opt_loop, opt_labels) {}
++
++    /**
++     * Sets paused to true.
++     *
++     * @see [MovieClip]
++     */
++createjs.MovieClip.prototype.stop = function () {  }
++
++
++    /**
++     * Advances this movie clip to the specified position or label and sets paused to true.
++     *
++     * @param {(number|string|null)} positionOrLabel The animation or frame name to go to.
++     * @see [MovieClip]
++     */
++createjs.MovieClip.prototype.gotoAndStop = function (positionOrLabel) {  }
++
++    /**
++     * Use the {{#crossLink "MovieClip/currentLabel:property"}}{{/crossLink}} property instead.
++     *
++     * @see [MovieClip]
++     * @returns {string} 
++     */
++createjs.MovieClip.prototype.getCurrentLabel = function () { return ''; }
++
++    /**
++     * Sets paused to false.
++     *
++     * @see [MovieClip]
++     */
++createjs.MovieClip.prototype.play = function () {  }
++
++    /**
++     * @param {(Array|null)} state 
++     * @param {(number|null)} offset 
++     * @see [MovieClip]
++     */
++createjs.MovieClip.prototype._setState = function (state, offset) {  }
++
++    /**
++     * @see [MovieClip]
++     */
++createjs.MovieClip.prototype._reset = function () {  }
++
++
++    /**
++     * Adds a child to the timeline, and sets it up as a managed child.
++     *
++     * @param {(createjs.MovieClip|null)} child The child MovieClip to manage
++     * @param {(number|null)} offset 
++     * @see [MovieClip]
++     */
++createjs.MovieClip.prototype._addManagedChild = function (child, offset) {  }
++
++
++
++
++    /**
++     * @param {(number|string|null)} positionOrLabel The animation name or frame number to go to.
++     * @see [MovieClip]
++     */
++createjs.MovieClip.prototype._goto = function (positionOrLabel) {  }
++
++    /**
++     * Use the {{#crossLink "MovieClip/labels:property"}}{{/crossLink}} property instead.
++     *
++     * @see [MovieClip]
++     * @returns {(Array|null)} 
++     */
++createjs.MovieClip.prototype.getLabels = function () {  return null; }
++
++    /**
++     * @see [MovieClip]
++     */
++createjs.MovieClip.prototype._updateTimeline = function () {  }
++
++
++    /**
++     * Advances this movie clip to the specified position or label and sets paused to false.
++     *
++     * @param {(number|string|null)} positionOrLabel The animation name or frame number to go to.
++     * @see [MovieClip]
++     */
++createjs.MovieClip.prototype.gotoAndPlay = function (positionOrLabel) {  }
++
++    /**
++     * Advances the playhead. This occurs automatically each tick by default.
++     *
++     * @param {(number|null)} time The amount of time in ms to advance by. Only applicable if framerate is set.
++     * @see [MovieClip]
++     */
++createjs.MovieClip.prototype.advance = function (time) {  }
+ 
 -	MovieClipPlugin.install();
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shadow.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shadow.js
@@ -9584,10 +9575,10 @@ index 407ccb1..f7b7666 100644
 -	createjs.Shadow = Shadow;
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js
-index 26f2341..39dd780 100644
+index 26f2341..ebf4956 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Shape.js
-@@ -1,135 +1,32 @@
+@@ -1,135 +1,33 @@
 -/*
 -* Shape
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -9616,11 +9607,12 @@ index 26f2341..39dd780 100644
 -* OTHER DEALINGS IN THE SOFTWARE.
 -*/
 -
+-/**
+- * @module EaselJS
 +/** @fileoverview Auto-generated Externs files
 + * @externs
-+ */
- /**
-- * @module EaselJS
+  */
++/**
 + * A Shape allows you to display vector art in the display list. It composites a {{#crossLink "Graphics"}}{{/crossLink}}
 + * instance which exposes all of the vector drawing methods. The Graphics instance can be shared between multiple Shape
 + * instances to display the same vector graphics with different positions or transforms.
@@ -9642,8 +9634,6 @@ index 26f2341..39dd780 100644
 + * @param {(createjs.Graphics|null)} graphics Optional. The graphics instance to display. If null, a new Graphics instance will be created.
 + * @constructor
 + * @extends createjs.DisplayObject
-  */
-+createjs.Shape = function (graphics) {}
  
 -// namespace:
 -this.createjs = this.createjs||{};
@@ -9706,7 +9696,9 @@ index 26f2341..39dd780 100644
 -		var hasContent = this.cacheCanvas || (this.graphics && !this.graphics.isEmpty());
 -		return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0 && hasContent);
 -	};
--
++ */
++createjs.Shape = function (graphics) {}
+ 
 -	/**
 -	 * Draws the Shape into the specified context ignoring its visible, alpha, shadow, and transform. Returns true if
 -	 * the draw was handled (useful for overriding functionality).
@@ -9749,10 +9741,10 @@ index 26f2341..39dd780 100644
 -	createjs.Shape = createjs.promote(Shape, "DisplayObject");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js
-index 453f909..d8ae4b0 100644
+index 453f909..b6ed8db 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Sprite.js
-@@ -1,472 +1,100 @@
+@@ -1,472 +1,101 @@
 -/*
 -* Sprite
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -9781,11 +9773,12 @@ index 453f909..d8ae4b0 100644
 -* OTHER DEALINGS IN THE SOFTWARE.
 -*/
 -
+-/**
+- * @module EaselJS
 +/** @fileoverview Auto-generated Externs files
 + * @externs
-+ */
- /**
-- * @module EaselJS
+  */
++/**
 + * Displays a frame or sequence of frames (ie. an animation) from a SpriteSheet instance. A sprite sheet is a series of
 + * images (usually animation frames) combined into a single image. For example, an animation consisting of 8 100x100
 + * images could be combined into a 400x200 sprite sheet (4 frames across by 2 high). You can display individual frames,
@@ -9806,81 +9799,6 @@ index 453f909..d8ae4b0 100644
 + * @param {(number|string)=} opt_frameOrAnimation The frame number or animation to play initially.
 + * @constructor
 + * @extends createjs.DisplayObject
-  */
-+createjs.Sprite = function (spriteSheet, opt_frameOrAnimation) {}
-+
-+    /**
-+     * Stop playing a running animation. The Sprite will be playing if {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}}
-+     * is called. Note that calling {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}} or {{#crossLink "Sprite/play"}}{{/crossLink}}
-+     * will resume playback.
-+     *
-+     * @see [Sprite]
-+     */
-+createjs.Sprite.prototype.stop = function () {  }
-+
-+
-+    /**
-+     * Normalizes the current frame, advancing animations and dispatching callbacks as appropriate.
-+     *
-+     * @see [Sprite]
-+     */
-+createjs.Sprite.prototype._normalizeFrame = function (frameDelta) {  }
-+
-+    /**
-+     * Dispatches the "animationend" event. Returns true if a handler changed the animation (ex. calling {{#crossLink "Sprite/stop"}}{{/crossLink}},
-+     * {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}}, etc.)
-+     *
-+     * @see [Sprite]
-+     */
-+createjs.Sprite.prototype._dispatchAnimationEnd = function (animation, frame, paused, next, end) {  }
-+
-+    /**
-+     * Sets paused to true and seeks to the specified animation name, named frame, or frame number.
-+     *
-+     * @param {(number|string|null)} frameOrAnimation The frame number or animation name that the playhead should move to and stop.
-+     * @see [Sprite]
-+     */
-+createjs.Sprite.prototype.gotoAndStop = function (frameOrAnimation) {  }
-+
-+    /**
-+     * Play (unpause) the current animation. The Sprite will be paused if either {{#crossLink "Sprite/stop"}}{{/crossLink}}
-+     * or {{#crossLink "Sprite/gotoAndStop"}}{{/crossLink}} is called. Single frame animations will remain
-+     * unchanged.
-+     *
-+     * @see [Sprite]
-+     */
-+createjs.Sprite.prototype.play = function () {  }
-+
-+
-+
-+
-+
-+    /**
-+     * Moves the playhead to the specified frame number or animation.
-+     *
-+     * @param {(number|string|null)} frameOrAnimation The frame number or animation that the playhead should move to.
-+     * @param {boolean=} opt_frame The frame of the animation to go to. Defaults to 0.
-+     * @see [Sprite]
-+     */
-+createjs.Sprite.prototype._goto = function (frameOrAnimation, opt_frame) {  }
-+
-+
-+
-+    /**
-+     * Sets paused to false and plays the specified animation name, named frame, or frame number.
-+     *
-+     * @param {(number|string|null)} frameOrAnimation The frame number or animation name that the playhead should move to and begin playing.
-+     * @see [Sprite]
-+     */
-+createjs.Sprite.prototype.gotoAndPlay = function (frameOrAnimation) {  }
-+
-+    /**
-+     * Advances the playhead. This occurs automatically each tick by default.
-+     *
-+     * @param {(number|null)} time The amount of time in ms to advance by. Only applicable if framerate is set on the Sprite or its SpriteSheet.
-+     * @see [Sprite]
-+     */
-+createjs.Sprite.prototype.advance = function (time) {  }
  
 -// namespace:
 -this.createjs = this.createjs||{};
@@ -10319,14 +10237,89 @@ index 453f909..d8ae4b0 100644
 -		}
 -	};
 -
--
++ */
++createjs.Sprite = function (spriteSheet, opt_frameOrAnimation) {}
++
++    /**
++     * Stop playing a running animation. The Sprite will be playing if {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}}
++     * is called. Note that calling {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}} or {{#crossLink "Sprite/play"}}{{/crossLink}}
++     * will resume playback.
++     *
++     * @see [Sprite]
++     */
++createjs.Sprite.prototype.stop = function () {  }
++
++
++    /**
++     * Normalizes the current frame, advancing animations and dispatching callbacks as appropriate.
++     *
++     * @see [Sprite]
++     */
++createjs.Sprite.prototype._normalizeFrame = function (frameDelta) {  }
++
++    /**
++     * Dispatches the "animationend" event. Returns true if a handler changed the animation (ex. calling {{#crossLink "Sprite/stop"}}{{/crossLink}},
++     * {{#crossLink "Sprite/gotoAndPlay"}}{{/crossLink}}, etc.)
++     *
++     * @see [Sprite]
++     */
++createjs.Sprite.prototype._dispatchAnimationEnd = function (animation, frame, paused, next, end) {  }
++
++    /**
++     * Sets paused to true and seeks to the specified animation name, named frame, or frame number.
++     *
++     * @param {(number|string|null)} frameOrAnimation The frame number or animation name that the playhead should move to and stop.
++     * @see [Sprite]
++     */
++createjs.Sprite.prototype.gotoAndStop = function (frameOrAnimation) {  }
++
++    /**
++     * Play (unpause) the current animation. The Sprite will be paused if either {{#crossLink "Sprite/stop"}}{{/crossLink}}
++     * or {{#crossLink "Sprite/gotoAndStop"}}{{/crossLink}} is called. Single frame animations will remain
++     * unchanged.
++     *
++     * @see [Sprite]
++     */
++createjs.Sprite.prototype.play = function () {  }
++
++
++
++
++
++    /**
++     * Moves the playhead to the specified frame number or animation.
++     *
++     * @param {(number|string|null)} frameOrAnimation The frame number or animation that the playhead should move to.
++     * @param {boolean=} opt_frame The frame of the animation to go to. Defaults to 0.
++     * @see [Sprite]
++     */
++createjs.Sprite.prototype._goto = function (frameOrAnimation, opt_frame) {  }
++
++
++
++    /**
++     * Sets paused to false and plays the specified animation name, named frame, or frame number.
++     *
++     * @param {(number|string|null)} frameOrAnimation The frame number or animation name that the playhead should move to and begin playing.
++     * @see [Sprite]
++     */
++createjs.Sprite.prototype.gotoAndPlay = function (frameOrAnimation) {  }
++
++    /**
++     * Advances the playhead. This occurs automatically each tick by default.
++     *
++     * @param {(number|null)} time The amount of time in ms to advance by. Only applicable if framerate is set on the Sprite or its SpriteSheet.
++     * @see [Sprite]
++     */
++createjs.Sprite.prototype.advance = function (time) {  }
+ 
 -	createjs.Sprite = createjs.promote(Sprite, "DisplayObject");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js
-index 9bc7003..a8c66fe 100644
+index 9bc7003..2e745d9 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteContainer.js
-@@ -1,185 +1,36 @@
+@@ -1,185 +1,37 @@
 -/*
 -* SpriteContainer
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -10384,6 +10377,7 @@ index 9bc7003..a8c66fe 100644
 + * @param {createjs.SpriteSheet=} opt_spriteSheet The spriteSheet to use for this SpriteContainer and its children.
 + * @constructor
 + * @extends createjs.Container
++
 + */
 +createjs.SpriteContainer = function (opt_spriteSheet) {}
  
@@ -10545,10 +10539,10 @@ index 9bc7003..a8c66fe 100644
 -	createjs.SpriteContainer = createjs.promote(SpriteContainer, "Container");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js
-index 2e53d42..7a2fc1b 100644
+index 2e53d42..c7052b1 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteSheet.js
-@@ -1,555 +1,221 @@
+@@ -1,555 +1,222 @@
 -/*
 - * SpriteSheet
 - * Visit http://createjs.com/ for documentation, updates and examples.
@@ -10581,128 +10575,7 @@ index 2e53d42..7a2fc1b 100644
 -
  /**
 - * @module EaselJS
-+ * Encapsulates the properties and methods associated with a sprite sheet. A sprite sheet is a series of images (usually
-+ * animation frames) combined into a larger image (or images). For example, an animation consisting of eight 100x100
-+ * images could be combined into a single 400x200 sprite sheet (4 frames across by 2 high).
-+ * 
-+ * The data passed to the SpriteSheet constructor defines:<ol>
-+ * <li> The source image or images to use.</li>
-+ * <li> The positions of individual image frames.</li>
-+ * <li> Sequences of frames that form named animations. Optional.</li>
-+ * <li> The target playback framerate. Optional.</li>
-+ * </OL>
-+ * 
-+ * <h3>SpriteSheet Format</h3>
-+ * 
-+ * SpriteSheets are an object with two required properties (`images` and `frames`), and two optional properties
-+ * (`framerate` and `animations`). This makes them easy to define in javascript code, or in JSON.
-+ * 
-+ * <h4>images</h4>
-+ * An array of source images. Images can be either an HTMLImage
-+ * instance, or a uri to an image. The former is recommended to control preloading.
-+ * 
-+ * images: [image1, "path/to/image2.png"],
-+ * 
-+ * <h4>frames</h4>
-+ * Defines the individual frames. There are two supported formats for frame data:<OL>
-+ * <LI> when all of the frames are the same size (in a grid), use an object with `width`, `height`, `regX`, `regY`, and `count` properties.
-+ * `width` & `height` are required and specify the dimensions of the frames.
-+ * `regX` & `regY` indicate the registration point or "origin" of the frames.
-+ * `spacing` indicate the spacing between frames.
-+ * `margin` specify the margin around the image(s).
-+ * `count` allows you to specify the total number of frames in the spritesheet; if omitted, this will be calculated
-+ * based on the dimensions of the source images and the frames. Frames will be assigned indexes based on their position
-+ * in the source images (left to right, top to bottom).
-+ * 
-+ * frames: {width:64, height:64, count:20, regX: 32, regY:64, spacing:0, margin:0}
-+ * 
-+ * <LI> if the frames are of different sizes, use an array of frame definitions. Each definition is itself an array
-+ * with 4 required and 3 optional entries, in the order: `x`, `y`, `width`, `height`, `imageIndex`, `regX`, `regY`. The first
-+ * four entries are required and define the frame rectangle. The fifth specifies the index of the source image (defaults to 0). The
-+ * last two specify the registration point of the frame.
-+ * 
-+ * frames: [
-+ * // x, y, width, height, imageIndex*, regX*, regY*
-+ * [64, 0, 96, 64],
-+ * [0, 0, 64, 64, 1, 32, 32]
-+ * // etc.
-+ * ]
-+ * 
-+ * </OL>
-+ * 
-+ * <h4>animations</h4>
-+ * Optional. An object defining sequences of frames to play as named animations. Each property corresponds to an
-+ * animation of the same name. Each animation must specify the frames to play, and may
-+ * also include a relative playback `speed` (ex. 2 would playback at double speed, 0.5 at half), and
-+ * the name of the `next` animation to sequence to after it completes.
-+ * 
-+ * There are three formats supported for defining the frames in an animation, which can be mixed and matched as appropriate:<OL>
-+ * <LI> for a single frame animation, you can simply specify the frame index
-+ * 
-+ * animations: {
-+ * sit: 7
-+ * }
-+ * 
-+ * <LI> for an animation of consecutive frames, you can use an array with two required, and two optional entries
-+ * in the order: `start`, `end`, `next`, and `speed`. This will play the frames from start to end inclusive.
-+ * 
-+ * animations: {
-+ * // start, end, next*, speed*
-+ * run: [0, 8],
-+ * jump: [9, 12, "run", 2]
-+ * }
-+ * 
-+ * <LI> for non-consecutive frames, you can use an object with a `frames` property defining an array of frame indexes to
-+ * play in order. The object can also specify `next` and `speed` properties.
-+ * 
-+ * animations: {
-+ * walk: {
-+ * frames: [1,2,3,3,2,1]
-+ * },
-+ * shoot: {
-+ * frames: [1,4,5,6],
-+ * next: "walk",
-+ * speed: 0.5
-+ * }
-+ * }
-+ * 
-+ * </OL>
-+ * <strong>Note:</strong> the `speed` property was added in EaselJS 0.7.0. Earlier versions had a `frequency`
-+ * property instead, which was the inverse of `speed`. For example, a value of "4" would be 1/4 normal speed in earlier
-+ * versions, but is 4x normal speed in 0.7.0+.
-+ * 
-+ * <h4>framerate</h4>
-+ * Optional. Indicates the default framerate to play this spritesheet at in frames per second.
-+ * See {{#crossLink "SpriteSheet/framerate:property"}}{{/crossLink}} for more information.
-+ * 
-+ * framerate: 20
-+ * 
-+ * <h4>Example</h4>
-+ * To define a simple sprite sheet, with a single image "sprites.jpg" arranged in a regular 50x50 grid with three
-+ * animations: "stand" showing the first frame, "run" looping frame 1-5 inclusive, and "jump" playing  frame 6-8 and sequencing back to run.
-+ * 
-+ * var data = {
-+ * images: ["sprites.jpg"],
-+ * frames: {width:50, height:50},
-+ * animations: {
-+ * stand:0,
-+ * run:[1,5],
-+ * jump:[6,8,"run"]
-+ * }
-+ * };
-+ * var spriteSheet = new createjs.SpriteSheet(data);
-+ * var animation = new createjs.Sprite(spriteSheet, "run");
-+ * 
-+ * 
-+ * <strong>Warning:</strong> Images loaded cross-origin will throw cross-origin security errors when interacted with
-+ * using a mouse, using methods such as `getObjectUnderPoint`, using filters, or caching. You can get around this by
-+ * setting `crossOrigin` flags on your images before passing them to EaselJS, eg: `img.crossOrigin="Anonymous";`
-+ *
-+ * @see [SpriteSheet]
-+ * @param {(Object|null)} data An object describing the SpriteSheet data.
-+ * @constructor
-+ * @extends createjs.EventDispatcher
-  */
+- */
 -
 -// namespace:
 -this.createjs = this.createjs||{};
@@ -11203,7 +11076,128 @@ index 2e53d42..7a2fc1b 100644
 -		imgLoop:
 -		for (var i=0, imgs=this._images; i<imgs.length; i++) {
 -			var img = imgs[i], imgW = img.width, imgH = img.height;
--
++ * Encapsulates the properties and methods associated with a sprite sheet. A sprite sheet is a series of images (usually
++ * animation frames) combined into a larger image (or images). For example, an animation consisting of eight 100x100
++ * images could be combined into a single 400x200 sprite sheet (4 frames across by 2 high).
++ * 
++ * The data passed to the SpriteSheet constructor defines:<ol>
++ * <li> The source image or images to use.</li>
++ * <li> The positions of individual image frames.</li>
++ * <li> Sequences of frames that form named animations. Optional.</li>
++ * <li> The target playback framerate. Optional.</li>
++ * </OL>
++ * 
++ * <h3>SpriteSheet Format</h3>
++ * 
++ * SpriteSheets are an object with two required properties (`images` and `frames`), and two optional properties
++ * (`framerate` and `animations`). This makes them easy to define in javascript code, or in JSON.
++ * 
++ * <h4>images</h4>
++ * An array of source images. Images can be either an HTMLImage
++ * instance, or a uri to an image. The former is recommended to control preloading.
++ * 
++ * images: [image1, "path/to/image2.png"],
++ * 
++ * <h4>frames</h4>
++ * Defines the individual frames. There are two supported formats for frame data:<OL>
++ * <LI> when all of the frames are the same size (in a grid), use an object with `width`, `height`, `regX`, `regY`, and `count` properties.
++ * `width` & `height` are required and specify the dimensions of the frames.
++ * `regX` & `regY` indicate the registration point or "origin" of the frames.
++ * `spacing` indicate the spacing between frames.
++ * `margin` specify the margin around the image(s).
++ * `count` allows you to specify the total number of frames in the spritesheet; if omitted, this will be calculated
++ * based on the dimensions of the source images and the frames. Frames will be assigned indexes based on their position
++ * in the source images (left to right, top to bottom).
++ * 
++ * frames: {width:64, height:64, count:20, regX: 32, regY:64, spacing:0, margin:0}
++ * 
++ * <LI> if the frames are of different sizes, use an array of frame definitions. Each definition is itself an array
++ * with 4 required and 3 optional entries, in the order: `x`, `y`, `width`, `height`, `imageIndex`, `regX`, `regY`. The first
++ * four entries are required and define the frame rectangle. The fifth specifies the index of the source image (defaults to 0). The
++ * last two specify the registration point of the frame.
++ * 
++ * frames: [
++ * // x, y, width, height, imageIndex*, regX*, regY*
++ * [64, 0, 96, 64],
++ * [0, 0, 64, 64, 1, 32, 32]
++ * // etc.
++ * ]
++ * 
++ * </OL>
++ * 
++ * <h4>animations</h4>
++ * Optional. An object defining sequences of frames to play as named animations. Each property corresponds to an
++ * animation of the same name. Each animation must specify the frames to play, and may
++ * also include a relative playback `speed` (ex. 2 would playback at double speed, 0.5 at half), and
++ * the name of the `next` animation to sequence to after it completes.
++ * 
++ * There are three formats supported for defining the frames in an animation, which can be mixed and matched as appropriate:<OL>
++ * <LI> for a single frame animation, you can simply specify the frame index
++ * 
++ * animations: {
++ * sit: 7
++ * }
++ * 
++ * <LI> for an animation of consecutive frames, you can use an array with two required, and two optional entries
++ * in the order: `start`, `end`, `next`, and `speed`. This will play the frames from start to end inclusive.
++ * 
++ * animations: {
++ * // start, end, next*, speed*
++ * run: [0, 8],
++ * jump: [9, 12, "run", 2]
++ * }
++ * 
++ * <LI> for non-consecutive frames, you can use an object with a `frames` property defining an array of frame indexes to
++ * play in order. The object can also specify `next` and `speed` properties.
++ * 
++ * animations: {
++ * walk: {
++ * frames: [1,2,3,3,2,1]
++ * },
++ * shoot: {
++ * frames: [1,4,5,6],
++ * next: "walk",
++ * speed: 0.5
++ * }
++ * }
++ * 
++ * </OL>
++ * <strong>Note:</strong> the `speed` property was added in EaselJS 0.7.0. Earlier versions had a `frequency`
++ * property instead, which was the inverse of `speed`. For example, a value of "4" would be 1/4 normal speed in earlier
++ * versions, but is 4x normal speed in 0.7.0+.
++ * 
++ * <h4>framerate</h4>
++ * Optional. Indicates the default framerate to play this spritesheet at in frames per second.
++ * See {{#crossLink "SpriteSheet/framerate:property"}}{{/crossLink}} for more information.
++ * 
++ * framerate: 20
++ * 
++ * <h4>Example</h4>
++ * To define a simple sprite sheet, with a single image "sprites.jpg" arranged in a regular 50x50 grid with three
++ * animations: "stand" showing the first frame, "run" looping frame 1-5 inclusive, and "jump" playing  frame 6-8 and sequencing back to run.
++ * 
++ * var data = {
++ * images: ["sprites.jpg"],
++ * frames: {width:50, height:50},
++ * animations: {
++ * stand:0,
++ * run:[1,5],
++ * jump:[6,8,"run"]
++ * }
++ * };
++ * var spriteSheet = new createjs.SpriteSheet(data);
++ * var animation = new createjs.Sprite(spriteSheet, "run");
++ * 
++ * 
++ * <strong>Warning:</strong> Images loaded cross-origin will throw cross-origin security errors when interacted with
++ * using a mouse, using methods such as `getObjectUnderPoint`, using filters, or caching. You can get around this by
++ * setting `crossOrigin` flags on your images before passing them to EaselJS, eg: `img.crossOrigin="Anonymous";`
++ *
++ * @see [SpriteSheet]
++ * @param {(Object|null)} data An object describing the SpriteSheet data.
++ * @constructor
++ * @extends createjs.EventDispatcher
+ 
 -			var y = margin;
 -			while (y <= imgH-margin-frameHeight) {
 -				var x = margin;
@@ -11223,6 +11217,7 @@ index 2e53d42..7a2fc1b 100644
 -		}
 -		this._numFrames = frameCount;
 -	};
++ */
 +createjs.SpriteSheet = function (data) {}
 +
 +    /**
@@ -11321,10 +11316,10 @@ index 2e53d42..7a2fc1b 100644
 -	createjs.SpriteSheet = createjs.promote(SpriteSheet, "EventDispatcher");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js
-index 6eada6f..1e77464 100644
+index 6eada6f..3ec6f09 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/SpriteStage.js
-@@ -1,988 +1,174 @@
+@@ -1,988 +1,175 @@
 -/*
 -* SpriteStage
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -11353,11 +11348,12 @@ index 6eada6f..1e77464 100644
 -* OTHER DEALINGS IN THE SOFTWARE.
 -*/
 -
+-/**
+- * @module EaselJS
 +/** @fileoverview Auto-generated Externs files
 + * @externs
-+ */
- /**
-- * @module EaselJS
+  */
++/**
 + * A sprite stage is the root level {{#crossLink "Container"}}{{/crossLink}} for an aggressively optimized display list. Each time its {{#crossLink "Stage/tick"}}{{/crossLink}}
 + * method is called, it will render its display list to its target canvas. WebGL content is fully compatible with the existing Context2D renderer.
 + * On devices or browsers that don't support WebGL, content will automatically be rendered via canvas 2D.
@@ -11389,8 +11385,7 @@ index 6eada6f..1e77464 100644
 + * @param {(boolean|null)} antialias Specifies whether or not the browser's WebGL implementation should try to perform antialiasing.
 + * @constructor
 + * @extends createjs.Stage
-  */
--
+ 
 -// namespace:
 -this.createjs = this.createjs||{};
 -
@@ -12343,6 +12338,7 @@ index 6eada6f..1e77464 100644
 -		this._currentBoxIndex = -1;
 -		this._drawTexture = null;
 -	};
++ */
 +createjs.SpriteStage = function (canvas, preserveDrawingBuffer, antialias) {}
 +
 +    /**
@@ -12484,10 +12480,10 @@ index 6eada6f..1e77464 100644
 -	createjs.SpriteStage = createjs.promote(SpriteStage, "Stage");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js
-index 9cb6625..f3d912d 100644
+index 9cb6625..ea3c3a0 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Stage.js
-@@ -1,880 +1,276 @@
+@@ -1,880 +1,277 @@
 -/*
 -* Stage
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -12516,11 +12512,12 @@ index 9cb6625..f3d912d 100644
 -* OTHER DEALINGS IN THE SOFTWARE.
 -*/
 -
+-/**
+- * @module EaselJS
 +/** @fileoverview Auto-generated Externs files
 + * @externs
-+ */
- /**
-- * @module EaselJS
+  */
++/**
 + * A stage is the root level {{#crossLink "Container"}}{{/crossLink}} for a display list. Each time its {{#crossLink "Stage/tick"}}{{/crossLink}}
 + * method is called, it will render its display list to its target canvas.
 + * 
@@ -12541,257 +12538,6 @@ index 9cb6625..f3d912d 100644
 + * @param {(HTMLCanvasElement|Object|null)} canvas A canvas object that the Stage will render to, or the string id of a canvas object in the current document.
 + * @constructor
 + * @extends createjs.Container
-  */
-+createjs.Stage = function (canvas) {}
-+
-+    /**
-+     * Generated doc for missing field JSDoc.
-+     *
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype.nextStage;
-+
-+    /**
-+     * Each time the update method is called, the stage will call {{#crossLink "Stage/tick"}}{{/crossLink}}
-+     * unless {{#crossLink "Stage/tickOnUpdate:property"}}{{/crossLink}} is set to false,
-+     * and then render the display list to the canvas.
-+     *
-+     * @param {Object=} opt_props Props object to pass to `tick()`. Should usually be a {{#crossLink "Ticker"}}{{/crossLink}} event object, or similar object with a delta property.
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype.update = function (opt_props) {  }
-+
-+    /**
-+     * @param {(number|null)} id 
-+     * @param {(Event|null)} e 
-+     * @param {(number|null)} pageX 
-+     * @param {(number|null)} pageY 
-+     * @param {(createjs.Stage|null)} owner Indicates that the event has already been captured & handled by the indicated stage.
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._handlePointerDown = function (id, e, pageX, pageY, owner) {  }
-+
-+
-+    /**
-+     * @param {(boolean|null)} clear If true, clears the mouseover / rollover (ie. no target)
-+     * @param {(createjs.Stage|null)} owner Indicates that the event has already been captured & handled by the indicated stage.
-+     * @param {(createjs.Stage|null)} eventTarget The stage that the cursor is actively over.
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._testMouseOver = function (clear, owner, eventTarget) {  }
-+
-+    /**
-+     * Default event handler that calls the Stage {{#crossLink "Stage/update"}}{{/crossLink}} method when a {{#crossLink "DisplayObject/tick:event"}}{{/crossLink}}
-+     * event is received. This allows you to register a Stage instance as a event listener on {{#crossLink "Ticker"}}{{/crossLink}}
-+     * directly, using:
-+     * 
-+     * Ticker.addEventListener("tick", myStage");
-+     * 
-+     * Note that if you subscribe to ticks using this pattern, then the tick event object will be passed through to
-+     * display object tick handlers, instead of <code>delta</code> and <code>paused</code> parameters.
-+     *
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype.handleEvent = function (evt) {  }
-+
-+    /**
-+     * @param {(HTMLElement|null)} e 
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._getElementRect = function (e) {  }
-+
-+    /**
-+     * Enables or disables (by passing a frequency of 0) mouse over ({{#crossLink "DisplayObject/mouseover:event"}}{{/crossLink}}
-+     * and {{#crossLink "DisplayObject/mouseout:event"}}{{/crossLink}}) and roll over events ({{#crossLink "DisplayObject/rollover:event"}}{{/crossLink}}
-+     * and {{#crossLink "DisplayObject/rollout:event"}}{{/crossLink}}) for this stage's display list. These events can
-+     * be expensive to generate, so they are disabled by default. The frequency of the events can be controlled
-+     * independently of mouse move events via the optional `frequency` parameter.
-+     * 
-+     * <h4>Example</h4>
-+     * 
-+     * var stage = new createjs.Stage("canvasId");
-+     * stage.enableMouseOver(10); // 10 updates per second
-+     *
-+     * @param {number=} opt_frequency Optional param specifying the maximum number of times per second to broadcast mouse over/out events. Set to 0 to disable mouse over events completely. Maximum is 50. A lower frequency is less responsive, but uses less CPU.
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype.enableMouseOver = function (opt_frequency) {  }
-+
-+    /**
-+     * Returns a data url that contains a Base64-encoded image of the contents of the stage. The returned data url can
-+     * be specified as the src value of an image element.
-+     *
-+     * @param {string=} opt_backgroundColor The background color to be used for the generated image. Any valid CSS color value is allowed. The default value is a transparent background.
-+     * @param {string=} opt_mimeType The MIME type of the image format to be create. The default is "image/png". If an unknown MIME type is passed in, or if the browser does not support the specified MIME type, the default value will be used.
-+     * @see [Stage]
-+     * @returns {string} a Base64 encoded image.
-+     */
-+createjs.Stage.prototype.toDataURL = function (opt_backgroundColor, opt_mimeType) { return ''; }
-+
-+    /**
-+     * Enables or disables the event listeners that stage adds to DOM elements (window, document and canvas). It is good
-+     * practice to disable events when disposing of a Stage instance, otherwise the stage will continue to receive
-+     * events from the page.
-+     * 
-+     * When changing the canvas property you must disable the events on the old canvas, and enable events on the
-+     * new canvas or mouse events will not work as expected. For example:
-+     * 
-+     * mycreatejs.Stage.enableDOMEvents(false);
-+     * mycreatejs.Stage.canvas = anotherCanvas;
-+     * mycreatejs.Stage.enableDOMEvents(true);
-+     *
-+     * @param {boolean=} opt_enable Indicates whether to enable or disable the events. Default is true.
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype.enableDOMEvents = function (opt_enable) {  }
-+
-+    /**
-+     * @param {(createjs.DisplayObject|null)} target 
-+     * @param {string} type 
-+     * @param {(boolean|null)} bubbles 
-+     * @param {(number|null)} pointerId 
-+     * @param {(Object|null)} o 
-+     * @param {MouseEvent=} opt_nativeEvent 
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._dispatchMouseEvent = function (target, type, bubbles, pointerId, o, opt_nativeEvent) {  }
-+
-+    /**
-+     * Specifies a target stage that will have mouse / touch interactions relayed to it after this stage handles them.
-+     * This can be useful in cases where you have multiple layered canvases and want user interactions
-+     * events to pass through. For example, this would relay mouse events from topStage to bottomStage:
-+     * 
-+     * topcreatejs.Stage.nextStage = bottomStage;
-+     * 
-+     * To disable relaying, set nextStage to null.
-+     * 
-+     * MouseOver, MouseOut, RollOver, and RollOut interactions are also passed through using the mouse over settings
-+     * of the top-most stage, but are only processed if the target stage has mouse over interactions enabled.
-+     * Considerations when using roll over in relay targets:<OL>
-+     * <LI> The top-most (first) stage must have mouse over interactions enabled (via enableMouseOver)</LI>
-+     * <LI> All stages that wish to participate in mouse over interaction must enable them via enableMouseOver</LI>
-+     * <LI> All relay targets will share the frequency value of the top-most stage</LI>
-+     * </OL>
-+     * To illustrate, in this example the targetStage would process mouse over interactions at 10hz (despite passing
-+     * 30 as it's desired frequency):
-+     * topcreatejs.Stage.nextStage = targetStage;
-+     * topcreatejs.Stage.enableMouseOver(10);
-+     * targetcreatejs.Stage.enableMouseOver(30);
-+     * 
-+     * If the target stage's canvas is completely covered by this stage's canvas, you may also want to disable its
-+     * DOM events using:
-+     * 
-+     * targetcreatejs.Stage.enableDOMEvents(false);
-+     *
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._get_nextStage = function () {  }
-+
-+    /**
-+     * @param {(MouseEvent|null)} e 
-+     * @param {(createjs.Stage|null)} owner Indicates that the event has already been captured & handled by the indicated stage.
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._handleDoubleClick = function (e, owner) {  }
-+
-+    /**
-+     * Clears the target canvas. Useful if {{#crossLink "Stage/autoClear:property"}}{{/crossLink}} is set to `false`.
-+     *
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype.clear = function () {  }
-+
-+    /**
-+     * Propagates a tick event through the display list. This is automatically called by {{#crossLink "Stage/update"}}{{/crossLink}}
-+     * unless {{#crossLink "Stage/tickOnUpdate:property"}}{{/crossLink}} is set to false.
-+     * 
-+     * If a props object is passed to `tick()`, then all of its properties will be copied to the event object that is
-+     * propagated to listeners.
-+     * 
-+     * Some time-based features in EaselJS (for example {{#crossLink "Sprite/framerate"}}{{/crossLink}} require that
-+     * a {{#crossLink "Ticker/tick:event"}}{{/crossLink}} event object (or equivalent object with a delta property) be
-+     * passed as the `props` parameter to `tick()`. For example:
-+     * 
-+     * Ticker.on("tick", handleTick);
-+     * function handleTick(evtObj) {
-+     * // clone the event object from Ticker, and add some custom data to it:
-+     * var evt = evtObj.clone().set({greeting:"hello", name:"world"});
-+     * 
-+     * // pass it to stage.update():
-+     * mycreatejs.Stage.update(evt); // subsequently calls tick() with the same param
-+     * }
-+     * 
-+     * // ...
-+     * myDisplayObject.on("tick", handleDisplayObjectTick);
-+     * function handleDisplayObjectTick(evt) {
-+     * console.log(evt.delta); // the delta property from the Ticker tick event object
-+     * console.log(evt.greeting, evt.name); // custom data: "hello world"
-+     * }
-+     *
-+     * @param {Object=} opt_props An object with properties that should be copied to the event object. Should usually be a Ticker event object, or similar object with a delta property.
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype.tick = function (opt_props) {  }
-+
-+    /**
-+     * @param {(MouseEvent|null)} e 
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._handleMouseUp = function (e) {  }
-+
-+    /**
-+     * @param {(MouseEvent|null)} e 
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._handleMouseMove = function (e) {  }
-+
-+    /**
-+     * @param {(number|null)} id 
-+     * @param {(Event|null)} e 
-+     * @param {(number|null)} pageX 
-+     * @param {(number|null)} pageY 
-+     * @param {(createjs.Stage|null)} owner Indicates that the event has already been captured & handled by the indicated stage.
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._handlePointerMove = function (id, e, pageX, pageY, owner) {  }
-+
-+    /**
-+     * @param {(number|null)} id 
-+     * @param {(Event|null)} e 
-+     * @param {(boolean|null)} clear 
-+     * @param {(createjs.Stage|null)} owner Indicates that the event has already been captured & handled by the indicated stage.
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._handlePointerUp = function (id, e, clear, owner) {  }
-+
-+
-+    /**
-+     * @param {(number|null)} id 
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._getPointerData = function (id) {  }
-+
-+    /**
-+     * Generated doc for missing method JSDoc.
-+     *
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._set_nextStage = function (value) {  }
-+
-+    /**
-+     * @param {(MouseEvent|null)} e 
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._handleMouseDown = function (e) {  }
-+
-+    /**
-+     * @param {(number|null)} id 
-+     * @param {(Event|null)} e 
-+     * @param {(number|null)} pageX 
-+     * @param {(number|null)} pageY 
-+     * @see [Stage]
-+     */
-+createjs.Stage.prototype._updatePointerPosition = function (id, e, pageX, pageY) {  }
  
 -// namespace:
 -this.createjs = this.createjs||{};
@@ -13638,14 +13384,265 @@ index 9cb6625..f3d912d 100644
 -		target.dispatchEvent(evt);
 -	};
 -
--
++ */
++createjs.Stage = function (canvas) {}
++
++    /**
++     * Generated doc for missing field JSDoc.
++     *
++     * @see [Stage]
++     */
++createjs.Stage.prototype.nextStage;
++
++    /**
++     * Each time the update method is called, the stage will call {{#crossLink "Stage/tick"}}{{/crossLink}}
++     * unless {{#crossLink "Stage/tickOnUpdate:property"}}{{/crossLink}} is set to false,
++     * and then render the display list to the canvas.
++     *
++     * @param {Object=} opt_props Props object to pass to `tick()`. Should usually be a {{#crossLink "Ticker"}}{{/crossLink}} event object, or similar object with a delta property.
++     * @see [Stage]
++     */
++createjs.Stage.prototype.update = function (opt_props) {  }
++
++    /**
++     * @param {(number|null)} id 
++     * @param {(Event|null)} e 
++     * @param {(number|null)} pageX 
++     * @param {(number|null)} pageY 
++     * @param {(createjs.Stage|null)} owner Indicates that the event has already been captured & handled by the indicated stage.
++     * @see [Stage]
++     */
++createjs.Stage.prototype._handlePointerDown = function (id, e, pageX, pageY, owner) {  }
++
++
++    /**
++     * @param {(boolean|null)} clear If true, clears the mouseover / rollover (ie. no target)
++     * @param {(createjs.Stage|null)} owner Indicates that the event has already been captured & handled by the indicated stage.
++     * @param {(createjs.Stage|null)} eventTarget The stage that the cursor is actively over.
++     * @see [Stage]
++     */
++createjs.Stage.prototype._testMouseOver = function (clear, owner, eventTarget) {  }
++
++    /**
++     * Default event handler that calls the Stage {{#crossLink "Stage/update"}}{{/crossLink}} method when a {{#crossLink "DisplayObject/tick:event"}}{{/crossLink}}
++     * event is received. This allows you to register a Stage instance as a event listener on {{#crossLink "Ticker"}}{{/crossLink}}
++     * directly, using:
++     * 
++     * Ticker.addEventListener("tick", myStage");
++     * 
++     * Note that if you subscribe to ticks using this pattern, then the tick event object will be passed through to
++     * display object tick handlers, instead of <code>delta</code> and <code>paused</code> parameters.
++     *
++     * @see [Stage]
++     */
++createjs.Stage.prototype.handleEvent = function (evt) {  }
++
++    /**
++     * @param {(HTMLElement|null)} e 
++     * @see [Stage]
++     */
++createjs.Stage.prototype._getElementRect = function (e) {  }
++
++    /**
++     * Enables or disables (by passing a frequency of 0) mouse over ({{#crossLink "DisplayObject/mouseover:event"}}{{/crossLink}}
++     * and {{#crossLink "DisplayObject/mouseout:event"}}{{/crossLink}}) and roll over events ({{#crossLink "DisplayObject/rollover:event"}}{{/crossLink}}
++     * and {{#crossLink "DisplayObject/rollout:event"}}{{/crossLink}}) for this stage's display list. These events can
++     * be expensive to generate, so they are disabled by default. The frequency of the events can be controlled
++     * independently of mouse move events via the optional `frequency` parameter.
++     * 
++     * <h4>Example</h4>
++     * 
++     * var stage = new createjs.Stage("canvasId");
++     * stage.enableMouseOver(10); // 10 updates per second
++     *
++     * @param {number=} opt_frequency Optional param specifying the maximum number of times per second to broadcast mouse over/out events. Set to 0 to disable mouse over events completely. Maximum is 50. A lower frequency is less responsive, but uses less CPU.
++     * @see [Stage]
++     */
++createjs.Stage.prototype.enableMouseOver = function (opt_frequency) {  }
++
++    /**
++     * Returns a data url that contains a Base64-encoded image of the contents of the stage. The returned data url can
++     * be specified as the src value of an image element.
++     *
++     * @param {string=} opt_backgroundColor The background color to be used for the generated image. Any valid CSS color value is allowed. The default value is a transparent background.
++     * @param {string=} opt_mimeType The MIME type of the image format to be create. The default is "image/png". If an unknown MIME type is passed in, or if the browser does not support the specified MIME type, the default value will be used.
++     * @see [Stage]
++     * @returns {string} a Base64 encoded image.
++     */
++createjs.Stage.prototype.toDataURL = function (opt_backgroundColor, opt_mimeType) { return ''; }
++
++    /**
++     * Enables or disables the event listeners that stage adds to DOM elements (window, document and canvas). It is good
++     * practice to disable events when disposing of a Stage instance, otherwise the stage will continue to receive
++     * events from the page.
++     * 
++     * When changing the canvas property you must disable the events on the old canvas, and enable events on the
++     * new canvas or mouse events will not work as expected. For example:
++     * 
++     * mycreatejs.Stage.enableDOMEvents(false);
++     * mycreatejs.Stage.canvas = anotherCanvas;
++     * mycreatejs.Stage.enableDOMEvents(true);
++     *
++     * @param {boolean=} opt_enable Indicates whether to enable or disable the events. Default is true.
++     * @see [Stage]
++     */
++createjs.Stage.prototype.enableDOMEvents = function (opt_enable) {  }
++
++    /**
++     * @param {(createjs.DisplayObject|null)} target 
++     * @param {string} type 
++     * @param {(boolean|null)} bubbles 
++     * @param {(number|null)} pointerId 
++     * @param {(Object|null)} o 
++     * @param {MouseEvent=} opt_nativeEvent 
++     * @see [Stage]
++     */
++createjs.Stage.prototype._dispatchMouseEvent = function (target, type, bubbles, pointerId, o, opt_nativeEvent) {  }
++
++    /**
++     * Specifies a target stage that will have mouse / touch interactions relayed to it after this stage handles them.
++     * This can be useful in cases where you have multiple layered canvases and want user interactions
++     * events to pass through. For example, this would relay mouse events from topStage to bottomStage:
++     * 
++     * topcreatejs.Stage.nextStage = bottomStage;
++     * 
++     * To disable relaying, set nextStage to null.
++     * 
++     * MouseOver, MouseOut, RollOver, and RollOut interactions are also passed through using the mouse over settings
++     * of the top-most stage, but are only processed if the target stage has mouse over interactions enabled.
++     * Considerations when using roll over in relay targets:<OL>
++     * <LI> The top-most (first) stage must have mouse over interactions enabled (via enableMouseOver)</LI>
++     * <LI> All stages that wish to participate in mouse over interaction must enable them via enableMouseOver</LI>
++     * <LI> All relay targets will share the frequency value of the top-most stage</LI>
++     * </OL>
++     * To illustrate, in this example the targetStage would process mouse over interactions at 10hz (despite passing
++     * 30 as it's desired frequency):
++     * topcreatejs.Stage.nextStage = targetStage;
++     * topcreatejs.Stage.enableMouseOver(10);
++     * targetcreatejs.Stage.enableMouseOver(30);
++     * 
++     * If the target stage's canvas is completely covered by this stage's canvas, you may also want to disable its
++     * DOM events using:
++     * 
++     * targetcreatejs.Stage.enableDOMEvents(false);
++     *
++     * @see [Stage]
++     */
++createjs.Stage.prototype._get_nextStage = function () {  }
++
++    /**
++     * @param {(MouseEvent|null)} e 
++     * @param {(createjs.Stage|null)} owner Indicates that the event has already been captured & handled by the indicated stage.
++     * @see [Stage]
++     */
++createjs.Stage.prototype._handleDoubleClick = function (e, owner) {  }
++
++    /**
++     * Clears the target canvas. Useful if {{#crossLink "Stage/autoClear:property"}}{{/crossLink}} is set to `false`.
++     *
++     * @see [Stage]
++     */
++createjs.Stage.prototype.clear = function () {  }
++
++    /**
++     * Propagates a tick event through the display list. This is automatically called by {{#crossLink "Stage/update"}}{{/crossLink}}
++     * unless {{#crossLink "Stage/tickOnUpdate:property"}}{{/crossLink}} is set to false.
++     * 
++     * If a props object is passed to `tick()`, then all of its properties will be copied to the event object that is
++     * propagated to listeners.
++     * 
++     * Some time-based features in EaselJS (for example {{#crossLink "Sprite/framerate"}}{{/crossLink}} require that
++     * a {{#crossLink "Ticker/tick:event"}}{{/crossLink}} event object (or equivalent object with a delta property) be
++     * passed as the `props` parameter to `tick()`. For example:
++     * 
++     * Ticker.on("tick", handleTick);
++     * function handleTick(evtObj) {
++     * // clone the event object from Ticker, and add some custom data to it:
++     * var evt = evtObj.clone().set({greeting:"hello", name:"world"});
++     * 
++     * // pass it to stage.update():
++     * mycreatejs.Stage.update(evt); // subsequently calls tick() with the same param
++     * }
++     * 
++     * // ...
++     * myDisplayObject.on("tick", handleDisplayObjectTick);
++     * function handleDisplayObjectTick(evt) {
++     * console.log(evt.delta); // the delta property from the Ticker tick event object
++     * console.log(evt.greeting, evt.name); // custom data: "hello world"
++     * }
++     *
++     * @param {Object=} opt_props An object with properties that should be copied to the event object. Should usually be a Ticker event object, or similar object with a delta property.
++     * @see [Stage]
++     */
++createjs.Stage.prototype.tick = function (opt_props) {  }
++
++    /**
++     * @param {(MouseEvent|null)} e 
++     * @see [Stage]
++     */
++createjs.Stage.prototype._handleMouseUp = function (e) {  }
++
++    /**
++     * @param {(MouseEvent|null)} e 
++     * @see [Stage]
++     */
++createjs.Stage.prototype._handleMouseMove = function (e) {  }
++
++    /**
++     * @param {(number|null)} id 
++     * @param {(Event|null)} e 
++     * @param {(number|null)} pageX 
++     * @param {(number|null)} pageY 
++     * @param {(createjs.Stage|null)} owner Indicates that the event has already been captured & handled by the indicated stage.
++     * @see [Stage]
++     */
++createjs.Stage.prototype._handlePointerMove = function (id, e, pageX, pageY, owner) {  }
++
++    /**
++     * @param {(number|null)} id 
++     * @param {(Event|null)} e 
++     * @param {(boolean|null)} clear 
++     * @param {(createjs.Stage|null)} owner Indicates that the event has already been captured & handled by the indicated stage.
++     * @see [Stage]
++     */
++createjs.Stage.prototype._handlePointerUp = function (id, e, clear, owner) {  }
++
++
++    /**
++     * @param {(number|null)} id 
++     * @see [Stage]
++     */
++createjs.Stage.prototype._getPointerData = function (id) {  }
++
++    /**
++     * Generated doc for missing method JSDoc.
++     *
++     * @see [Stage]
++     */
++createjs.Stage.prototype._set_nextStage = function (value) {  }
++
++    /**
++     * @param {(MouseEvent|null)} e 
++     * @see [Stage]
++     */
++createjs.Stage.prototype._handleMouseDown = function (e) {  }
++
++    /**
++     * @param {(number|null)} id 
++     * @param {(Event|null)} e 
++     * @param {(number|null)} pageX 
++     * @param {(number|null)} pageY 
++     * @see [Stage]
++     */
++createjs.Stage.prototype._updatePointerPosition = function (id, e, pageX, pageY) {  }
+ 
 -	createjs.Stage = createjs.promote(Stage, "Container");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js
-index 52df706..e99a3fa 100644
+index 52df706..7804274 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/display/Text.js
-@@ -1,421 +1,127 @@
+@@ -1,421 +1,128 @@
 -/*
 -* Text
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -13674,11 +13671,12 @@ index 52df706..e99a3fa 100644
 -* OTHER DEALINGS IN THE SOFTWARE.
 -*/
 -
+-/**
+- * @module EaselJS
 +/** @fileoverview Auto-generated Externs files
 + * @externs
-+ */
- /**
-- * @module EaselJS
+  */
++/**
 + * Display one or more lines of dynamic text (not user editable) in the display list. Line wrapping support (using the
 + * lineWidth) is very basic, wrapping on spaces and tabs only. Note that as an alternative to Text, you can position HTML
 + * text above or below the canvas relative to items in the display list using the {{#crossLink "DisplayObject/localToGlobal"}}{{/crossLink}}
@@ -13705,100 +13703,6 @@ index 52df706..e99a3fa 100644
 + * @param {string=} opt_color The color to draw the text in. Any valid value for the CSS color attribute is acceptable (ex. "#F00", "red", or "#FF0000").
 + * @constructor
 + * @extends createjs.DisplayObject
-  */
-+createjs.Text = function (opt_text, opt_font, opt_color) {}
-+
-+    /**
-+     * @type {string} 
-+     * @see [missing]
-+     */
-+createjs.Text.prototype.text;
-+
-+    /**
-+     * @type {string} 
-+     * @see [missing]
-+     */
-+createjs.Text.prototype.textAlign;
-+
-+    /**
-+     * @type {string} 
-+     * @see [missing]
-+     */
-+createjs.Text.prototype.textBaseline;
-+
-+    /**
-+     * @param {(CanvasRenderingContext2D|null)} ctx 
-+     * @see [Text]
-+     * @returns {(CanvasRenderingContext2D|null)} 
-+     */
-+createjs.Text.prototype._prepContext = function (ctx) {  return null; }
-+
-+    /**
-+     * Returns the measured, untransformed width of the text without wrapping. Use getBounds for a more robust value.
-+     *
-+     * @see [Text]
-+     * @returns {(number|null)} The measured, untransformed width of the text.
-+     */
-+createjs.Text.prototype.getMeasuredWidth = function () { return 0; }
-+
-+
-+    /**
-+     * @param {(CanvasRenderingContext2D|null)} ctx 
-+     * @param {string} text 
-+     * @param {(number|null)} y 
-+     * @see [Text]
-+     */
-+createjs.Text.prototype._drawTextLine = function (ctx, text, y) {  }
-+
-+    /**
-+     * Returns an object with width, height, and lines properties. The width and height are the visual width and height
-+     * of the drawn text. The lines property contains an array of strings, one for
-+     * each line of text that will be drawn, accounting for line breaks and wrapping. These strings have trailing
-+     * whitespace removed.
-+     *
-+     * @see [Text]
-+     * @returns {(Object|null)} An object with width, height, and lines properties.
-+     */
-+createjs.Text.prototype.getMetrics = function () {  return null; }
-+
-+    /**
-+     * Returns an approximate line height of the text, ignoring the lineHeight property. This is based on the measured
-+     * width of a "M" character multiplied by 1.2, which provides an approximate line height for most fonts.
-+     *
-+     * @see [Text]
-+     * @returns {(number|null)} an approximate line height of the text, ignoring the lineHeight property. This is based on the measured width of a "M" character multiplied by 1.2, which approximates em for most fonts.
-+     */
-+createjs.Text.prototype.getMeasuredLineHeight = function () { return 0; }
-+
-+    /**
-+     * Draws multiline text.
-+     *
-+     * @param {(CanvasRenderingContext2D|null)} ctx 
-+     * @param {(Object|null)} o 
-+     * @param {(Array|null)} lines 
-+     * @see [Text]
-+     * @returns {(Object|null)} 
-+     */
-+createjs.Text.prototype._drawText = function (ctx, o, lines) {  return null; }
-+
-+
-+
-+
-+    /**
-+     * @param {string} text 
-+     * @see [Text]
-+     */
-+createjs.Text.prototype._getMeasuredWidth = function (text) {  }
-+
-+    /**
-+     * Returns the approximate height of multi-line text by multiplying the number of lines against either the
-+     * <code>lineHeight</code> (if specified) or {{#crossLink "Text/getMeasuredLineHeight"}}{{/crossLink}}. Note that
-+     * this operation requires the text flowing logic to run, which has an associated CPU cost.
-+     *
-+     * @see [Text]
-+     * @returns {(number|null)} The approximate height of the untransformed multi-line text.
-+     */
-+createjs.Text.prototype.getMeasuredHeight = function () { return 0; }
  
 -// namespace:
 -this.createjs = this.createjs||{};
@@ -14158,7 +14062,101 @@ index 52df706..e99a3fa 100644
 -		if (!paint) { ctx.restore(); }
 -		return o;
 -	};
--
++ */
++createjs.Text = function (opt_text, opt_font, opt_color) {}
++
++    /**
++     * @type {string} 
++     * @see [missing]
++     */
++createjs.Text.prototype.text;
++
++    /**
++     * @type {string} 
++     * @see [missing]
++     */
++createjs.Text.prototype.textAlign;
++
++    /**
++     * @type {string} 
++     * @see [missing]
++     */
++createjs.Text.prototype.textBaseline;
++
++    /**
++     * @param {(CanvasRenderingContext2D|null)} ctx 
++     * @see [Text]
++     * @returns {(CanvasRenderingContext2D|null)} 
++     */
++createjs.Text.prototype._prepContext = function (ctx) {  return null; }
++
++    /**
++     * Returns the measured, untransformed width of the text without wrapping. Use getBounds for a more robust value.
++     *
++     * @see [Text]
++     * @returns {(number|null)} The measured, untransformed width of the text.
++     */
++createjs.Text.prototype.getMeasuredWidth = function () { return 0; }
++
++
++    /**
++     * @param {(CanvasRenderingContext2D|null)} ctx 
++     * @param {string} text 
++     * @param {(number|null)} y 
++     * @see [Text]
++     */
++createjs.Text.prototype._drawTextLine = function (ctx, text, y) {  }
++
++    /**
++     * Returns an object with width, height, and lines properties. The width and height are the visual width and height
++     * of the drawn text. The lines property contains an array of strings, one for
++     * each line of text that will be drawn, accounting for line breaks and wrapping. These strings have trailing
++     * whitespace removed.
++     *
++     * @see [Text]
++     * @returns {(Object|null)} An object with width, height, and lines properties.
++     */
++createjs.Text.prototype.getMetrics = function () {  return null; }
++
++    /**
++     * Returns an approximate line height of the text, ignoring the lineHeight property. This is based on the measured
++     * width of a "M" character multiplied by 1.2, which provides an approximate line height for most fonts.
++     *
++     * @see [Text]
++     * @returns {(number|null)} an approximate line height of the text, ignoring the lineHeight property. This is based on the measured width of a "M" character multiplied by 1.2, which approximates em for most fonts.
++     */
++createjs.Text.prototype.getMeasuredLineHeight = function () { return 0; }
++
++    /**
++     * Draws multiline text.
++     *
++     * @param {(CanvasRenderingContext2D|null)} ctx 
++     * @param {(Object|null)} o 
++     * @param {(Array|null)} lines 
++     * @see [Text]
++     * @returns {(Object|null)} 
++     */
++createjs.Text.prototype._drawText = function (ctx, o, lines) {  return null; }
++
++
++
++
++    /**
++     * @param {string} text 
++     * @see [Text]
++     */
++createjs.Text.prototype._getMeasuredWidth = function (text) {  }
++
++    /**
++     * Returns the approximate height of multi-line text by multiplying the number of lines against either the
++     * <code>lineHeight</code> (if specified) or {{#crossLink "Text/getMeasuredLineHeight"}}{{/crossLink}}. Note that
++     * this operation requires the text flowing logic to run, which has an associated CPU cost.
++     *
++     * @see [Text]
++     * @returns {(number|null)} The approximate height of the untransformed multi-line text.
++     */
++createjs.Text.prototype.getMeasuredHeight = function () { return 0; }
+ 
 -	/**
 -	 * @method _drawTextLine
 -	 * @param {CanvasRenderingContext2D} ctx
@@ -14190,10 +14188,10 @@ index 52df706..e99a3fa 100644
 -	createjs.Text = createjs.promote(Text, "DisplayObject");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js
-index 2b4e1b3..098a753 100644
+index 2b4e1b3..805cb7d 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/events/MouseEvent.js
-@@ -1,187 +1,46 @@
+@@ -1,187 +1,47 @@
 -/*
 -* MouseEvent
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -14222,11 +14220,12 @@ index 2b4e1b3..098a753 100644
 -* OTHER DEALINGS IN THE SOFTWARE.
 -*/
 -
+-/**
+- * @module EaselJS
 +/** @fileoverview Auto-generated Externs files
 + * @externs
-+ */
- /**
-- * @module EaselJS
+  */
++/**
 + * Passed as the parameter to all mouse/pointer/touch related events. For a listing of mouse events and their properties,
 + * see the {{#crossLink "DisplayObject"}}{{/crossLink}} and {{#crossLink "Stage"}}{{/crossLink}} event listings.
 + *
@@ -14243,8 +14242,6 @@ index 2b4e1b3..098a753 100644
 + * @param {(number|null)} rawY The raw y position relative to the stage.
 + * @constructor
 + * @extends createjs.Event
-  */
-+createjs.MouseEvent = function (type, bubbles, cancelable, stageX, stageY, nativeEvent, pointerID, primary, rawX, rawY) {}
  
 -// namespace:
 -this.createjs = this.createjs||{};
@@ -14333,7 +14330,9 @@ index 2b4e1b3..098a753 100644
 -		this.primary = !!primary;
 -	}
 -	var p = createjs.extend(MouseEvent, createjs.Event);
--
++ */
++createjs.MouseEvent = function (type, bubbles, cancelable, stageX, stageY, nativeEvent, pointerID, primary, rawX, rawY) {}
+ 
 -	// TODO: deprecated
 -	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
 -	
@@ -14420,10 +14419,10 @@ index 2b4e1b3..098a753 100644
 -	createjs.MouseEvent = createjs.promote(MouseEvent, "Event");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js
-index a37a7bf..61906e6 100644
+index a37a7bf..ed645c9 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js
-@@ -1,168 +1,42 @@
+@@ -1,168 +1,43 @@
 -/*
 - * AlphaMapFilter
 - * Visit http://createjs.com/ for documentation, updates and examples.
@@ -14456,36 +14455,8 @@ index a37a7bf..61906e6 100644
 -
  /**
 - * @module EaselJS
-+ * Applies a greyscale alpha map image (or canvas) to the target, such that the alpha channel of the result will
-+ * be copied from the red channel of the map, and the RGB channels will be copied from the target.
-+ * 
-+ * Generally, it is recommended that you use {{#crossLink "AlphaMaskFilter"}}{{/crossLink}}, because it has much
-+ * better performance.
-+ * 
-+ * <h4>Example</h4>
-+ * This example draws a red->blue box, caches it, and then uses the cache canvas as an alpha map on a 100x100 image.
-+ * 
-+ * var box = new createjs.Shape();
-+ * box.graphics.beginLinearGradientFill(["#ff0000", "#0000ff"], [0, 1], 0, 0, 0, 100)
-+ * box.graphics.drawRect(0, 0, 100, 100);
-+ * box.cache(0, 0, 100, 100);
-+ * 
-+ * var bmp = new createjs.Bitmap("path/to/image.jpg");
-+ * bmp.filters = [
-+ * new createjs.AlphaMapFilter(box.cacheCanvas)
-+ * ];
-+ * bmp.cache(0, 0, 100, 100);
-+ * stage.addChild(bmp);
-+ * 
-+ * See {{#crossLink "Filter"}}{{/crossLink}} for more information on applying filters.
-+ *
-+ * @see [AlphaMapFilter]
-+ * @param {(HTMLCanvasElement|Image|null)} alphaMap The greyscale image (or canvas) to use as the alpha value for the result. This should be exactly the same dimensions as the target.
-+ * @constructor
-+ * @extends createjs.Filter
-  */
-+createjs.AlphaMapFilter = function (alphaMap) {}
- 
+- */
+-
 -// namespace:
 -this.createjs = this.createjs || {};
 -
@@ -14571,7 +14542,34 @@ index a37a7bf..61906e6 100644
 -		return "[AlphaMapFilter]";
 -	};
 -
--
++ * Applies a greyscale alpha map image (or canvas) to the target, such that the alpha channel of the result will
++ * be copied from the red channel of the map, and the RGB channels will be copied from the target.
++ * 
++ * Generally, it is recommended that you use {{#crossLink "AlphaMaskFilter"}}{{/crossLink}}, because it has much
++ * better performance.
++ * 
++ * <h4>Example</h4>
++ * This example draws a red->blue box, caches it, and then uses the cache canvas as an alpha map on a 100x100 image.
++ * 
++ * var box = new createjs.Shape();
++ * box.graphics.beginLinearGradientFill(["#ff0000", "#0000ff"], [0, 1], 0, 0, 0, 100)
++ * box.graphics.drawRect(0, 0, 100, 100);
++ * box.cache(0, 0, 100, 100);
++ * 
++ * var bmp = new createjs.Bitmap("path/to/image.jpg");
++ * bmp.filters = [
++ * new createjs.AlphaMapFilter(box.cacheCanvas)
++ * ];
++ * bmp.cache(0, 0, 100, 100);
++ * stage.addChild(bmp);
++ * 
++ * See {{#crossLink "Filter"}}{{/crossLink}} for more information on applying filters.
++ *
++ * @see [AlphaMapFilter]
++ * @param {(HTMLCanvasElement|Image|null)} alphaMap The greyscale image (or canvas) to use as the alpha value for the result. This should be exactly the same dimensions as the target.
++ * @constructor
++ * @extends createjs.Filter
+ 
 -// private methods:
 -	/** docced in super class **/
 -	p._applyFilter = function (imageData) {
@@ -14585,7 +14583,9 @@ index a37a7bf..61906e6 100644
 -		
 -		return true;
 -	};
--
++ */
++createjs.AlphaMapFilter = function (alphaMap) {}
+ 
 -	/**
 -	 * @method _prepAlphaMap
 -	 * @protected
@@ -14627,10 +14627,10 @@ index a37a7bf..61906e6 100644
 -	createjs.AlphaMapFilter = createjs.promote(AlphaMapFilter, "Filter");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js
-index d3ee792..e5ba9f8 100644
+index d3ee792..4a2c462 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMaskFilter.js
-@@ -1,134 +1,37 @@
+@@ -1,134 +1,38 @@
 -/*
 - * AlphaMaskFilter
 - * Visit http://createjs.com/ for documentation, updates and examples.
@@ -14663,36 +14663,8 @@ index d3ee792..e5ba9f8 100644
 -
  /**
 - * @module EaselJS
-+ * Applies the alpha from the mask image (or canvas) to the target, such that the alpha channel of the result will
-+ * be derived from the mask, and the RGB channels will be copied from the target. This can be used, for example, to
-+ * apply an alpha mask to a display object. This can also be used to combine a JPG compressed RGB image with a PNG32
-+ * alpha mask, which can result in a much smaller file size than a single PNG32 containing ARGB.
-+ * 
-+ * <b>IMPORTANT NOTE: This filter currently does not support the targetCtx, or targetX/Y parameters correctly.</b>
-+ * 
-+ * <h4>Example</h4>
-+ * This example draws a gradient box, then caches it and uses the "cacheCanvas" as the alpha mask on a 100x100 image.
-+ * 
-+ * var box = new createjs.Shape();
-+ * box.graphics.beginLinearGradientFill(["#000000", "rgba(0, 0, 0, 0)"], [0, 1], 0, 0, 100, 100)
-+ * box.graphics.drawRect(0, 0, 100, 100);
-+ * box.cache(0, 0, 100, 100);
-+ * 
-+ * var bmp = new createjs.Bitmap("path/to/image.jpg");
-+ * bmp.filters = [
-+ * new createjs.AlphaMaskFilter(box.cacheCanvas)
-+ * ];
-+ * bmp.cache(0, 0, 100, 100);
-+ * 
-+ * See {{#crossLink "Filter"}}{{/crossLink}} for more information on applying filters.
-+ *
-+ * @see [AlphaMaskFilter]
-+ * @param {(Image|null)} mask 
-+ * @constructor
-+ * @extends createjs.Filter
-  */
-+createjs.AlphaMaskFilter = function (mask) {}
- 
+- */
+-
 -// namespace:
 -this.createjs = this.createjs || {};
 -
@@ -14775,13 +14747,42 @@ index d3ee792..e5ba9f8 100644
 -			// clearRect, then draw the ctx in?
 -			return false;
 -		}
--
++ * Applies the alpha from the mask image (or canvas) to the target, such that the alpha channel of the result will
++ * be derived from the mask, and the RGB channels will be copied from the target. This can be used, for example, to
++ * apply an alpha mask to a display object. This can also be used to combine a JPG compressed RGB image with a PNG32
++ * alpha mask, which can result in a much smaller file size than a single PNG32 containing ARGB.
++ * 
++ * <b>IMPORTANT NOTE: This filter currently does not support the targetCtx, or targetX/Y parameters correctly.</b>
++ * 
++ * <h4>Example</h4>
++ * This example draws a gradient box, then caches it and uses the "cacheCanvas" as the alpha mask on a 100x100 image.
++ * 
++ * var box = new createjs.Shape();
++ * box.graphics.beginLinearGradientFill(["#000000", "rgba(0, 0, 0, 0)"], [0, 1], 0, 0, 100, 100)
++ * box.graphics.drawRect(0, 0, 100, 100);
++ * box.cache(0, 0, 100, 100);
++ * 
++ * var bmp = new createjs.Bitmap("path/to/image.jpg");
++ * bmp.filters = [
++ * new createjs.AlphaMaskFilter(box.cacheCanvas)
++ * ];
++ * bmp.cache(0, 0, 100, 100);
++ * 
++ * See {{#crossLink "Filter"}}{{/crossLink}} for more information on applying filters.
++ *
++ * @see [AlphaMaskFilter]
++ * @param {(Image|null)} mask 
++ * @constructor
++ * @extends createjs.Filter
+ 
 -		targetCtx.globalCompositeOperation = "destination-in";
 -		targetCtx.drawImage(this.mask, targetX, targetY);
 -		targetCtx.restore();
 -		return true;
 -	};
--
++ */
++createjs.AlphaMaskFilter = function (mask) {}
+ 
 -	/** docced in super class **/
 -	p.clone = function () {
 -		return new AlphaMaskFilter(this.mask);
@@ -14796,16 +14797,22 @@ index d3ee792..e5ba9f8 100644
 -	createjs.AlphaMaskFilter = createjs.promote(AlphaMaskFilter, "Filter");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js
-index d6f63ff..ee7e3fa 100644
+index d6f63ff..d77376f 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/BlurFilter.js
-@@ -1,354 +1,35 @@
+@@ -1,354 +1,36 @@
 -/*
 - * BlurFilter
 - * Visit http://createjs.com/ for documentation, updates and examples.
 - *
 - * Copyright (c) 2010 gskinner.com, inc.
-- * 
++/** @fileoverview Auto-generated Externs files
++ * @externs
++ */
++/**
++ * Applies a box blur to DisplayObjects. Note that this filter is fairly CPU intensive, particularly if the quality is
++ * set higher than 1.
+  * 
 - * BoxBlur Algorithm by Mario Klingemann, quasimondo.com
 - *
 - * Permission is hereby granted, free of charge, to any person
@@ -14819,24 +14826,6 @@ index d6f63ff..ee7e3fa 100644
 - *
 - * The above copyright notice and this permission notice shall be
 - * included in all copies or substantial portions of the Software.
-- *
-- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- * OTHER DEALINGS IN THE SOFTWARE.
-+/** @fileoverview Auto-generated Externs files
-+ * @externs
-  */
--
- /**
-- * @module EaselJS
-+ * Applies a box blur to DisplayObjects. Note that this filter is fairly CPU intensive, particularly if the quality is
-+ * set higher than 1.
-+ * 
 + * <h4>Example</h4>
 + * This example creates a red circle, and then applies a 5 pixel blur to it. It uses the {{#crossLink "Filter/getBounds"}}{{/crossLink}}
 + * method to account for the spread that the blur causes.
@@ -14851,13 +14840,25 @@ index d6f63ff..ee7e3fa 100644
 + * shape.cache(-50+bounds.x, -50+bounds.y, 100+bounds.width, 100+bounds.height);
 + * 
 + * See {{#crossLink "Filter"}}{{/crossLink}} for an more information on applying filters.
-+ *
+  *
+- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+- * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+- * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+- * OTHER DEALINGS IN THE SOFTWARE.
+- */
 + * @see [BlurFilter]
 + * @param {number=} opt_blurX The horizontal blur radius in pixels.
 + * @param {number=} opt_blurY The vertical blur radius in pixels.
 + * @param {number=} opt_quality The number of blur iterations.
 + * @constructor
 + * @extends createjs.Filter
+ 
+-/**
+- * @module EaselJS
   */
 +createjs.BlurFilter = function (opt_blurX, opt_blurY, opt_quality) {}
  
@@ -15182,10 +15183,10 @@ index d6f63ff..ee7e3fa 100644
 -	createjs.BlurFilter = createjs.promote(BlurFilter, "Filter");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js
-index aac7be3..34b9e65 100644
+index aac7be3..0fdae63 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorFilter.js
-@@ -1,167 +1,37 @@
+@@ -1,167 +1,38 @@
 -/*
 -* ColorFilter
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -15214,11 +15215,12 @@ index aac7be3..34b9e65 100644
 -* OTHER DEALINGS IN THE SOFTWARE.
 -*/
 -
+-/**
+- * @module EaselJS
 +/** @fileoverview Auto-generated Externs files
 + * @externs
-+ */
- /**
-- * @module EaselJS
+  */
++/**
 + * Applies a color transform to DisplayObjects.
 + * 
 + * <h4>Example</h4>
@@ -15246,8 +15248,6 @@ index aac7be3..34b9e65 100644
 + * @param {number=} opt_alphaOffset The amount to add to the alpha channel after it has been multiplied. This is a range between -255 and 255.
 + * @constructor
 + * @extends createjs.Filter
-  */
-+createjs.ColorFilter = function (opt_redMultiplier, opt_greenMultiplier, opt_blueMultiplier, opt_alphaMultiplier, opt_redOffset, opt_greenOffset, opt_blueOffset, opt_alphaOffset) {}
  
 -// namespace:
 -this.createjs = this.createjs||{};
@@ -15360,7 +15360,9 @@ index aac7be3..34b9e65 100644
 -	p.toString = function() {
 -		return "[ColorFilter]";
 -	};
--
++ */
++createjs.ColorFilter = function (opt_redMultiplier, opt_greenMultiplier, opt_blueMultiplier, opt_alphaMultiplier, opt_redOffset, opt_greenOffset, opt_blueOffset, opt_alphaOffset) {}
+ 
 -	/** docced in super class **/
 -	p.clone = function() {
 -		return new ColorFilter(this.redMultiplier, this.greenMultiplier, this.blueMultiplier, this.alphaMultiplier, this.redOffset, this.greenOffset, this.blueOffset, this.alphaOffset);
@@ -15934,10 +15936,10 @@ index aa0f5ba..863c2db 100644
 -	createjs.ColorMatrix = ColorMatrix;
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js
-index 67c17f6..0f5e679 100644
+index 67c17f6..6e99702 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/filters/ColorMatrixFilter.js
-@@ -1,121 +1,33 @@
+@@ -1,121 +1,34 @@
 -/*
 -* ColorMatrixFilter
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -15966,11 +15968,12 @@ index 67c17f6..0f5e679 100644
 -* OTHER DEALINGS IN THE SOFTWARE.
 -*/
 -
+-/**
+- * @module EaselJS
 +/** @fileoverview Auto-generated Externs files
 + * @externs
-+ */
- /**
-- * @module EaselJS
+  */
++/**
 + * Allows you to carry out complex color operations such as modifying saturation, brightness, or inverting. See the
 + * {{#crossLink "ColorMatrix"}}{{/crossLink}} for more information on changing colors. For an easier color transform,
 + * consider the {{#crossLink "ColorFilter"}}{{/crossLink}}.
@@ -15994,8 +15997,6 @@ index 67c17f6..0f5e679 100644
 + * @param {(Array|createjs.ColorMatrix|null)} matrix A 4x5 matrix describing the color operation to perform. See also the {{#crossLink "ColorMatrix"}}{{/crossLink}} class.
 + * @constructor
 + * @extends createjs.Filter
-  */
-+createjs.ColorMatrixFilter = function (matrix) {}
  
 -// namespace:
 -this.createjs = this.createjs||{};
@@ -16057,7 +16058,9 @@ index 67c17f6..0f5e679 100644
 -	p.clone = function() {
 -		return new ColorMatrixFilter(this.matrix);
 -	};
--
++ */
++createjs.ColorMatrixFilter = function (matrix) {}
+ 
 -// private methods:
 -	/** docced in super class **/
 -	p._applyFilter = function(imageData) { 
@@ -18523,10 +18526,10 @@ index 6a93aa0..4b1cd5f 100644
 +
 +
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js
-index 44ff76c..5ef05dd 100644
+index 44ff76c..bacf4db 100644
 --- a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js
 +++ b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetBuilder.js
-@@ -1,533 +1,146 @@
+@@ -1,533 +1,147 @@
 -/*
 -* SpriteSheetBuilder
 -* Visit http://createjs.com/ for documentation, updates and examples.
@@ -18555,11 +18558,12 @@ index 44ff76c..5ef05dd 100644
 -* OTHER DEALINGS IN THE SOFTWARE.
 -*/
 -
+-/**
+- * @module EaselJS
 +/** @fileoverview Auto-generated Externs files
 + * @externs
-+ */
- /**
-- * @module EaselJS
+  */
++/**
 + * The SpriteSheetBuilder allows you to generate sprite sheets at run time from any display object. This can allow
 + * you to maintain your assets as vector graphics (for low file size), and render them at run time as sprite sheets
 + * for better performance.
@@ -18573,134 +18577,6 @@ index 44ff76c..5ef05dd 100644
 + * @see [SpriteSheetBuilder]
 + * @constructor
 + * @extends createjs.EventDispatcher
-  */
-+createjs.SpriteSheetBuilder = function () {}
-+
-+    /**
-+     * Stops the current asynchronous build.
-+     *
-+     * @see [SpriteSheetBuilder]
-+     */
-+createjs.SpriteSheetBuilder.prototype.stopAsync = function () {  }
-+
-+    /**
-+     * SpriteSheetBuilder instances cannot be cloned.
-+     *
-+     * @see [SpriteSheetBuilder]
-+     */
-+createjs.SpriteSheetBuilder.prototype.clone = function () {  }
-+
-+    /**
-+     * @see [SpriteSheetBuilder]
-+     */
-+createjs.SpriteSheetBuilder.prototype._endBuild = function () {  }
-+
-+    /**
-+     * @see [SpriteSheetBuilder]
-+     */
-+createjs.SpriteSheetBuilder.prototype._run = function () {  }
-+
-+    /**
-+     * @see [SpriteSheetBuilder]
-+     */
-+createjs.SpriteSheetBuilder.prototype._startBuild = function () {  }
-+
-+    /**
-+     * Asynchronously builds a {{#crossLink "SpriteSheet"}}{{/crossLink}} instance based on the current frames. It will
-+     * run 20 times per second, using an amount of time defined by <code>timeSlice</code>. When it is complete it will
-+     * call the specified callback.
-+     *
-+     * @param {number=} opt_timeSlice Sets the timeSlice property on this instance.
-+     * @see [SpriteSheetBuilder]
-+     */
-+createjs.SpriteSheetBuilder.prototype.buildAsync = function (opt_timeSlice) {  }
-+
-+    /**
-+     * Builds a SpriteSheet instance based on the current frames.
-+     *
-+     * @see [SpriteSheetBuilder]
-+     * @returns {(createjs.SpriteSheet|null)} The created SpriteSheet instance, or null if a build is already running or an error occurred.
-+     */
-+createjs.SpriteSheetBuilder.prototype.build = function () {  return null; }
-+
-+    /**
-+     * Adds a frame to the {{#crossLink "SpriteSheet"}}{{/crossLink}}. Note that the frame will not be drawn until you
-+     * call {{#crossLink "SpriteSheetBuilder/build"}}{{/crossLink}} method. The optional setup params allow you to have
-+     * a function run immediately before the draw occurs. For example, this allows you to add a single source multiple
-+     * times, but manipulate it or its children to change it to generate different frames.
-+     * 
-+     * Note that the source's transformations (x, y, scale, rotate, alpha) will be ignored, except for regX/Y. To apply
-+     * transforms to a source object and have them captured in the sprite sheet, simply place it into a {{#crossLink "Container"}}{{/crossLink}}
-+     * and pass in the Container as the source.
-+     *
-+     * @param {(createjs.DisplayObject|null)} source The source {{#crossLink "DisplayObject"}}{{/crossLink}}  to draw as the frame.
-+     * @param {createjs.Rectangle=} opt_sourceRect A {{#crossLink "Rectangle"}}{{/crossLink}} defining the portion of the source to draw to the frame. If not specified, it will look for a <code>getBounds</code> method, bounds property, or <code>nominalBounds</code> property on the source to use. If one is not found, the frame will be skipped.
-+     * @param {number=} opt_scale Optional. The scale to draw this frame at. Default is 1.
-+     * @param {Function=} opt_setupFunction A function to call immediately before drawing this frame. It will be called with two parameters: the source, and setupData.
-+     * @param {Object=} opt_setupData Arbitrary setup data to pass to setupFunction as the second parameter.
-+     * @see [SpriteSheetBuilder]
-+     * @returns {(number|null)} The index of the frame that was just added, or null if a sourceRect could not be determined.
-+     */
-+createjs.SpriteSheetBuilder.prototype.addFrame = function (source, opt_sourceRect, opt_scale, opt_setupFunction, opt_setupData) { return 0; }
-+
-+    /**
-+     * @see [SpriteSheetBuilder]
-+     * @returns {(number|null)} The width & height of the row.
-+     */
-+createjs.SpriteSheetBuilder.prototype._getSize = function (size, max) { return 0; }
-+
-+    /**
-+     * @see [SpriteSheetBuilder]
-+     * @returns {(number|null)} The width & height of the row.
-+     */
-+createjs.SpriteSheetBuilder.prototype._setupMovieClipFrame = function (source, data) { return 0; }
-+
-+    /**
-+     * Adds an animation that will be included in the created sprite sheet.
-+     *
-+     * @param {string} name The name for the animation.
-+     * @param {(Array|null)} frames An array of frame indexes that comprise the animation. Ex. [3,6,5] would describe an animation that played frame indexes 3, 6, and 5 in that order.
-+     * @param {string=} opt_next Specifies the name of the animation to continue to after this animation ends. You can also pass false to have the animation stop when it ends. By default it will loop to the start of the same animation.
-+     * @param {number=} opt_frequency Specifies a frame advance frequency for this animation. For example, a value of 2 would cause the animation to advance every second tick.
-+     * @see [SpriteSheetBuilder]
-+     */
-+createjs.SpriteSheetBuilder.prototype.addAnimation = function (name, frames, opt_next, opt_frequency) {  }
-+
-+
-+    /**
-+     * @param {(Array|null)} frames 
-+     * @param {(number|null)} y 
-+     * @param {(Image|null)} img 
-+     * @param {(Object|null)} dataFrames 
-+     * @param {(number|null)} pad 
-+     * @see [SpriteSheetBuilder]
-+     * @returns {(number|null)} The width & height of the row.
-+     */
-+createjs.SpriteSheetBuilder.prototype._fillRow = function (frames, y, img, dataFrames, pad) { return 0; }
-+
-+    /**
-+     * This will take a MovieClip instance, and add its frames and labels to this builder. Labels will be added as an animation
-+     * running from the label index to the next label. For example, if there is a label named "foo" at frame 0 and a label
-+     * named "bar" at frame 10, in a MovieClip with 15 frames, it will add an animation named "foo" that runs from frame
-+     * index 0 to 9, and an animation named "bar" that runs from frame index 10 to 14.
-+     * 
-+     * Note that this will iterate through the full MovieClip with actionsEnabled set to false, ending on the last frame.
-+     *
-+     * @param {(createjs.MovieClip|null)} source The source MovieClip instance to add to the sprite sheet.
-+     * @param {createjs.Rectangle=} opt_sourceRect A {{#crossLink "Rectangle"}}{{/crossLink}} defining the portion of the source to draw to the frame. If not specified, it will look for a <code>getBounds</code> method, <code>frameBounds</code> Array, <code>bounds</code> property, or <code>nominalBounds</code> property on the source to use. If one is not found, the MovieClip will be skipped.
-+     * @param {number=} opt_scale The scale to draw the movie clip at.
-+     * @param {Function=} opt_setupFunction A function to call immediately before drawing each frame. It will be called with three parameters: the source, setupData, and the frame index.
-+     * @param {Object=} opt_setupData Arbitrary setup data to pass to setupFunction as the second parameter.
-+     * @param {Function=} opt_labelFunction This method will be called for each movieclip label that is added with four parameters: the label name, the source movieclip instance, the starting frame index (in the movieclip timeline) and the end index. It must return a new name for the label/animation, or false to exclude the label.
-+     * @see [SpriteSheetBuilder]
-+     */
-+createjs.SpriteSheetBuilder.prototype.addMovieClip = function (source, opt_sourceRect, opt_scale, opt_setupFunction, opt_setupData, opt_labelFunction) {  }
-+
-+    /**
-+     * @see [SpriteSheetBuilder]
-+     * @returns {?} Boolean Returns false if this is the last draw.
-+     */
-+createjs.SpriteSheetBuilder.prototype._drawNext = function () {  return null; }
  
 -// namespace:
 -this.createjs = this.createjs||{};
@@ -19200,7 +19076,135 @@ index 44ff76c..5ef05dd 100644
 -		return (++this._index) < this._frames.length;
 -	};
 -
--
++ */
++createjs.SpriteSheetBuilder = function () {}
++
++    /**
++     * Stops the current asynchronous build.
++     *
++     * @see [SpriteSheetBuilder]
++     */
++createjs.SpriteSheetBuilder.prototype.stopAsync = function () {  }
++
++    /**
++     * SpriteSheetBuilder instances cannot be cloned.
++     *
++     * @see [SpriteSheetBuilder]
++     */
++createjs.SpriteSheetBuilder.prototype.clone = function () {  }
++
++    /**
++     * @see [SpriteSheetBuilder]
++     */
++createjs.SpriteSheetBuilder.prototype._endBuild = function () {  }
++
++    /**
++     * @see [SpriteSheetBuilder]
++     */
++createjs.SpriteSheetBuilder.prototype._run = function () {  }
++
++    /**
++     * @see [SpriteSheetBuilder]
++     */
++createjs.SpriteSheetBuilder.prototype._startBuild = function () {  }
++
++    /**
++     * Asynchronously builds a {{#crossLink "SpriteSheet"}}{{/crossLink}} instance based on the current frames. It will
++     * run 20 times per second, using an amount of time defined by <code>timeSlice</code>. When it is complete it will
++     * call the specified callback.
++     *
++     * @param {number=} opt_timeSlice Sets the timeSlice property on this instance.
++     * @see [SpriteSheetBuilder]
++     */
++createjs.SpriteSheetBuilder.prototype.buildAsync = function (opt_timeSlice) {  }
++
++    /**
++     * Builds a SpriteSheet instance based on the current frames.
++     *
++     * @see [SpriteSheetBuilder]
++     * @returns {(createjs.SpriteSheet|null)} The created SpriteSheet instance, or null if a build is already running or an error occurred.
++     */
++createjs.SpriteSheetBuilder.prototype.build = function () {  return null; }
++
++    /**
++     * Adds a frame to the {{#crossLink "SpriteSheet"}}{{/crossLink}}. Note that the frame will not be drawn until you
++     * call {{#crossLink "SpriteSheetBuilder/build"}}{{/crossLink}} method. The optional setup params allow you to have
++     * a function run immediately before the draw occurs. For example, this allows you to add a single source multiple
++     * times, but manipulate it or its children to change it to generate different frames.
++     * 
++     * Note that the source's transformations (x, y, scale, rotate, alpha) will be ignored, except for regX/Y. To apply
++     * transforms to a source object and have them captured in the sprite sheet, simply place it into a {{#crossLink "Container"}}{{/crossLink}}
++     * and pass in the Container as the source.
++     *
++     * @param {(createjs.DisplayObject|null)} source The source {{#crossLink "DisplayObject"}}{{/crossLink}}  to draw as the frame.
++     * @param {createjs.Rectangle=} opt_sourceRect A {{#crossLink "Rectangle"}}{{/crossLink}} defining the portion of the source to draw to the frame. If not specified, it will look for a <code>getBounds</code> method, bounds property, or <code>nominalBounds</code> property on the source to use. If one is not found, the frame will be skipped.
++     * @param {number=} opt_scale Optional. The scale to draw this frame at. Default is 1.
++     * @param {Function=} opt_setupFunction A function to call immediately before drawing this frame. It will be called with two parameters: the source, and setupData.
++     * @param {Object=} opt_setupData Arbitrary setup data to pass to setupFunction as the second parameter.
++     * @see [SpriteSheetBuilder]
++     * @returns {(number|null)} The index of the frame that was just added, or null if a sourceRect could not be determined.
++     */
++createjs.SpriteSheetBuilder.prototype.addFrame = function (source, opt_sourceRect, opt_scale, opt_setupFunction, opt_setupData) { return 0; }
++
++    /**
++     * @see [SpriteSheetBuilder]
++     * @returns {(number|null)} The width & height of the row.
++     */
++createjs.SpriteSheetBuilder.prototype._getSize = function (size, max) { return 0; }
++
++    /**
++     * @see [SpriteSheetBuilder]
++     * @returns {(number|null)} The width & height of the row.
++     */
++createjs.SpriteSheetBuilder.prototype._setupMovieClipFrame = function (source, data) { return 0; }
++
++    /**
++     * Adds an animation that will be included in the created sprite sheet.
++     *
++     * @param {string} name The name for the animation.
++     * @param {(Array|null)} frames An array of frame indexes that comprise the animation. Ex. [3,6,5] would describe an animation that played frame indexes 3, 6, and 5 in that order.
++     * @param {string=} opt_next Specifies the name of the animation to continue to after this animation ends. You can also pass false to have the animation stop when it ends. By default it will loop to the start of the same animation.
++     * @param {number=} opt_frequency Specifies a frame advance frequency for this animation. For example, a value of 2 would cause the animation to advance every second tick.
++     * @see [SpriteSheetBuilder]
++     */
++createjs.SpriteSheetBuilder.prototype.addAnimation = function (name, frames, opt_next, opt_frequency) {  }
++
++
++    /**
++     * @param {(Array|null)} frames 
++     * @param {(number|null)} y 
++     * @param {(Image|null)} img 
++     * @param {(Object|null)} dataFrames 
++     * @param {(number|null)} pad 
++     * @see [SpriteSheetBuilder]
++     * @returns {(number|null)} The width & height of the row.
++     */
++createjs.SpriteSheetBuilder.prototype._fillRow = function (frames, y, img, dataFrames, pad) { return 0; }
++
++    /**
++     * This will take a MovieClip instance, and add its frames and labels to this builder. Labels will be added as an animation
++     * running from the label index to the next label. For example, if there is a label named "foo" at frame 0 and a label
++     * named "bar" at frame 10, in a MovieClip with 15 frames, it will add an animation named "foo" that runs from frame
++     * index 0 to 9, and an animation named "bar" that runs from frame index 10 to 14.
++     * 
++     * Note that this will iterate through the full MovieClip with actionsEnabled set to false, ending on the last frame.
++     *
++     * @param {(createjs.MovieClip|null)} source The source MovieClip instance to add to the sprite sheet.
++     * @param {createjs.Rectangle=} opt_sourceRect A {{#crossLink "Rectangle"}}{{/crossLink}} defining the portion of the source to draw to the frame. If not specified, it will look for a <code>getBounds</code> method, <code>frameBounds</code> Array, <code>bounds</code> property, or <code>nominalBounds</code> property on the source to use. If one is not found, the MovieClip will be skipped.
++     * @param {number=} opt_scale The scale to draw the movie clip at.
++     * @param {Function=} opt_setupFunction A function to call immediately before drawing each frame. It will be called with three parameters: the source, setupData, and the frame index.
++     * @param {Object=} opt_setupData Arbitrary setup data to pass to setupFunction as the second parameter.
++     * @param {Function=} opt_labelFunction This method will be called for each movieclip label that is added with four parameters: the label name, the source movieclip instance, the starting frame index (in the movieclip timeline) and the end index. It must return a new name for the label/animation, or false to exclude the label.
++     * @see [SpriteSheetBuilder]
++     */
++createjs.SpriteSheetBuilder.prototype.addMovieClip = function (source, opt_sourceRect, opt_scale, opt_setupFunction, opt_setupData, opt_labelFunction) {  }
++
++    /**
++     * @see [SpriteSheetBuilder]
++     * @returns {?} Boolean Returns false if this is the last draw.
++     */
++createjs.SpriteSheetBuilder.prototype._drawNext = function () {  return null; }
+ 
 -	createjs.SpriteSheetBuilder = createjs.promote(SpriteSheetBuilder, "EventDispatcher");
 -}());
 diff --git a/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetUtils.js b/createjs/target/downloads/EaselJS-0.8.0/src/easeljs/utils/SpriteSheetUtils.js
