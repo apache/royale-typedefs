@@ -58,6 +58,17 @@ Window.prototype.document;
 Window.prototype.resolveLocalFileSystemURL = function(url, successCallback,
     errorCallback) {}
 
+
+/**
+* @constructor
+*/
+function dialogPolyfill() {};
+
+/**
+* @param {!Element} element to upgrade, if necessary
+*/
+dialogPolyfill.registerDialog = function(element) {};
+
 /**
  * @constructor
  */
