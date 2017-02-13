@@ -145,9 +145,9 @@
                 <include>browser/webgl.js</include>
                 <include>browser/webstorage.js</include>
                 <include>browser/whatwg_encoding.js</include>
+                <include>es6_collections.js</include>
               </includes>
               <excludes>
-                <exclude>es6_collections.js</exclude>
                 <exclude>browser/w3c_dom4.js</exclude>
                 <exclude>browser/w3c_serviceworker.js</exclude>
                 <exclude>browser/w3c_webcrypto.js</exclude>
