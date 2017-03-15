@@ -194,15 +194,15 @@
     </include-file>
     <include-file>
         <name>externs/Ease.js</name>
-        <path>downloads/Tweenjs-0.6.2/src/tweenjs/Ease.js</path>
+        <path>downloads/TweenJS-0.6.2/src/tweenjs/Ease.js</path>
     </include-file>
     <include-file>
         <name>externs/Tween.js</name>
-        <path>downloads/Tweenjs-0.6.2/src/tweenjs/Tween.js</path>
+        <path>downloads/TweenJS-0.6.2/src/tweenjs/Tween.js</path>
     </include-file>
     <include-file>
         <name>externs/Timeline.js</name>
-        <path>downloads/Tweenjs-0.6.2/src/tweenjs/Timeline.js</path>
+        <path>downloads/TweenJS-0.6.2/src/tweenjs/Timeline.js</path>
     </include-file>
     <include-file>
         <name>externs/Event.js</name>
