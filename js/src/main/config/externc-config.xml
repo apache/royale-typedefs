@@ -139,8 +139,8 @@
     </class-exclude>
     
     <!-- Object.toString() is excluded by the ExternC compiler.  Otherwise
-         int.toString(radix) becomes an illegal override.  Other classes
-         need to have their toString() supplied by missing.js -->
+         int.toString(radix) becomes an illegal override.  The compiler should
+         allow toString() usage in every object -->
     <exclude>
         <class>Array</class>
         <name>toSource</name>

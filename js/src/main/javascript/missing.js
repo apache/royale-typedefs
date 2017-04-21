@@ -262,14 +262,3 @@ uint.MAX_VALUE;
  * @const
  */
 uint.MIN_VALUE;
-
-
-/**
- * Many top-level classes will need a toString() defined.
- * Object.toString() is excluded by the ExternC compiler
- * so int.toString(radix) doesn't return an illegal override
- * error.
- * @return {string} The result.
- */
-Error.prototype.toString = function() {}
-
