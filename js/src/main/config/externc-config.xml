@@ -135,8 +135,12 @@
 
     <class-exclude>
         <class>controlRange</class>
+        <class>ITemplateArray</class>
     </class-exclude>
     
+    <!-- Object.toString() is excluded by the ExternC compiler.  Otherwise
+         int.toString(radix) becomes an illegal override.  Other classes
+         need to have their toString() supplied by missing.js -->
     <exclude>
         <class>Array</class>
         <name>toSource</name>
@@ -148,6 +152,10 @@
     <exclude>
         <class>String</class>
         <name>valueOf</name>
+    </exclude>
+    <exclude>
+        <class>String</class>
+        <name>raw</name>
     </exclude>
     <!-- SVG -->
     <exclude><class>SVGStylable</class><name>className</name></exclude>

@@ -262,3 +262,25 @@ uint.MAX_VALUE;
  * @const
  */
 uint.MIN_VALUE;
+
+
+/**
+8 @type {!Object}
+* @const
+*/
+var dialogPolyfill;;
+
+/**
+* @param {!Element} element to upgrade, if necessary
+*/
+dialogPolyfill.registerDialog = function(element) {};
+
+/**
+ * Many top-level classes will need a toString() defined.
+ * Object.toString() is excluded by the ExternC compiler
+ * so int.toString(radix) doesn't return an illegal override
+ * error.
+ * @return {string} The result.
+ */
+Error.prototype.toString = function() {}
+
