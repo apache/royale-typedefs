@@ -40,83 +40,6 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>com.googlecode.maven-download-plugin</groupId>
-        <artifactId>download-maven-plugin</artifactId>
-        <version>1.2.1</version>
-        <executions>
-          <!-- Download easejs/createjs form GitHub and unpack it into the target directory -->
-          <execution>
-            <id>get-createjs</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>https://github.com/CreateJS/EaselJS/archive/${createjs.version}.zip</url>
-              <unpack>true</unpack>
-              <outputFileName>createjs-${createjs.version}.zip</outputFileName>
-              <outputDirectory>${project.build.directory}/downloads</outputDirectory>
-            </configuration>
-          </execution>
-          <!-- Download TweenJS form GitHub and unpack it into the target directory -->
-          <execution>
-            <id>get-tweenjs</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>https://github.com/CreateJS/TweenJS/archive/${tweenjs.version}.zip</url>
-              <unpack>true</unpack>
-              <outputFileName>tweenjs-${tweenjs.version}.zip</outputFileName>
-              <outputDirectory>${project.build.directory}/downloads</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.5.0</version>
-        <configuration>
-          <executable>${git.executable}</executable>
-          <workingDirectory>${basedir}/..</workingDirectory>
-          <arguments>
-            <argument>apply</argument>
-            <argument>--ignore-whitespace</argument>
-            <argument>--whitespace=nowarn</argument>
-          </arguments>
-        </configuration>
-        <executions>
-          <execution>
-            <id>patch-easeljs</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <arguments combine.children="append">
-                <argument>${basedir}/src/main/patch/easeljs.patch</argument>
-              </arguments>
-            </configuration>
-          </execution>
-          <execution>
-            <id>patch-tweenjs</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <arguments combine.children="append">
-                <argument>${basedir}/src/main/patch/tweenjs.patch</argument>
-              </arguments>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
         <groupId>org.apache.flex.flexjs.compiler</groupId>
         <artifactId>flexjs-maven-plugin</artifactId>
         <version>${flexjs.compiler.version}</version>
@@ -128,24 +51,6 @@
               <directory>${project.basedir}/src/main/javascript</directory>
               <includes>
                 <include>**/*.js</include>
-              </includes>
-            </fileSet>
-            <fileSet>
-              <directory>${project.basedir}/target/downloads/EaselJS-${createjs.version}/src</directory>
-              <includes>
-                <include>**/*.js</include>
-              </includes>
-              <excludes>
-                <exclude>easeljs/version.js</exclude>
-                <exclude>easeljs/version_movieclip.js</exclude>
-              </excludes>
-            </fileSet>
-            <fileSet>
-              <directory>${project.basedir}/target/downloads/TweenJS-${tweenjs.version}/src</directory>
-              <includes>
-                <include>tweenjs/Ease.js</include>
-                <include>tweenjs/Timeline.js</include>
-                <include>tweenjs/Tween.js</include>
               </includes>
             </fileSet>
           </externcInput>
@@ -170,6 +75,11 @@
               <name>externs/missing.js</name>
               <path>../src/main/javascript/missing.js</path>
             </include-file>
+            <include-file>
+              <name>externs/createjs.js</name>
+              <path>../src/main/javascript/createjs.js</path>
+            </include-file>
+            <!--
             <include-file>
               <name>externs/AlphaMapFilter.js</name>
               <path>downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js</path>
@@ -310,6 +220,7 @@
               <name>externs/Ticker.js</name>
               <path>downloads/EaselJS-0.8.0/src/createjs/utils/Ticker.js</path>
             </include-file>
+             -->
           </includeFiles>
           <skipSwc>true</skipSwc>
         </configuration>
