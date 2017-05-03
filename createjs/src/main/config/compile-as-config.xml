@@ -85,6 +85,11 @@
         <path>../src/main/javascript/missing.js</path>
     </include-file>
     <include-file>
+        <name>externs/createjs.js</name>
+        <path>../src/main/javascript/createjs.js</path>
+    </include-file>
+    <!--
+    <include-file>
         <name>externs/AlphaMapFilter.js</name>
         <path>downloads/EaselJS-0.8.0/src/easeljs/filters/AlphaMapFilter.js</path>
     </include-file>
@@ -224,7 +229,7 @@
         <name>externs/Ticker.js</name>
         <path>downloads/EaselJS-0.8.0/src/createjs/utils/Ticker.js</path>
     </include-file>
-    
+    -->
     <!--
     <include-namespaces>
         <uri>library://ns.adobe.com/flex/spark</uri>

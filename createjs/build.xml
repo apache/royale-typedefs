@@ -21,9 +21,6 @@
 
 <project name="createjs" default="main" basedir=".">
     
-    <property name="createjs.version" value="0.8.0" />
-    <property name="tweenjs.version" value="0.6.2" />
-    
     <property name="FLEXJS_HOME" value="${basedir}/.." />
     
     <condition property="FALCON_HOME" value="${env.FALCON_HOME}">
@@ -80,7 +77,7 @@
         </and>
     </condition>
     
-    <target name="main" depends="download, download_tween, preprocess, externc, postprocess, compc" />
+    <target name="main" depends="externc, compc" />
     
     <target name="download" >
         <mkdir dir="${basedir}/target/downloads" />
