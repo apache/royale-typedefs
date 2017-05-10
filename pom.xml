@@ -120,6 +120,12 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+            <excludes>
+                <!-- Patch files aren't supposed to have headers -->
+                <exclude>**/*.patch</exclude>
+            </excludes>
+        </configuration>
         <dependencies>
           <dependency>
             <groupId>org.apache.maven.doxia</groupId>
