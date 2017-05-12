@@ -18,6 +18,10 @@
  */
 // This file is in Google Closure Compiler Externs format which is a 
 // non-copyrightable subset of EaselJS and TweenJS from https://github.com/CreateJS 
+/**
+ * @fileoverview
+ * @externs
+ */
 
 /**
  * @param {(HTMLCanvasElement|Image|null)} alphaMap
