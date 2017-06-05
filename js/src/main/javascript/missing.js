@@ -72,11 +72,6 @@ dialogPolyfill.registerDialog = function(element) {};
 /**
  * @constructor
  */
-function Promise() {}
-
-/**
- * @constructor
- */
 function FontFaceSetLoadStatus() {}
 
 /**
