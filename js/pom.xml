@@ -80,7 +80,7 @@
           <dependency>
             <groupId>com.google.javascript</groupId>
             <artifactId>closure-compiler-externs</artifactId>
-            <version>v20161201</version>
+            <version>v20170626</version>
           </dependency>
         </dependencies>
       </plugin>
