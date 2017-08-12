@@ -24,13 +24,6 @@
  */
 function ExtendableEvent() {}
 
-// HACK @enum page_visibility
-/**
- * @constructor
- */
-function VisibilityState(description) {}
-
-
 // chrome.js
 /**
  * @constructor
@@ -68,16 +61,6 @@ function dialogPolyfill() {};
 * @param {!Element} element to upgrade, if necessary
 */
 dialogPolyfill.registerDialog = function(element) {};
-
-/**
- * @constructor
- */
-function FontFaceSetLoadStatus() {}
-
-/**
- * @constructor
- */
-function FontFaceLoadStatus() {}
 
 /**
  * @constructor
