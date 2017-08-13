@@ -52,7 +52,7 @@
                   Give it a number matching the date so we can
                   trigger a new download by updating the date
               -->
-              <outputFileName>closure-compiler-20160421.zip</outputFileName>
+              <outputFileName>closure-compiler-20170626.zip</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
               <unpack>true</unpack>
             </configuration>
