@@ -34,12 +34,12 @@
         </and>
     </condition>
     
-    <condition property="FALCON_HOME" value="${FLEXJS_HOME}/../flex-falcon/compiler">
+    <condition property="FALCON_HOME" value="${FLEXJS_HOME}/../royale-compiler/compiler">
         <and>
             <not>
                 <isset property="FALCON_HOME" />
             </not>
-            <available file="${FLEXJS_HOME}/../flex-falcon/compiler/lib/falcon-mxmlc.jar" type="file" />
+            <available file="${FLEXJS_HOME}/../royale-compiler/compiler/lib/falcon-mxmlc.jar" type="file" />
         </and>
     </condition>
     
@@ -70,12 +70,12 @@
         </and>
     </condition>
     
-    <condition property="FALCONJX_HOME" value="${FLEXJS_HOME}/../flex-falcon/compiler-jx">
+    <condition property="FALCONJX_HOME" value="${FLEXJS_HOME}/../royale-compiler/compiler-jx">
         <and>
             <not>
                 <isset property="FALCONJX_HOME" />
             </not>
-            <available file="${FLEXJS_HOME}/../flex-falcon/compiler-jx/lib/jsc.jar" type="file" />
+            <available file="${FLEXJS_HOME}/../royale-compiler/compiler-jx/lib/jsc.jar" type="file" />
         </and>
     </condition>
     
