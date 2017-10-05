@@ -16,41 +16,14 @@
   limitations under the License.
 
 -->
-<flex-config>
+<royale-config>
 
     <compiler>
         <accessible>true</accessible>
         
-        <!--
-        <external-library-path>
-            <path-element>${env.PLAYERGLOBAL_HOME}/${playerglobal.version}/playerglobal.swc</path-element>
-            <path-element>../../libs/framework.swc</path-element>
-            <path-element>../../libs/mx/mx.swc</path-element>
-            <path-element>../../libs/osmf.swc</path-element>
-            <path-element>../../libs/textLayout.swc</path-element>
-        </external-library-path>
-        
-        <keep-as3-metadata>
-            <name>SkinPart</name>
-        </keep-as3-metadata>
-        
-        <mxml>
-            <minimum-supported-version>4.0.0</minimum-supported-version>
-        </mxml>
-        -->
-        
         <locale/>
         
         <library-path/>
-        
-        <!--
-        <namespaces>
-            <namespace>
-                <uri>library://ns.adobe.com/flex/spark</uri>
-                <manifest>manifest.xml</manifest>
-            </namespace>
-        </namespaces>
-        -->
         
         <warn-no-constructor>true</warn-no-constructor>
     </compiler>
@@ -62,31 +35,4 @@
 
     <as-root>../../../target/generated-sources/externc</as-root>
     
-    <!--
-    <class-exclude>
-        <class>MovieClipPlugin</class>
-    </class-exclude>
-    <class-exclude>
-        <class>createjs.Text.V_OFFSETS</class>
-    </class-exclude>
-    <class-exclude>
-        <class>createjs.Text.H_OFFSETS</class>
-    </class-exclude>
-    <class-exclude>
-        <class>createjs.Graphics.BASE_64</class>
-    </class-exclude>
-    -->
-    
-    <!--
-    <field-exclude>
-        <class>Window</class>
-        <field>focus</field>
-    </field-exclude>
-
-    <exclude>
-        <class>Array</class>
-        <name>toSource</name>
-    </exclude>
-    -->
-
-</flex-config>
+</royale-config>

@@ -21,21 +21,21 @@
     <property environment="env"/>
     <available file="${basedir}/../../sdk"
         type="dir"
-        property="FLEX_HOME"
+        property="ROYALE_HOME"
         value="${basedir}/../../sdk" />
 	
-	<property name="FLEX_HOME" value="${basedir}/../../../flex-sdk"/>
+	<property name="ROYALE_HOME" value="${basedir}/../../../royale-compiler"/>
 	<property name="lenient" value="true"/>
-	<property name="flexlib" location="${basedir}/../frameworks"/>
+	<property name="royalelib" location="${basedir}/../frameworks"/>
 
     <property name="doc_output" location="${basedir}/../asdoc-output"   />
     <property name="project_home" location="${basedir}/../"/>
 
-    <property file="${FLEX_HOME}/env.properties"/>
-	<property file="${FLEX_HOME}/build.properties"/>
+    <property file="${ROYALE_HOME}/env.properties"/>
+	<property file="${ROYALE_HOME}/build.properties"/>
 	
-	<echo message="FLEX_HOME = ${FLEX_HOME}" />
-	<echo message="flexlib = ${flexlib}" />
+	<echo message="ROYALE_HOME = ${ROYALE_HOME}" />
+	<echo message="royalelib = ${royalelib}" />
 	<echo message="doc_output = ${doc_output}" />
     <echo message="compiler.source-path = ${project_home}/js/out/as/classes" />
     <echo message="compiler.source-path = ${project_home}/js/out/as/constants" />
@@ -64,16 +64,15 @@
 	    </condition>
 
         <path id="flexTasks.path">
-            <fileset dir="${FLEX_HOME}">
-                <include name="lib/flexTasks.jar" />
-                <include name="ant/lib/flexTasks.jar" />
+            <fileset dir="${ROYALE_HOME}">
+                <include name="js/lib/flexTasks.jar" />
             </fileset>
         </path>
         <taskdef resource="flexTasks.tasks" classpathref="flexTasks.path"/>
         
 		<!-- Call asdoc to generate dita xml files -->
 		<asdoc output="${doc_output}" lenient="true" failonerror="true" warnings="false" strict="false" locale="en_US" fork="true"
-               window-title="Apache FlexJS API Reference"
+               window-title="Apache Royale API Reference"
                main-title="${release} API Reference "
                footer="${manifest.Implementation-Vendor}" >
                
@@ -87,7 +86,7 @@
 			<compiler.source-path path-element="${project_home}/js/out/as/typedefs"/>
 			
 			<!-- namespaces to include in asdoc 
- 			<doc-namespaces uri="library://ns.apache.org/flexjs/basic"/>
+ 			<doc-namespaces uri="library://ns.apache.org/royale/basic"/>
 			-->
 			
 			<!-- classes to include in asdoc -->
@@ -98,7 +97,7 @@
 			<doc-sources path-element="${project_home}/js/out/as/typedefs"/>
 			 
 			<!-- namespace declaration for asdoc 
-			<namespace uri="library://ns.apache.org/flexjs/basic" manifest="${project_home}/Binding/basic-manifest.xml" />
+			<namespace uri="library://ns.apache.org/royale/basic" manifest="${project_home}/Binding/basic-manifest.xml" />
 			-->
 			
 			<library-path/>

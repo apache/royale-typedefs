@@ -16,7 +16,7 @@
   limitations under the License.
 
 -->
-<flex-config>
+<royale-config>
 
     <compiler>
         <accessible>true</accessible>
@@ -160,4 +160,4 @@
         <path>downloads/closure-compiler-master/contrib/nodejs/zlib.js</path>
     </include-file>
 
-</flex-config>
+</royale-config>

@@ -152,7 +152,7 @@ XMLHttpRequest.prototype.timeout;
 
 /**
  * @export
- * This gets mapped to org.apache.flex.utils.Language.trace() by the compiler
+ * This gets mapped to org.apache.royale.utils.Language.trace() by the compiler
  * @param {...} rest
  */
 function trace(rest) {}

@@ -23,7 +23,7 @@
     
     <property name="cordova.version" value="4.11" />
     
-    <property name="FLEXJS_HOME" value="${basedir}/.." />
+    <property name="ROYALE_HOME" value="${basedir}/.." />
     
     <condition property="FALCON_HOME" value="${env.FALCON_HOME}">
         <and>
@@ -34,21 +34,21 @@
         </and>
     </condition>
     
-    <condition property="FALCON_HOME" value="${FLEXJS_HOME}/../royale-compiler/compiler">
+    <condition property="FALCON_HOME" value="${ROYALE_HOME}/../royale-compiler/compiler">
         <and>
             <not>
                 <isset property="FALCON_HOME" />
             </not>
-            <available file="${FLEXJS_HOME}/../royale-compiler/compiler/lib/falcon-mxmlc.jar" type="file" />
+            <available file="${ROYALE_HOME}/../royale-compiler/compiler/lib/falcon-mxmlc.jar" type="file" />
         </and>
     </condition>
     
-    <condition property="FALCON_HOME" value="${FLEXJS_HOME}">
+    <condition property="FALCON_HOME" value="${ROYALE_HOME}">
         <and>
             <not>
                 <isset property="FALCON_HOME" />
             </not>
-            <available file="${FLEXJS_HOME}/lib/falcon-mxmlc.jar" type="file" />
+            <available file="${ROYALE_HOME}/lib/falcon-mxmlc.jar" type="file" />
         </and>
     </condition>
     
@@ -61,21 +61,21 @@
         </and>
     </condition>
     
-    <condition property="FALCONJX_HOME" value="${FLEXJS_HOME}/js">
+    <condition property="FALCONJX_HOME" value="${ROYALE_HOME}/js">
         <and>
             <not>
                 <isset property="FALCONJX_HOME" />
             </not>
-            <available file="${FLEXJS_HOME}/js/lib/jsc.jar" type="file" />
+            <available file="${ROYALE_HOME}/js/lib/jsc.jar" type="file" />
         </and>
     </condition>
     
-    <condition property="FALCONJX_HOME" value="${FLEXJS_HOME}/../royale-compiler/compiler-jx">
+    <condition property="FALCONJX_HOME" value="${ROYALE_HOME}/../royale-compiler/compiler-jx">
         <and>
             <not>
                 <isset property="FALCONJX_HOME" />
             </not>
-            <available file="${FLEXJS_HOME}/../royale-compiler/compiler-jx/lib/jsc.jar" type="file" />
+            <available file="${ROYALE_HOME}/../royale-compiler/compiler-jx/lib/jsc.jar" type="file" />
         </and>
     </condition>
     
@@ -89,7 +89,7 @@
     <target name="externc" >
         <java jar="${FALCONJX_HOME}/lib/externc.jar" fork="true"
             failonerror="true">
-            <arg value="+flexlib=externs" />
+            <arg value="+royalelib=externs" />
             <arg value="-debug" />
             <arg value="-load-config=${basedir}/src/main/config/externc-config.xml" />
         </java>
@@ -103,7 +103,7 @@
         todir="${basedir}/target" />
         <java jar="${FALCON_HOME}/lib/falcon-compc.jar" fork="true"
             failonerror="true">
-            <arg value="+flexlib=externs/frameworks" />
+            <arg value="+royalelib=externs/frameworks" />
             <arg value="-debug" />
             <arg value="-external-library-path+=${basedir}/../js/target/js.swc" />
             <arg value="-load-config=${basedir}/target/compile-as-config.xml" />

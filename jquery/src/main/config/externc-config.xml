@@ -16,7 +16,7 @@
   limitations under the License.
 
 -->
-<flex-config>
+<royale-config>
 
     <compiler>
         <accessible>true</accessible>
@@ -52,4 +52,4 @@
     <class-exclude><class>$.Deferred</class></class-exclude>
     <class-exclude><class>$.deferred</class></class-exclude>
 
-</flex-config>
+</royale-config>

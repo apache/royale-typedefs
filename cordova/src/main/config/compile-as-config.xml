@@ -16,7 +16,7 @@
   limitations under the License.
 
 -->
-<flex-config>
+<royale-config>
 
     <compiler>
         <accessible>true</accessible>
@@ -40,4 +40,4 @@
         <path>../src/main/javascript/cordova_file_plugin-4-11.js</path>
     </include-file>
 
-</flex-config>
+</royale-config>

@@ -16,41 +16,14 @@
   limitations under the License.
 
 -->
-<flex-config>
+<royale-config>
 
     <compiler>
         <accessible>true</accessible>
         
-        <!--
-        <external-library-path>
-            <path-element>${env.PLAYERGLOBAL_HOME}/${playerglobal.version}/playerglobal.swc</path-element>
-            <path-element>../../libs/framework.swc</path-element>
-            <path-element>../../libs/mx/mx.swc</path-element>
-            <path-element>../../libs/osmf.swc</path-element>
-            <path-element>../../libs/textLayout.swc</path-element>
-        </external-library-path>
-        
-        <keep-as3-metadata>
-            <name>SkinPart</name>
-        </keep-as3-metadata>
-        
-        <mxml>
-            <minimum-supported-version>4.0.0</minimum-supported-version>
-        </mxml>
-        -->
-        
         <locale/>
         
         <library-path/>
-        
-        <!--
-        <namespaces>
-            <namespace>
-                <uri>library://ns.adobe.com/flex/spark</uri>
-                <manifest>manifest.xml</manifest>
-            </namespace>
-        </namespaces>
-        -->
         
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
@@ -163,4 +136,4 @@
     <exclude><class>SVGLocatable</class><name>farthestViewportElement</name></exclude>
     <exclude><class>SVGLocatable</class><name>nearestViewportElement</name></exclude>
 
-</flex-config>
+</royale-config>

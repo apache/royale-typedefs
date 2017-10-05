@@ -16,7 +16,7 @@
   limitations under the License.
 
 -->
-<flex-config>
+<royale-config>
 
     <compiler>
         <accessible>true</accessible>
@@ -38,4 +38,4 @@
     </field-exclude>
     <exclude><class>jasmine.Matchers</class><name>actual</name></exclude><!-- TODO returns T -->
 
-</flex-config>
+</royale-config>
