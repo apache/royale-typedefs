@@ -108,7 +108,7 @@
     <target name="compc" >
         <copy file="${basedir}/src/main/config/compile-as-config.xml"
         todir="${basedir}/target" />
-        <java jar="${FALCON_HOME}/lib/falcon-compc.jar" fork="true"
+        <java jar="${FALCON_HOME}/lib/compiler-compc.jar" fork="true"
             failonerror="true">
             <arg value="+royalelib=externs/frameworks" />
             <arg value="-debug" />
