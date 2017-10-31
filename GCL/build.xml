@@ -23,55 +23,55 @@
     
     <property name="ROYALE_HOME" value="${basedir}/.." />
     
-    <condition property="FALCON_HOME" value="${env.FALCON_HOME}">
+    <condition property="ROYALE_COMPILER_HOME" value="${env.ROYALE_COMPILER_HOME}">
         <and>
             <not>
-                <isset property="FALCON_HOME" />
+                <isset property="ROYALE_COMPILER_HOME" />
             </not>
-            <available file="${env.FALCON_HOME}/lib/compiler-mxmlc.jar" type="file" />
+            <available file="${env.ROYALE_COMPILER_HOME}/lib/compiler-mxmlc.jar" type="file" />
         </and>
     </condition>
     
-    <condition property="FALCON_HOME" value="${ROYALE_HOME}/../royale-compiler/compiler">
+    <condition property="ROYALE_COMPILER_HOME" value="${ROYALE_HOME}/../royale-compiler/compiler">
         <and>
             <not>
-                <isset property="FALCON_HOME" />
+                <isset property="ROYALE_COMPILER_HOME" />
             </not>
             <available file="${ROYALE_HOME}/../royale-compiler/compiler/lib/compiler-mxmlc.jar" type="file" />
         </and>
     </condition>
     
-    <condition property="FALCON_HOME" value="${ROYALE_HOME}">
+    <condition property="ROYALE_COMPILER_HOME" value="${ROYALE_HOME}">
         <and>
             <not>
-                <isset property="FALCON_HOME" />
+                <isset property="ROYALE_COMPILER_HOME" />
             </not>
             <available file="${ROYALE_HOME}/lib/compiler-mxmlc.jar" type="file" />
         </and>
     </condition>
     
-    <condition property="FALCONJX_HOME" value="${env.FALCONJX_HOME}">
+    <condition property="ROYALE_TRANSPILER_HOME" value="${env.ROYALE_TRANSPILER_HOME}">
         <and>
             <not>
-                <isset property="FALCONJX_HOME" />
+                <isset property="ROYALE_TRANSPILER_HOME" />
             </not>
-            <available file="${env.FALCONJX_HOME}/lib/jsc.jar" type="file" />
+            <available file="${env.ROYALE_TRANSPILER_HOME}/lib/jsc.jar" type="file" />
         </and>
     </condition>
     
-    <condition property="FALCONJX_HOME" value="${ROYALE_HOME}/js">
+    <condition property="ROYALE_TRANSPILER_HOME" value="${ROYALE_HOME}/js">
         <and>
             <not>
-                <isset property="FALCONJX_HOME" />
+                <isset property="ROYALE_TRANSPILER_HOME" />
             </not>
             <available file="${ROYALE_HOME}/js/lib/jsc.jar" type="file" />
         </and>
     </condition>
     
-    <condition property="FALCONJX_HOME" value="${ROYALE_HOME}/../royale-compiler/compiler-jx">
+    <condition property="ROYALE_TRANSPILER_HOME" value="${ROYALE_HOME}/../royale-compiler/compiler-jx">
         <and>
             <not>
-                <isset property="FALCONJX_HOME" />
+                <isset property="ROYALE_TRANSPILER_HOME" />
             </not>
             <available file="${ROYALE_HOME}/../royale-compiler/compiler-jx/lib/jsc.jar" type="file" />
         </and>
@@ -93,7 +93,7 @@
     <target name="compc" >
         <copy file="${basedir}/src/main/config/compile-as-config.xml"
         todir="${basedir}/target" />
-        <java jar="${FALCON_HOME}/lib/compiler-compc.jar" fork="true"
+        <java jar="${ROYALE_COMPILER_HOME}/lib/compiler-compc.jar" fork="true"
             failonerror="true">
             <arg value="+royalelib=externs/frameworks" />
             <arg value="-debug" />
