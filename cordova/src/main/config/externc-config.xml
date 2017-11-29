@@ -26,9 +26,9 @@
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
     
-    <external>
+    <typedefs>
         <path-element>../javascript/cordova_file_plugin-4-11.js</path-element>
-    </external>
+    </typedefs>
         
     <as-root>../../../target/generated-sources/externc</as-root>
 

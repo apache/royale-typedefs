@@ -28,10 +28,10 @@
         <warn-no-constructor>true</warn-no-constructor>
     </compiler>
     
-    <external>
+    <typedefs>
         <path-element>../javascript/createjs.js</path-element>
         <path-element>../javascript/missing.js</path-element>
-    </external>
+    </typedefs>
 
     <as-root>../../../target/generated-sources/externc</as-root>
     
