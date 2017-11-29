@@ -26,7 +26,7 @@
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
 
-    <typedefs>
+    <external>
         <path-element>../javascript/missing.js</path-element>
         <path-element>../../../target/downloads/closure-compiler-master/contrib/nodejs/assert.js</path-element>
         <path-element>../../../target/downloads/closure-compiler-master/contrib/nodejs/buffer.js</path-element>
@@ -56,7 +56,7 @@
         <path-element>../../../target/downloads/closure-compiler-master/contrib/nodejs/util.js</path-element>
         <path-element>../../../target/downloads/closure-compiler-master/contrib/nodejs/vm.js</path-element>
         <path-element>../../../target/downloads/closure-compiler-master/contrib/nodejs/zlib.js</path-element>
-    </typedefs>
+    </external>
     <named-module>
         <module>assert</module>
         <module>buffer</module>
