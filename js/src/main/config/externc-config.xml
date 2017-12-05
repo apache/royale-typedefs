@@ -28,7 +28,7 @@
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
     
-    <external>
+    <typedefs>
         <path-element>../javascript/missing.js</path-element>
         <path-element>../../../target/downloads/es3.js</path-element>
         <path-element>../../../target/downloads/es5.js</path-element>
@@ -97,7 +97,7 @@
         <path-element>../../../target/downloads/browser/window.js</path-element>
 
         <path-element>../../../target/downloads/svg.js</path-element>
-    </external>
+    </typedefs>
 
     <as-root>../../../target/generated-sources/externc</as-root>
     
