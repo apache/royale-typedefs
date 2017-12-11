@@ -26,9 +26,9 @@
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
     
-    <external>
+    <typedefs>
         <path-element>../../../target/downloads/jasmine-2.0.js</path-element>
-    </external>
+    </typedefs>
 
     <as-root>../../../target/generated-sources/externc</as-root>
 	
