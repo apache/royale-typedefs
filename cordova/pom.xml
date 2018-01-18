@@ -23,11 +23,11 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.0-SNAPSHOT</version>
+    <version>0.9.0</version>
   </parent>
 
   <artifactId>royale-typedefs-cordova</artifactId>
-  <version>0.9.0-SNAPSHOT</version>
+  <version>0.9.0</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: Cordova</name>
@@ -76,7 +76,7 @@
     <dependency>
       <groupId>org.apache.royale.typedefs</groupId>
       <artifactId>royale-typedefs-js</artifactId>
-      <version>0.9.0-SNAPSHOT</version>
+      <version>0.9.0</version>
       <type>swc</type>
       <classifier>typedefs</classifier>
       <scope>runtime</scope>
