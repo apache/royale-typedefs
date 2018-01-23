@@ -26,7 +26,7 @@ package __AS3__.vec
  *  @langversion 3.0
  *  @playerversion Flash 9
  *  @playerversion AIR 1.1
- *  @productversion Flex 3
+ *  @productversion Royale 3
  */
 internal class Vector$double
 {

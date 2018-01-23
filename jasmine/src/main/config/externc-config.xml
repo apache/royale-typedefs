@@ -16,7 +16,7 @@
   limitations under the License.
 
 -->
-<flex-config>
+<royale-config>
 
     <compiler>
         <accessible>true</accessible>
@@ -26,9 +26,9 @@
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
     
-    <external>
+    <typedefs>
         <path-element>../../../target/downloads/jasmine-2.0.js</path-element>
-    </external>
+    </typedefs>
 
     <as-root>../../../target/generated-sources/externc</as-root>
 	
@@ -38,4 +38,4 @@
     </field-exclude>
     <exclude><class>jasmine.Matchers</class><name>actual</name></exclude><!-- TODO returns T -->
 
-</flex-config>
+</royale-config>

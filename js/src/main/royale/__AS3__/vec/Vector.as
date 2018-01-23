@@ -21,56 +21,56 @@ package __AS3__.vec
 {
 
 /**
- *  The compiler appears to expect these internal implementations
+ *  This is a special case for Vector
  *  
  *  @langversion 3.0
  *  @playerversion Flash 9
  *  @playerversion AIR 1.1
- *  @productversion Flex 3
+ *  @productversion Royale 3
  */
-internal class Vector$int
+public class Vector
 {
-	public function Vector$int(length:uint = 0, fixed:Boolean = false) {}
+	public function Vector(length:uint = 0, fixed:Boolean = false) {}
 	
 	public var fixed:Boolean;
 	
 	public var length:uint;
 	
-	public function concat(...args):Vector$int { return null }
+	public function concat(...args):Vector { return null }
 	
 	public function every(callback:Function, thisObject:Object):Boolean { return false }
 	
-	public function filter(callback:Function, thisObject:Object = null):Vector$int { return null }
+	public function filter(callback:Function, thisObject:Object = null):Vector { return null }
 	
 	public function forEach(callback:Function, thisObject:Object = null):void {}
 	
-	public function indexOf(searchElement:int, fromIndex:int = 0):int { return -1 }
+	public function indexOf(searchElement:Object, fromIndex:int = 0):int { return -1 }
 	
-	public function insertAt(index:int, element:int):void {}
+	public function insertAt(index:int, element:Object):void {}
 	
 	public function join(sep:String = ","):String { return null }
 	
-	public function lastIndexOf(searchElement:int, fromIndex:int = 0x7fffffff):int { return -1 }
+	public function lastIndexOf(searchElement:Object, fromIndex:int = 0x7fffffff):int { return -1 }
 	
-	public function map(callback:Function, thisObject:Object = null):Vector$int { return null }
+	public function map(callback:Function, thisObject:Object = null):Vector { return null }
 	
-	public function pop():int { return null }
+	public function pop():Object { return null }
 	
 	public function push(... args):uint { return 0 }
 	
-	public function removeAt(index:int):int { return null }
+	public function removeAt(index:int):Object { return null }
 	
-	public function reverse():Vector$int { return null }
+	public function reverse():Vector { return null }
 	
-	public function shift():int { return null }
+	public function shift():Object { return null }
 	
-	public function slice(startIndex:int = 0, endIndex:int = 16777215):Vector$int { return null }
+	public function slice(startIndex:int = 0, endIndex:int = 16777215):Vector { return null }
 	
 	public function some(callback:Function, thisObject:Object = null):Boolean { return false }
 	
-	public function sort(sortBehavior:Object):Vector$int { return null }
+	public function sort(sortBehavior:Object):Vector { return null }
 	
-	public function splice(startIndex:int, deleteCount:uint = 4294967295, ... items):Vector$int { return null }
+	public function splice(startIndex:int, deleteCount:uint = 4294967295, ... items):Vector { return null }
 	
 	override public function toLocaleString():String { return null }
 	

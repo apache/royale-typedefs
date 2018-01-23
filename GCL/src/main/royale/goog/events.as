@@ -14,7 +14,7 @@
 
 package goog {
 public class events {
-	// fireListener is a static function, but we want to re-assign it from FlexJS so we declare it as a var
+	// fireListener is a static function, but we want to re-assign it from Royale so we declare it as a var
     public static var fireListener:Function;
 	public static function hasListener(object:Object, type:String = null, capture:Boolean = false):Boolean{return false};
 	public static function listen(object:Object, type:String, handler:Function, capture:Boolean = false, scope:Object = null):Boolean{return false}; 

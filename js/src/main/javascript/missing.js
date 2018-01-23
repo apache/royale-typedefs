@@ -24,13 +24,6 @@
  */
 function ExtendableEvent() {}
 
-// HACK @enum page_visibility
-/**
- * @constructor
- */
-function VisibilityState(description) {}
-
-
 // chrome.js
 /**
  * @constructor
@@ -68,21 +61,6 @@ function dialogPolyfill() {};
 * @param {!Element} element to upgrade, if necessary
 */
 dialogPolyfill.registerDialog = function(element) {};
-
-/**
- * @constructor
- */
-function Promise() {}
-
-/**
- * @constructor
- */
-function FontFaceSetLoadStatus() {}
-
-/**
- * @constructor
- */
-function FontFaceLoadStatus() {}
 
 /**
  * @constructor
@@ -174,7 +152,7 @@ XMLHttpRequest.prototype.timeout;
 
 /**
  * @export
- * This gets mapped to org.apache.flex.utils.Language.trace() by the compiler
+ * This gets mapped to org.apache.royale.utils.Language.trace() by the compiler
  * @param {...} rest
  */
 function trace(rest) {}

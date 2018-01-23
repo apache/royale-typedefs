@@ -16,7 +16,7 @@
   limitations under the License.
 
 -->
-<flex-config>
+<royale-config>
 
     <compiler>
         <accessible>true</accessible>
@@ -26,10 +26,10 @@
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
     
-    <external>
+    <typedefs>
         <path-element>../../../target/downloads/google_maps_api_v3_11.js</path-element>
-    </external>
+    </typedefs>
 
     <as-root>../../../target/generated-sources/externc</as-root>
 
-</flex-config>
+</royale-config>

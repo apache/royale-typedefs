@@ -21,19 +21,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache.flex.flexjs.typedefs</groupId>
-    <artifactId>flexjs-typedefs-parent</artifactId>
-    <version>0.8.0</version>
+    <groupId>org.apache.royale.typedefs</groupId>
+    <artifactId>royale-typedefs-parent</artifactId>
+    <version>0.9.0</version>
   </parent>
 
-  <artifactId>flexjs-typedefs-js</artifactId>
-  <version>0.8.0</version>
+  <artifactId>royale-typedefs-js</artifactId>
+  <version>0.9.0</version>
   <packaging>swc</packaging>
 
-  <name>Apache Flex - FlexJS: TypeDefs: JS</name>
+  <name>Apache Royale: TypeDefs: JS</name>
 
   <build>
-    <sourceDirectory>src/main/flex</sourceDirectory>
+    <sourceDirectory>src/main/royale</sourceDirectory>
     <plugins>
       <!-- Download JavaScript form GitHub -->
       <plugin>
@@ -57,9 +57,9 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.apache.flex.flexjs.compiler</groupId>
+        <groupId>org.apache.royale.compiler</groupId>
         <artifactId>compiler-build-tools</artifactId>
-        <version>${flexjs.build-tools.version}</version>
+        <version>${royale.build-tools.version}</version>
         <executions>
           <execution>
             <id>unpack-closure-externs</id>
@@ -80,7 +80,7 @@
           <dependency>
             <groupId>com.google.javascript</groupId>
             <artifactId>closure-compiler-externs</artifactId>
-            <version>v20161201</version>
+            <version>v20170626</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -115,9 +115,9 @@
       </plugin>
 
       <plugin>
-        <groupId>org.apache.flex.flexjs.compiler</groupId>
-        <artifactId>flexjs-maven-plugin</artifactId>
-        <version>${flexjs.compiler.version}</version>
+        <groupId>org.apache.royale.compiler</groupId>
+        <artifactId>royale-maven-plugin</artifactId>
+        <version>${royale.compiler.version}</version>
         <extensions>true</extensions>
         <configuration>
           <includeSources>true</includeSources>
@@ -214,9 +214,9 @@
         </configuration>
         <dependencies>
           <dependency>
-            <groupId>org.apache.flex.flexjs.compiler</groupId>
+            <groupId>org.apache.royale.compiler</groupId>
             <artifactId>compiler-jx</artifactId>
-            <version>${flexjs.compiler.version}</version>
+            <version>${royale.compiler.version}</version>
           </dependency>
         </dependencies>
       </plugin>
