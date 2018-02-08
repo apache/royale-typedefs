@@ -35,6 +35,7 @@
         <ant dir="jquery" target="clean"/>
         <ant dir="google_maps" target="clean"/>
         <ant dir="node" target="clean"/>
+        <ant dir="ace" target="clean"/>
     </target>
 
     <target name="wipe" description="Wipes out everything that didn't come from Git.">
@@ -46,6 +47,7 @@
         <ant dir="jquery" target="wipe"/>
         <ant dir="google_maps" target="wipe"/>
         <ant dir="node" target="wipe"/>
+        <ant dir="ace" target="wipe"/>
     </target>
     
     <target name="main" description="Build everything">
@@ -57,6 +59,7 @@
         <ant dir="jquery" />
         <ant dir="google_maps" />
         <ant dir="node" />
+        <ant dir="ace" />
     </target>
 
 </project>
