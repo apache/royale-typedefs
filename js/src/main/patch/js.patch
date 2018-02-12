@@ -61,7 +61,7 @@ index d27743c3..36e6fcbd 100644
 @@ -1525,6 +1525,17 @@ CSSProperties.prototype.outlineWidth;
   */
  CSSProperties.prototype.overflow;
-
+ 
 +/**
 + * @type {string}
 + * @see https://drafts.csswg.org/css-overflow-3/#propdef-overflow-x
