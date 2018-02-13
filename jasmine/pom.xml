@@ -51,7 +51,7 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/jasmine-${jasmine.version}.js</url>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/jasmine-${jasmine.version}.js</url>
               <outputFileName>jasmine-${jasmine.version}.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
             </configuration>

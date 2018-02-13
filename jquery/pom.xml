@@ -51,7 +51,7 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/jquery-${jquery.version}.js</url>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/jquery-${jquery.version}.js</url>
               <outputFileName>jquery-${jquery.version}.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
             </configuration>

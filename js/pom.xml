@@ -48,7 +48,7 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/closureidl/svg.js</url>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/svg.js</url>
               <outputFileName>svg.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
               <skipCache>true</skipCache>
@@ -85,7 +85,7 @@
         </dependencies>
       </plugin>
 
-      <plugin>
+      <!-- <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.5.0</version>
@@ -112,7 +112,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
+      </plugin> -->
 
       <plugin>
         <groupId>org.apache.royale.compiler</groupId>

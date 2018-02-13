@@ -79,7 +79,7 @@
         
     <target name="main" depends="preprocess, externc, postprocess, compc" />
 
-    <property name="srcServer" value="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/nodejs" />
+    <property name="srcServer" value="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/nodejs" />
     <property name="destDir" value="${basedir}/target/downloads/closure-compiler-master/contrib/nodejs" />
     
     <target name="getfile" >

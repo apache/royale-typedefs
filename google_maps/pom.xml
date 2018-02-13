@@ -51,7 +51,7 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/maps/google_maps_api_${googlemaps.version}.js</url>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/maps/google_maps_api_${googlemaps.version}.js</url>
               <outputFileName>google_maps_api_${googlemaps.version}.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
             </configuration>
