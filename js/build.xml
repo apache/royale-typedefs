@@ -81,15 +81,16 @@
 
     <target name="download" >
         <echo>${ROYALE_HOME}</echo>
-        <mkdir dir="${basedir}/target/temp/externs" />
-        <unjar src="${ROYALE_TRANSPILER_HOME}/lib/google/closure-compiler/compiler.jar"
-            dest="${basedir}/target/temp/externs">
-            <patternset>
-                <include name="externs.zip"/>
-            </patternset>
-        </unjar>
+        <mkdir dir="${basedir}/target/temp" />
+        <exec executable="svn">
+            <arg value="co" />
+            <arg value="https://github.com/royale-extras/closure-compiler/branches/royale/externs" />
+            <arg value="${basedir}/target/temp/externs" />
+        </exec>
         <mkdir dir="${basedir}/target/downloads" />
-        <unzip src="${basedir}/target/temp/externs/externs.zip" dest="${basedir}/target/downloads" />
+        <copy todir="${basedir}/target/downloads">
+           <fileset dir="${basedir}/target/temp/externs" includes="**"/>
+        </copy>
         <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/svg.js" dest="${basedir}/target/downloads/svg.js" ignoreerrors="true"/>
         <antcall target="get-from-cache-if-needed" >
             <param name="srcFile" value="svg.js" />
@@ -146,12 +147,6 @@
     </target>
 
     <target name="preprocess" depends="download">
-        <!-- <exec executable="git" dir="${basedir}/.." failonerror="true">
-            <arg value="apply"/>
-            <arg value="--ignore-whitespace"/>
-            <arg value="--whitespace=nowarn"/>
-            <arg value="${basedir}/src/main/patch/js.patch"/>
-        </exec> -->
     </target>
 
     <target name="externc" >
