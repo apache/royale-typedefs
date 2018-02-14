@@ -99,12 +99,12 @@
                 <exclude name="**/w3c_dom2.js"/>
             </patternset>
         </unzip>
-        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/svg.js" dest="${basedir}/target/downloads/svg.js" ignoreerrors="true" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/es3.js" dest="${basedir}/target/downloads/es3.js" ignoreerrors="true" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/es6.js" dest="${basedir}/target/downloads/es6.js" ignoreerrors="true" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_css.js" dest="${basedir}/target/downloads/browser/w3c_css.js" ignoreerrors="true" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/gecko_dom.js" dest="${basedir}/target/downloads/browser/gecko_dom.js" ignoreerrors="true" skipexisting="true"/>
-        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_dom2.js" dest="${basedir}/target/downloads/browser/w3c_dom2.js" ignoreerrors="true" skipexisting="true"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/svg.js" dest="${basedir}/target/downloads/svg.js" ignoreerrors="true" skipexisting="false"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/es3.js" dest="${basedir}/target/downloads/es3.js" ignoreerrors="true" skipexisting="false"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/es6.js" dest="${basedir}/target/downloads/es6.js" ignoreerrors="true" skipexisting="false"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_css.js" dest="${basedir}/target/downloads/browser/w3c_css.js" ignoreerrors="true" skipexisting="false"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/gecko_dom.js" dest="${basedir}/target/downloads/browser/gecko_dom.js" ignoreerrors="true" skipexisting="false"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_dom2.js" dest="${basedir}/target/downloads/browser/w3c_dom2.js" ignoreerrors="true" skipexisting="false"/>
         <antcall target="get-from-cache-if-needed" >
             <param name="srcFile" value="svg.js" />
             <param name="destFile" value="svg.js" />
