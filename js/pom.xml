@@ -117,7 +117,7 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/browser/w3c_css.js</url>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_css.js</url>
               <outputFileName>w3c_css.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
               <skipCache>true</skipCache>
@@ -131,7 +131,7 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/browser/gecko_dom.js</url>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/gecko_dom.js</url>
               <outputFileName>gecko_dom.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
               <skipCache>true</skipCache>
@@ -145,7 +145,7 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/browser/w3c_dom2.js</url>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_dom2.js</url>
               <outputFileName>w3c_dom2.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
               <skipCache>true</skipCache>
