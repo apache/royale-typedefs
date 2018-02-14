@@ -81,35 +81,60 @@
 
     <target name="download" >
         <echo>${ROYALE_HOME}</echo>
-        <mkdir dir="${basedir}/target/temp" />
-        <exec executable="git" failonerror="false" dir="${basedir}/target/temp/">
-            <arg value="clone" />
-            <arg value="https://github.com/royale-extras/closure-compiler.git" />
-            <arg value="closure-compiler" />
-        </exec>
-        <exec executable="git" failonerror="false" dir="${basedir}/target/temp/closure-compiler">
-            <arg value="checkout" />
-            <arg value="royale" />
-        </exec>
-        <exec executable="git" failonerror="false" dir="${basedir}/target/temp/closure-compiler">
-            <arg value="pull" />
-        </exec>
-        <!-- <exec executable="svn">
-            <arg value="co" />
-            <arg value="https://github.com/royale-extras/closure-compiler/branches/royale/externs" />
-            <arg value="${basedir}/target/temp/externs" />
-        </exec> -->
+        <mkdir dir="${basedir}/target/temp/externs" />
+        <unjar src="${ROYALE_TRANSPILER_HOME}/lib/google/closure-compiler/compiler.jar"
+            dest="${basedir}/target/temp/externs">
+            <patternset>
+                <include name="externs.zip"/>
+            </patternset>
+        </unjar>
         <mkdir dir="${basedir}/target/downloads" />
-        <copy todir="${basedir}/target/downloads">
-           <fileset dir="${basedir}/target/temp/closure-compiler/externs" includes="**"/>
-        </copy>
-        <copy file="${basedir}/target/temp/closure-compiler/contrib/externs/svg.js" tofile="${basedir}/target/downloads/svg.js" />
-        <!-- <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/svg.js" dest="${basedir}/target/downloads/svg.js" ignoreerrors="true"/> -->
-        <!-- <antcall target="get-from-cache-if-needed" >
+        <unzip src="${basedir}/target/temp/externs/externs.zip" dest="${basedir}/target/downloads">
+            <patternset>
+                <include name="**/*.js"/>
+                <exclude name="**/es3.js"/>
+                <exclude name="**/es6.js"/>
+                <exclude name="**/w3c_css.js"/>
+                <exclude name="**/gecko_dom.js"/>
+                <exclude name="**/w3c_dom2.js"/>
+            </patternset>
+        </unzip>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/svg.js" dest="${basedir}/target/downloads/svg.js" ignoreerrors="true" skipexisting="true"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/es3.js" dest="${basedir}/target/downloads/es3.js" ignoreerrors="true" skipexisting="true"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/es6.js" dest="${basedir}/target/downloads/es6.js" ignoreerrors="true" skipexisting="true"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_css.js" dest="${basedir}/target/downloads/browser/w3c_css.js" ignoreerrors="true" skipexisting="true"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/gecko_dom.js" dest="${basedir}/target/downloads/browser/gecko_dom.js" ignoreerrors="true" skipexisting="true"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_dom2.js" dest="${basedir}/target/downloads/browser/w3c_dom2.js" ignoreerrors="true" skipexisting="true"/>
+        <antcall target="get-from-cache-if-needed" >
             <param name="srcFile" value="svg.js" />
             <param name="destFile" value="svg.js" />
             <param name="destDir" value="${basedir}/target/downloads" />
-        </antcall> -->
+        </antcall>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="es3.js" />
+            <param name="destFile" value="es3.js" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="es6.js" />
+            <param name="destFile" value="es6.js" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="w3c_css.js" />
+            <param name="destFile" value="w3c_css.js" />
+            <param name="destDir" value="${basedir}/target/downloads/browser" />
+        </antcall>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="gecko_dom.js" />
+            <param name="destFile" value="gecko_dom.js" />
+            <param name="destDir" value="${basedir}/target/downloads/browser" />
+        </antcall>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="w3c_dom2.js" />
+            <param name="destFile" value="w3c_dom2.js" />
+            <param name="destDir" value="${basedir}/target/downloads/browser" />
+        </antcall>
         <antcall target="fail-if-not-found" >
             <param name="destFile" value="svg.js" />
             <param name="destDir" value="${basedir}/target/downloads" />
@@ -117,10 +142,10 @@
     </target>
     
     <target name="make_patch" depends="download">
-        <!-- <mkdir dir="${basedir}/target/reference" />
+        <mkdir dir="${basedir}/target/reference" />
         <copy todir="${basedir}/target/reference">
             <fileset dir="${basedir}/target/downloads/" />
-        </copy> -->
+        </copy>
         <!-- preprocessing .js files -->
         <!-- <replaceregexp file="${basedir}/target/downloads/svg.js" match="@type \{function\(new:.*" replace="" flags="g" />
         <replaceregexp file="${basedir}/target/downloads/svg.js" match="Window\.prototype\..*" replace="" flags="g" />
