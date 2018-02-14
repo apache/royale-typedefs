@@ -93,6 +93,7 @@
               <outputFileName>es3.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
               <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
             </configuration>
           </execution>
           <execution>
@@ -106,6 +107,7 @@
               <outputFileName>es6.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
               <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
             </configuration>
           </execution>
           <execution>
@@ -119,6 +121,7 @@
               <outputFileName>w3c_css.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
               <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
             </configuration>
           </execution>
           <execution>
@@ -132,6 +135,7 @@
               <outputFileName>gecko_dom.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
               <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
             </configuration>
           </execution>
           <execution>
@@ -145,6 +149,7 @@
               <outputFileName>w3c_dom2.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
               <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
             </configuration>
           </execution>
         </executions>
