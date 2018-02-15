@@ -119,14 +119,14 @@ function JSON() {}
 
 /**
  * @param {string} s The input.
- * @param {function=} opt_reviver Optional reviver.
+ * @param {(function(string, *) : *)=} opt_reviver
  * @return {Object} The result.
  */
 JSON.parse = function(s, opt_reviver) {}
 
 /**
  * @param {Object} obj The input.
- * @param {function=} opt_replacer Optional reviver.
+ * @param {(Array<string>|(function(string, *) : *)|null)=} opt_replacer
  * @param {string|number=} opt_space Optional space.
  * @return {string} The result.
  */
