@@ -67,7 +67,7 @@
 
         <path-element>../../../target/downloads/browser/whatwg_encoding.js</path-element>
 
-        <path-element>../../../target/downloads/browser/chrome.js</path-element>
+        <!-- <path-element>../../../target/downloads/browser/chrome.js</path-element> -->
         <!-- path-element>../../../target/downloads/browser/fetchapi.js</path-element>-->
         <path-element>../../../target/downloads/browser/fileapi.js</path-element>
         <path-element>../../../target/downloads/browser/flash.js</path-element>

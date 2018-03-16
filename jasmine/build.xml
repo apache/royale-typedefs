@@ -81,7 +81,7 @@
 
     <target name="preprocess">
         <mkdir dir="${basedir}/target/downloads" />
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/jasmine-2.0.js" dest="${basedir}/target/downloads/jasmine-2.0.js" skipexisting="true" ignoreerrors="true"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/jasmine-2.0.js" dest="${basedir}/target/downloads/jasmine-2.0.js" skipexisting="true" ignoreerrors="true"/>
         <antcall target="get-from-cache-if-needed" >
             <param name="srcFile" value="jasmine-2.0.js" />
             <param name="destFile" value="jasmine-2.0.js" />

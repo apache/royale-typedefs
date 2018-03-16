@@ -23,11 +23,11 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.1</version>
+    <version>0.9.2</version>
   </parent>
 
   <artifactId>royale-typedefs-googlemaps</artifactId>
-  <version>0.9.1</version>
+  <version>0.9.2</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: GoogleMaps</name>
@@ -51,7 +51,7 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/maps/google_maps_api_${googlemaps.version}.js</url>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/maps/google_maps_api_${googlemaps.version}.js</url>
               <outputFileName>google_maps_api_${googlemaps.version}.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
             </configuration>
@@ -126,7 +126,7 @@
     <dependency>
       <groupId>org.apache.royale.typedefs</groupId>
       <artifactId>royale-typedefs-js</artifactId>
-      <version>0.9.1</version>
+      <version>0.9.2</version>
       <type>swc</type>
       <classifier>typedefs</classifier>
       <scope>runtime</scope>

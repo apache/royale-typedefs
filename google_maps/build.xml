@@ -103,7 +103,7 @@
 
     <target name="download" >
         <mkdir dir="${basedir}/target/downloads" />
-        <get src="https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/maps/google_maps_api_v3_11.js" dest="${basedir}/target/downloads/google_maps_api_v3_11.js" ignoreerrors="true"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/maps/google_maps_api_v3_11.js" dest="${basedir}/target/downloads/google_maps_api_v3_11.js" ignoreerrors="true"/>
         <antcall target="get-from-cache-if-needed" >
             <param name="srcFile" value="google_maps_api_v3_11.js" />
             <param name="destFile" value="google_maps_api_v3_11.js" />
