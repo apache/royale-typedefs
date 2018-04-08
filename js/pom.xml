@@ -23,11 +23,11 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.1-SNAPSHOT</version>
+    <version>0.9.3-SNAPSHOT</version>
   </parent>
 
   <artifactId>royale-typedefs-js</artifactId>
-  <version>0.9.1-SNAPSHOT</version>
+  <version>0.9.3-SNAPSHOT</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: JS</name>
@@ -35,27 +35,6 @@
   <build>
     <sourceDirectory>src/main/royale</sourceDirectory>
     <plugins>
-      <!-- Download JavaScript form GitHub -->
-      <plugin>
-        <groupId>com.googlecode.maven-download-plugin</groupId>
-        <artifactId>download-maven-plugin</artifactId>
-        <version>1.2.1</version>
-        <executions>
-          <execution>
-            <id>get-createjs</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/closureidl/svg.js</url>
-              <outputFileName>svg.js</outputFileName>
-              <outputDirectory>${project.build.directory}/downloads</outputDirectory>
-              <skipCache>true</skipCache>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.apache.royale.compiler</groupId>
         <artifactId>compiler-build-tools</artifactId>
@@ -84,31 +63,93 @@
           </dependency>
         </dependencies>
       </plugin>
-
+      <!-- Download JavaScript from GitHub -->
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.5.0</version>
-        <configuration>
-          <executable>${git.executable}</executable>
-          <workingDirectory>${basedir}/..</workingDirectory>
-          <arguments>
-            <argument>apply</argument>
-            <argument>--ignore-whitespace</argument>
-            <argument>--whitespace=nowarn</argument>
-          </arguments>
-        </configuration>
+        <groupId>com.googlecode.maven-download-plugin</groupId>
+        <artifactId>download-maven-plugin</artifactId>
+        <version>1.2.1</version>
         <executions>
           <execution>
-            <id>patch-js</id>
+            <id>get-svg</id>
             <phase>validate</phase>
             <goals>
-              <goal>exec</goal>
+              <goal>wget</goal>
             </goals>
             <configuration>
-              <arguments combine.children="append">
-                <argument>${basedir}/src/main/patch/js.patch</argument>
-              </arguments>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/svg.js</url>
+              <outputFileName>svg.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads</outputDirectory>
+              <skipCache>true</skipCache>
+            </configuration>
+          </execution>
+          <execution>
+            <id>get-es3</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/es3.js</url>
+              <outputFileName>es3.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
+            </configuration>
+          </execution>
+          <execution>
+            <id>get-es6</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/es6.js</url>
+              <outputFileName>es6.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
+            </configuration>
+          </execution>
+          <execution>
+            <id>get-w3c_css</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_css.js</url>
+              <outputFileName>w3c_css.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
+            </configuration>
+          </execution>
+          <execution>
+            <id>get-gecko_dom</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/gecko_dom.js</url>
+              <outputFileName>gecko_dom.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
+            </configuration>
+          </execution>
+          <execution>
+            <id>get-w3c_dom2</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_dom2.js</url>
+              <outputFileName>w3c_dom2.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
             </configuration>
           </execution>
         </executions>
@@ -138,7 +179,7 @@
                 <include>browser/gecko_*.js</include>
                 <include>browser/webkit_*.js</include>
                 <include>browser/iphone.js</include>
-                <include>browser/chrome.js</include>
+                <!-- <include>browser/chrome.js</include> -->
                 <include>browser/flash.js</include>
                 <include>browser/page_visibility.js</include>
                 <include>browser/fileapi.js</include>

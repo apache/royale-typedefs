@@ -89,12 +89,51 @@
             </patternset>
         </unjar>
         <mkdir dir="${basedir}/target/downloads" />
-        <unzip src="${basedir}/target/temp/externs/externs.zip" dest="${basedir}/target/downloads" />
-        <get src="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/closureidl/svg.js" dest="${basedir}/target/downloads/svg.js" ignoreerrors="true"/>
+        <unzip src="${basedir}/target/temp/externs/externs.zip" dest="${basedir}/target/downloads">
+            <patternset>
+                <include name="**/*.js"/>
+                <exclude name="**/es3.js"/>
+                <exclude name="**/es6.js"/>
+                <exclude name="**/w3c_css.js"/>
+                <exclude name="**/gecko_dom.js"/>
+                <exclude name="**/w3c_dom2.js"/>
+            </patternset>
+        </unzip>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/svg.js" dest="${basedir}/target/downloads/svg.js" ignoreerrors="true" skipexisting="false"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/es3.js" dest="${basedir}/target/downloads/es3.js" ignoreerrors="true" skipexisting="false"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/es6.js" dest="${basedir}/target/downloads/es6.js" ignoreerrors="true" skipexisting="false"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_css.js" dest="${basedir}/target/downloads/browser/w3c_css.js" ignoreerrors="true" skipexisting="false"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/gecko_dom.js" dest="${basedir}/target/downloads/browser/gecko_dom.js" ignoreerrors="true" skipexisting="false"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_dom2.js" dest="${basedir}/target/downloads/browser/w3c_dom2.js" ignoreerrors="true" skipexisting="false"/>
         <antcall target="get-from-cache-if-needed" >
             <param name="srcFile" value="svg.js" />
             <param name="destFile" value="svg.js" />
             <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="es3.js" />
+            <param name="destFile" value="es3.js" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="es6.js" />
+            <param name="destFile" value="es6.js" />
+            <param name="destDir" value="${basedir}/target/downloads" />
+        </antcall>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="w3c_css.js" />
+            <param name="destFile" value="w3c_css.js" />
+            <param name="destDir" value="${basedir}/target/downloads/browser" />
+        </antcall>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="gecko_dom.js" />
+            <param name="destFile" value="gecko_dom.js" />
+            <param name="destDir" value="${basedir}/target/downloads/browser" />
+        </antcall>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="w3c_dom2.js" />
+            <param name="destFile" value="w3c_dom2.js" />
+            <param name="destDir" value="${basedir}/target/downloads/browser" />
         </antcall>
         <antcall target="fail-if-not-found" >
             <param name="destFile" value="svg.js" />
@@ -108,10 +147,10 @@
             <fileset dir="${basedir}/target/downloads/" />
         </copy>
         <!-- preprocessing .js files -->
-        <replaceregexp file="${basedir}/target/downloads/svg.js" match="@type \{function\(new:.*" replace="" flags="g" />
+        <!-- <replaceregexp file="${basedir}/target/downloads/svg.js" match="@type \{function\(new:.*" replace="" flags="g" />
         <replaceregexp file="${basedir}/target/downloads/svg.js" match="Window\.prototype\..*" replace="" flags="g" />
-        <replace file="${basedir}/target/downloads/svg.js" token="EventListener|(function(Event)" value="EventListener|(function(!Event)" />
-        <replaceregexp file="${basedir}/target/downloads/es3.js" match="(The constructor of the current object(?:(?!\*/).)*?)@type \{Function\}((?:(?!\*/).)*?\*/[\r\n]+Object\.prototype\.constructor)([^;]*?);" replace="\1@type {Class}\2;" flags="s" />
+        <replace file="${basedir}/target/downloads/svg.js" token="EventListener|(function(Event)" value="EventListener|(function(!Event)" /> -->
+        <!-- <replaceregexp file="${basedir}/target/downloads/es3.js" match="(The constructor of the current object(?:(?!\*/).)*?)@type \{Function\}((?:(?!\*/).)*?\*/[\r\n]+Object\.prototype\.constructor)([^;]*?);" replace="\1@type {Class}\2;" flags="s" />
         <replaceregexp file="${basedir}/target/downloads/es3.js" match="(Transposes the elements of an array in place(?:(?!\*/).)*?[\r\n]+ \*)([\r\n]+)( \* @this)" replace="\1\2 * @return {!Array&lt;?&gt;}\2\3" flags="s" />
         <replaceregexp file="${basedir}/target/downloads/es3.js" match="(Sorts the elements of an array in place(?:(?!\*/).)*?[\r\n]+ \*)([\r\n]+)( \* @param)" replace="\1\2 * @return {!Array&lt;?&gt;}\2\3" flags="s" />
         <replace file="${basedir}/target/downloads/es3.js" >
@@ -121,7 +160,7 @@
             <replacefilter token="param {number|undefined} base" value="param {number=} base" />
         </replace>
         <replaceregexp file="${basedir}/target/downloads/es6.js" match="@constructor(. \* @extends \{Array&lt;string&gt;\})" replace="@interface" flags="s" />
-        <antcall target="diff" />
+        <antcall target="diff" /> -->
     </target>
 
     <target name="diff" >
@@ -146,12 +185,6 @@
     </target>
 
     <target name="preprocess" depends="download">
-        <exec executable="git" dir="${basedir}/.." failonerror="true">
-            <arg value="apply"/>
-            <arg value="--ignore-whitespace"/>
-            <arg value="--whitespace=nowarn"/>
-            <arg value="${basedir}/src/main/patch/js.patch"/>
-        </exec>
     </target>
 
     <target name="externc" >

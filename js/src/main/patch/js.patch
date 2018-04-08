@@ -54,6 +54,28 @@ index 1b8a25a..0d92668 100644
   * @see http://www.ecma-international.org/ecma-262/6.0/#sec-gettemplateobject
   */
  var ITemplateArray = function() {};
+diff --git a/w3c_css.js b/w3c_css.js
+index d27743c3..36e6fcbd 100644
+--- a/js/target/downloads/browser/w3c_css.js
++++ b/js/target/downloads/browser/w3c_css.js
+@@ -1525,6 +1525,17 @@ CSSProperties.prototype.outlineWidth;
+  */
+ CSSProperties.prototype.overflow;
+ 
++/**
++ * @type {string}
++ * @see https://drafts.csswg.org/css-overflow-3/#propdef-overflow-x
++ */
++CSSProperties.prototype.overflowX;
++/**
++ * @type {string}
++ * @see https://drafts.csswg.org/css-overflow-3/#propdef-overflow-y
++ */
++CSSProperties.prototype.overflowY;
++
+ /**
+  * @type {string|number}
+  * @see http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSSProperties-padding
 diff --git a/js/target/downloads/svg.js b/js/target/downloads/svg.js
 index a13180c..48115b3 100644
 --- a/js/target/downloads/svg.js

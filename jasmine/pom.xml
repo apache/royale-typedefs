@@ -23,11 +23,11 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.1-SNAPSHOT</version>
+    <version>0.9.3-SNAPSHOT</version>
   </parent>
 
   <artifactId>royale-typedefs-jasmine</artifactId>
-  <version>0.9.1-SNAPSHOT</version>
+  <version>0.9.3-SNAPSHOT</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: Jasmine</name>
@@ -51,7 +51,7 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/jasmine-${jasmine.version}.js</url>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/jasmine-${jasmine.version}.js</url>
               <outputFileName>jasmine-${jasmine.version}.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
             </configuration>
@@ -110,7 +110,7 @@
     <dependency>
       <groupId>org.apache.royale.typedefs</groupId>
       <artifactId>royale-typedefs-js</artifactId>
-      <version>0.9.1-SNAPSHOT</version>
+      <version>0.9.3-SNAPSHOT</version>
       <type>swc</type>
       <classifier>typedefs</classifier>
       <scope>runtime</scope>
