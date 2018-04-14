@@ -55,6 +55,16 @@ Window.prototype.resolveLocalFileSystemURL = function(url, successCallback,
 /**
 * @constructor
 */
+function performance() {};
+
+/**
+* @return {number} time to return
+*/
+performance.now = function() {};
+
+/**
+* @constructor
+*/
 function dialogPolyfill() {};
 
 /**
