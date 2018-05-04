@@ -45,7 +45,7 @@
     <project.reporting.outputencoding>UTF-8</project.reporting.outputencoding>
     <maven.version>3.3.1</maven.version>
 
-    <royale.compiler.version>0.9.3-SNAPSHOT</royale.compiler.version>
+    <royale.compiler.version>0.9.3</royale.compiler.version>
     <royale.build-tools.version>1.0.0</royale.build-tools.version>
 
     <git.executable>git</git.executable>
