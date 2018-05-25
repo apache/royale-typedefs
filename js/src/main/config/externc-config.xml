@@ -109,6 +109,24 @@
     <class-exclude>
         <class>controlRange</class>
         <class>ITemplateArray</class>
+        <!-- file-system API abandoned by W3C -->
+        <class>DirectoryEntry</class>
+        <class>DirectoryReader</class>
+        <class>Entry</class>
+        <class>FileEntry</class>
+        <class>FileSystemFlags</class>
+        <class>FileSystem</class>
+        <class>LocalFileSystem</class>
+        <class>Metadata</class>
+        <class>requestFileSystem</class>
+        <class>resolveLocalFileSystemURI</class>
+        <class>webkitRequestFileSystem</class>
+        <class>webkitResolveLocalFileSystemURI</class>
+        <!-- file-writer API abandoned by W3C -->
+        <class>BlobBuilder</class>
+        <class>WebKitBlobBuilder</class>
+        <class>FileSaver</class>
+        <class>FileWriter</class>
     </class-exclude>
     
     <!-- Object.toString() is excluded by the ExternC compiler.  Otherwise
@@ -129,6 +147,26 @@
     <exclude>
         <class>String</class>
         <name>raw</name>
+    </exclude>
+    <exclude>
+        <class>Window</class>
+        <name>requestFileSystem</name>
+    </exclude>
+    <exclude>
+        <class>Window</class>
+        <name>resolveLocalFileSystemURI</name>
+    </exclude>
+    <exclude>
+        <class>Window</class>
+        <name>webkitRequestFileSystem</name>
+    </exclude>
+    <exclude>
+        <class>Window</class>
+        <name>webkitResolveLocalFileSystemURI</name>
+    </exclude>
+    <exclude>
+        <class>DataTransferItem</class>
+        <name>webkitGetAsEntry</name>
     </exclude>
     <!-- SVG -->
     <exclude><class>SVGStylable</class><name>className</name></exclude>
