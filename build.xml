@@ -36,6 +36,7 @@
         <ant dir="google_maps" target="clean"/>
         <ant dir="node" target="clean"/>
         <ant dir="ace" target="clean"/>
+        <ant dir="moment" target="clean"/>
     </target>
 
     <target name="wipe" description="Wipes out everything that didn't come from Git.">
@@ -48,6 +49,7 @@
         <ant dir="google_maps" target="wipe"/>
         <ant dir="node" target="wipe"/>
         <ant dir="ace" target="wipe"/>
+        <ant dir="moment" target="wipe"/>
     </target>
     
     <target name="main" description="Build everything">
@@ -60,6 +62,7 @@
         <ant dir="google_maps" />
         <ant dir="node" />
         <ant dir="ace" />
+        <ant dir="moment" />
     </target>
 
 </project>
