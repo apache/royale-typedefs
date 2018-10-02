@@ -124,7 +124,6 @@
             <excludes>
                 <!-- Patch files aren't supposed to have headers -->
                 <exclude>**/*.patch</exclude>
-                <exclude>ace/target/generated-sources/**</exclude>
             </excludes>
         </configuration>
         <dependencies>
