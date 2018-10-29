@@ -43,6 +43,7 @@
     <exclude><class>jQuery</class><name>post</name></exclude>
     <exclude><class>jQuery</class><name>getScript</name></exclude>
     <exclude><class>jQuery</class><name>Callbacks</name></exclude>
+    <exclude><class>jQuery.jqXHR</class><name>onreadystatechange</name></exclude>
 
     <class-exclude><class>Deferred</class></class-exclude>
     <class-exclude><class>jQuery.deferred</class></class-exclude>
