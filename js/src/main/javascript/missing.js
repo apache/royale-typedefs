@@ -223,31 +223,26 @@ Array.prototype.removeAt = function(index) {};
  */
 Array.prototype.sortOn = function(fieldName, opt_options) {};
 
-
 /**
- * @type {number}
- * @const
+ * @const {int}
  */
 int.MAX_VALUE;
 
 
 /**
- * @type {number}
- * @const
+ * @const {int}
  */
 int.MIN_VALUE;
 
 
 /**
- * @type {number}
- * @const
+ * @const {uint}
  */
 uint.MAX_VALUE;
 
 
 /**
- * @type {number}
- * @const
+ * @const {uint}
  */
 uint.MIN_VALUE;
 
