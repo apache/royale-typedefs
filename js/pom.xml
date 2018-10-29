@@ -260,6 +260,10 @@
                 <name>createTreeWalker</name>
               </exclude>
               <exclude>
+                <className>Element</className>
+                <name>load</name>
+              </exclude>
+              <exclude>
                 <className>Event</className>
                 <name>initUIEvent</name>
               </exclude>
