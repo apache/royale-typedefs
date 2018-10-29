@@ -135,6 +135,10 @@
                 <className>jQuery</className>
                 <name>Callbacks</name>
               </exclude>
+              <exclude>
+                <className>jQuery.jqXHR</className>
+                <name>onreadystatechange</name>
+              </exclude>
             </excludes>
           </externcConfig>
           <includeFiles>

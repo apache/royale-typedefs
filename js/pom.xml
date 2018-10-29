@@ -243,6 +243,30 @@
                 <className>SVGLocatable</className>
                 <name>nearestViewportElement</name>
               </exclude>
+              <exclude>
+                <className>Document</className>
+                <name>loadXML</name>
+              </exclude>
+              <exclude>
+                <className>Document</className>
+                <name>open</name>
+              </exclude>
+              <exclude>
+                <className>Document</className>
+                <name>close</name>
+              </exclude>
+              <exclude>
+                <className>Document</className>
+                <name>createTreeWalker</name>
+              </exclude>
+              <exclude>
+                <className>Event</className>
+                <name>initUIEvent</name>
+              </exclude>
+              <exclude>
+                <className>Event</className>
+                <name>initMessageEvent</name>
+              </exclude>
             </excludes>
           </externcConfig>
           <includeFiles>
