@@ -38,6 +38,7 @@
         <path-element>../../../target/downloads/browser/w3c_anim_timing.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_audio.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_batterystatus.js</path-element>
+        <path-element>../../../target/downloads/browser/w3c_composition_event.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_css.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_css3d.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_device_sensor_event.js</path-element>
