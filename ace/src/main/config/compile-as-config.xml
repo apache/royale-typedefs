@@ -20,11 +20,12 @@
 
     <compiler>
         <accessible>true</accessible>
-		
+        
         <external-library-path>
         </external-library-path>
 		
         <source-path>
+            <path-element>generated-sources/externc/classes</path-element>
             <path-element>generated-sources/externc/constants</path-element>
         </source-path>
         
@@ -32,14 +33,13 @@
     </compiler>
     
     <include-sources>
-        <path-element>generated-sources/externc/constants</path-element>
         <path-element>generated-sources/externc/classes</path-element>
-        <path-element>generated-sources/externc/interfaces</path-element>
+        <path-element>generated-sources/externc/constants</path-element>
     </include-sources>
 
     <include-file>
-        <name>externs/cordova_file_plugin-4-11.js</name>
-        <path>../src/main/javascript/cordova_file_plugin-4-11.js</path>
+        <name>externs/ace-1.2.3.js</name>
+        <path>downloads/ace-1.2.3.js</path>
     </include-file>
 
 </royale-config>

@@ -23,11 +23,11 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.2</version>
+    <version>0.9.4</version>
   </parent>
 
   <artifactId>royale-typedefs-js</artifactId>
-  <version>0.9.2</version>
+  <version>0.9.4</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: JS</name>
@@ -106,6 +106,20 @@
               <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/es6.js</url>
               <outputFileName>es6.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
+            </configuration>
+          </execution>
+          <execution>
+            <id>get-w3c_composition_event</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_composition_event.js</url>
+              <outputFileName>w3c_composition_event.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
               <skipCache>true</skipCache>
               <overwrite>true</overwrite>
             </configuration>
@@ -242,6 +256,34 @@
               <exclude>
                 <className>SVGLocatable</className>
                 <name>nearestViewportElement</name>
+              </exclude>
+              <exclude>
+                <className>Document</className>
+                <name>loadXML</name>
+              </exclude>
+              <exclude>
+                <className>Document</className>
+                <name>open</name>
+              </exclude>
+              <exclude>
+                <className>Document</className>
+                <name>close</name>
+              </exclude>
+              <exclude>
+                <className>Document</className>
+                <name>createTreeWalker</name>
+              </exclude>
+              <exclude>
+                <className>Element</className>
+                <name>load</name>
+              </exclude>
+              <exclude>
+                <className>Event</className>
+                <name>initUIEvent</name>
+              </exclude>
+              <exclude>
+                <className>Event</className>
+                <name>initMessageEvent</name>
               </exclude>
             </excludes>
           </externcConfig>

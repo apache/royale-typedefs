@@ -35,9 +35,27 @@ public class Event {
     }
 
     public var type:String;
-    public var target:Object;
-    public var currentTarget:Object;
-    public var defaultPrevented:Boolean;
+    public function get target():Object
+    {
+        return null;
+    }
+    public function set target(value:Object):void
+    {
+    }
+    public function get currentTarget():Object
+    {
+        return null;
+    }
+    public function set currentTarget(value:Object):void
+    {
+    }
+    public function get defaultPrevented():Boolean
+    {
+        return null;
+    }
+    public function set defaultPrevented(value:Boolean):void
+    {
+    }
 
     public function stopPropagation():void {}
     public function preventDefault():void {}

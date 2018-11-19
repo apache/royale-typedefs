@@ -4,7 +4,7 @@
   contributor license agreements.  See the NOTICE file distributed with
   this work for additional information regarding copyright ownership.
   The ASF licenses this file to You under the Apache License, Version 2.0
-  (the "License"); you may not use this file except in compliance with
+  (the "License</name></exclude> you may not use this file except in compliance with
   the License.  You may obtain a copy of the License at
 
       http://www.apache.org/licenses/LICENSE-2.0
@@ -20,26 +20,16 @@
 
     <compiler>
         <accessible>true</accessible>
-		
-        <external-library-path>
-        </external-library-path>
-		
-        <source-path>
-            <path-element>generated-sources/externc/constants</path-element>
-        </source-path>
+        
+        <locale/>
         
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
     
-    <include-sources>
-        <path-element>generated-sources/externc/constants</path-element>
-        <path-element>generated-sources/externc/classes</path-element>
-        <path-element>generated-sources/externc/interfaces</path-element>
-    </include-sources>
+    <typedefs>
+        <path-element>../../../target/downloads/ace-1.2.3.js</path-element>
+    </typedefs>
 
-    <include-file>
-        <name>externs/cordova_file_plugin-4-11.js</name>
-        <path>../src/main/javascript/cordova_file_plugin-4-11.js</path>
-    </include-file>
+    <as-root>../../../target/generated-sources/externc</as-root>
 
 </royale-config>

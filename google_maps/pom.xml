@@ -23,11 +23,11 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.2</version>
+    <version>0.9.4</version>
   </parent>
 
   <artifactId>royale-typedefs-googlemaps</artifactId>
-  <version>0.9.2</version>
+  <version>0.9.4</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: GoogleMaps</name>
@@ -51,6 +51,7 @@
               <goal>wget</goal>
             </goals>
             <configuration>
+              <skipCache>true</skipCache>
               <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/maps/google_maps_api_${googlemaps.version}.js</url>
               <outputFileName>google_maps_api_${googlemaps.version}.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
@@ -58,36 +59,7 @@
           </execution>
         </executions>
       </plugin>
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.5.0</version>
-        <configuration>
-          <executable>${git.executable}</executable>
-          <workingDirectory>${basedir}/..</workingDirectory>
-          <arguments>
-            <argument>apply</argument>
-            <argument>--ignore-whitespace</argument>
-            <argument>--whitespace=nowarn</argument>
-          </arguments>
-        </configuration>
-        <executions>
-          <execution>
-            <id>patch-google-maps</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <arguments combine.children="append">
-                <argument>${basedir}/src/main/patch/google_maps.patch</argument>
-              </arguments>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
+      
       <plugin>
         <groupId>org.apache.royale.compiler</groupId>
         <artifactId>royale-maven-plugin</artifactId>
@@ -126,7 +98,7 @@
     <dependency>
       <groupId>org.apache.royale.typedefs</groupId>
       <artifactId>royale-typedefs-js</artifactId>
-      <version>0.9.2</version>
+      <version>0.9.4</version>
       <type>swc</type>
       <classifier>typedefs</classifier>
       <scope>runtime</scope>
