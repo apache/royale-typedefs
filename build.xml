@@ -48,6 +48,10 @@
         <ant dir="google_maps" target="wipe"/>
         <ant dir="node" target="wipe"/>
         <ant dir="ace" target="wipe"/>
+        <delete dir="${basedir}" failonerror="false">
+            <include name="**/*.log"/>
+            <include name="**/*.mdmp"/>
+        </delete>
     </target>
     
     <target name="main" description="Build everything">
