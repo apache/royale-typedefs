@@ -189,6 +189,28 @@
           </attributes>
         </configuration>
       </plugin>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.3</version>
+          <configuration>
+              <providerImplementations>
+                  <git>jgit</git>
+              </providerImplementations>
+          </configuration>
+          <dependencies>
+              <dependency>
+                  <groupId>org.apache.maven.scm</groupId>
+                  <artifactId>maven-scm-provider-jgit</artifactId>
+                  <version>1.11.2-SNAPSHOT</version>
+              </dependency>
+              <dependency>
+                  <groupId>org.apache.maven.scm</groupId>
+                  <artifactId>maven-scm-api</artifactId>
+                  <version>1.11.2-SNAPSHOT</version>
+              </dependency>
+          </dependencies>
+      </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
@@ -251,6 +273,23 @@
       <properties>
         <git.executable>git.exe</git.executable>
       </properties>
+    </profile>
+    <profile>
+        <id>upload-release-to-staging</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>wagon-maven-plugin</artifactId>
+                    <version>2.0.0</version>
+                    <configuration>
+                        <includes>**</includes>
+                        <serverId>apache.releases.https</serverId>
+                        <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
     </profile>
   </profiles>
 
