@@ -49,6 +49,7 @@
     <royale.build-tools.version>1.0.0</royale.build-tools.version>
 
     <git.executable>git</git.executable>
+    <skipgpg>false</skipgpg>
 
     <!-- URL of the ASF SonarQube server -->
     <sonar.host.url>https://builds.apache.org/analysis</sonar.host.url>
@@ -100,6 +101,13 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <configuration>
+          <skip>${skipgpg}</skip><!--true to skip gpg if building release on CI server -->
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.sonarsource.scanner.maven</groupId>
         <artifactId>sonar-maven-plugin</artifactId>
