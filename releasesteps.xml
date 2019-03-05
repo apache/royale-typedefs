@@ -167,10 +167,16 @@
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-cordova/${release.version}/royale-typedefs-cordova-${release.version}-typedefs.swc" />
         </antcall>
         <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-cordova/${release.version}/royale-typedefs-cordova-${release.version}.pom" />
+        </antcall>
+        <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-createjs/${release.version}/royale-typedefs-createjs-${release.version}-sources.jar" />
         </antcall>
         <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-createjs/${release.version}/royale-typedefs-createjs-${release.version}-typedefs.swc" />
+        </antcall>
+        <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-createjs/${release.version}/royale-typedefs-createjs-${release.version}.pom" />
         </antcall>
         <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-gcl/${release.version}/royale-typedefs-gcl-${release.version}-sources.jar" />
@@ -179,10 +185,16 @@
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-gcl/${release.version}/royale-typedefs-gcl-${release.version}-typedefs.swc" />
         </antcall>
         <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-gcl/${release.version}/royale-typedefs-gcl-${release.version}.pom" />
+        </antcall>
+        <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-googlemaps/${release.version}/royale-typedefs-googlemaps-${release.version}-sources.jar" />
         </antcall>
         <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-googlemaps/${release.version}/royale-typedefs-googlemaps-${release.version}-typedefs.swc" />
+        </antcall>
+        <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-googlemaps/${release.version}/royale-typedefs-googlemaps-${release.version}.pom" />
         </antcall>
         <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-jasmine/${release.version}/royale-typedefs-jasmine-${release.version}-sources.jar" />
@@ -191,10 +203,16 @@
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-jasmine/${release.version}/royale-typedefs-jasmine-${release.version}-typedefs.swc" />
         </antcall>
         <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-jasmine/${release.version}/royale-typedefs-jasmine-${release.version}.pom" />
+        </antcall>
+        <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-jquery/${release.version}/royale-typedefs-jquery-${release.version}-sources.jar" />
         </antcall>
         <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-jquery/${release.version}/royale-typedefs-jquery-${release.version}-typedefs.swc" />
+        </antcall>
+        <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-jquery/${release.version}/royale-typedefs-jquery-${release.version}.pom" />
         </antcall>
         <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-js/${release.version}/royale-typedefs-js-${release.version}-sources.jar" />
@@ -203,10 +221,16 @@
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-js/${release.version}/royale-typedefs-js-${release.version}-typedefs.swc" />
         </antcall>
         <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-js/${release.version}/royale-typedefs-js-${release.version}.pom" />
+        </antcall>
+        <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-node/${release.version}/royale-typedefs-node-${release.version}-sources.jar" />
         </antcall>
         <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-node/${release.version}/royale-typedefs-node-${release.version}-typedefs.swc" />
+        </antcall>
+        <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-node/${release.version}/royale-typedefs-node-${release.version}.pom" />
         </antcall>
     </target>
     
