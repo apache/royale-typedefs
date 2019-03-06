@@ -161,6 +161,9 @@
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-parent/${release.version}/royale-typedefs-parent-${release.version}-source-release.zip" />
         </antcall>
         <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-parent/${release.version}/royale-typedefs-parent-${release.version}.pom" />
+        </antcall>
+        <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-cordova/${release.version}/royale-typedefs-cordova-${release.version}-sources.jar" />
         </antcall>
         <antcall target="sign-file" >
