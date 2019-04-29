@@ -135,8 +135,8 @@
         <exec executable="${mvn}" dir="${artifactfolder}/sources" failonerror="true" >
             <arg value="clean" />
             <arg value="install" />
-            <!--<arg value="-P" />
-            <arg value="-main,utils" />-->
+            <arg value="-P" />
+            <arg value="release-swcs,main" />
         </exec>
     </target>
     
@@ -151,7 +151,81 @@
             unless="artifact.folder.found"/>
     </target>
     
-    <target name="validate-bits">
+    <target name="validate-bits" depends="get-artifact-folder,compare-swcs">
+    </target>
+    
+    <target name="write-out-maven-swcs-list" >
+        <delete file="${artifactfolder}/swcs.txt" />
+        <!-- this is a comma-delimited, no spaces, no-line-breaks list used to decide which swcs
+         to skip in the rat-check of the binaries and which swcs to examine before approval -->
+        <property name="swcs-list" value="ace,cordova,createjs,gcl,google_maps,jasmine,jquery,js,node"/>
+        <echo file="${artifactfolder}/swcs.txt" message="${swcs-list}"/>
+    </target>
+    
+    <target name="compare-swcs" depends="write-out-maven-swcs-list">
+        <!-- comma delimited list, no spaces, not one file per line -->
+        <copy file="${artifactfolder}/swcs.txt" tofile="${artifactfolder}/loop.txt" />
+        <ant antfile="releasesteps.xml" target="loopOnce" inheritAll="false" >
+            <property name="artifactfolder" value="${artifactfolder}" />
+            <property name="release.version" value="${release.version}" />
+            <property name="utils.version" value="${utils.version}" />
+        </ant>
+    </target>
+    
+    <target name="loopOnce" >
+        <!-- make a copy of the list so we can munge it to
+         get the first item in the list -->
+        <delete file="${artifactfolder}/loop1.txt" />
+        <copy file="${artifactfolder}/loop.txt" tofile="${artifactfolder}/loop1.txt" />
+        <loadfile srcFile="${artifactfolder}/loop.txt" property="checkiflast" />
+        <condition property="islast" value="true">
+            <not>
+                <contains string="${checkiflast}" substring="," />
+            </not>
+        </condition>
+        <antcall target="notlast" />
+        <antcall target="lastone" />
+    </target>
+    <target name="notlast" unless="islast">
+        <loadfile srcFile="${artifactfolder}/loop1.txt" property="echoFile" />
+        <replaceregexp file="${artifactfolder}/loop1.txt" match="^(.*),(.*)" replace="\2" />
+        <loadfile srcFile="${artifactfolder}/loop1.txt" property="thisFile" />
+        <antcall target="compare_files" />
+        <replaceregexp file="${artifactfolder}/loop.txt" match="^(.*),(.*)" replace="\1" />
+        <ant antfile="releasesteps.xml" target="loopOnce" inheritAll="false">
+            <property name="artifactfolder" value="${artifactfolder}" />
+            <property name="release.version" value="${release.version}" />
+            <property name="utils.version" value="${utils.version}" />
+        </ant>
+    </target>
+    <target name="lastone" if="islast">
+        <loadfile srcFile="${artifactfolder}/loop1.txt" property="thisFile" />
+        <antcall target="compare_files" />
+        <delete file="${artifactfolder}/loop.txt" />
+        <delete file="${artifactfolder}/loop1.txt" />
+    </target>
+    
+    <target name="compare_files">
+        <echo>comparing royale-typedefs-${thisFile}-${release.version}-typedefs.swc</echo>
+        <fail message="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/${thisFile}/${release.version}/royale-typedefs-${thisFile}-${release.version}-typedefs.swc does not exist" >
+            <condition>
+                <not>
+                    <resourceexists><file file="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-${thisFile}/${release.version}/royale-typedefs-${thisFile}-${release.version}-typedefs.swc"/></resourceexists>
+                </not>
+            </condition>
+        </fail>
+        <fail message="${artifactfolder}/sources/${thisFile}/target/royale-typedefs-${thisFile}-${release.version}-extern.swc does not exist" >
+            <condition>
+                <not>
+                    <resourceexists><file file="${artifactfolder}/sources/${thisFile}/target/royale-typedefs-${thisFile}-${release.version}-extern.swc"/></resourceexists>
+                </not>
+            </condition>
+        </fail>
+        <condition property="filesmatch" value="true">
+            <filesmatch file1="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-${thisFile}/${release.version}/royale-typedefs-${thisFile}-${release.version}-typedefs.swc"
+            file2="${artifactfolder}/sources/${thisFile}/target/royale-typedefs-${thisFile}-${release.version}-extern.swc" />
+        </condition>
+        <fail message="royale-typedefs-${thisFile}-${release.version}-typedefs.swc does not match" unless="filesmatch" />
     </target>
     
     <target name="Release_Step_007_Sign" depends="get-artifact-folder">
