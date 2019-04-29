@@ -28,7 +28,7 @@
 
   <groupId>org.apache.royale.typedefs</groupId>
   <artifactId>royale-typedefs-parent</artifactId>
-  <version>0.9.8-SNAPSHOT</version>
+  <version>0.9.6-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Apache Royale: TypeDefs: Parent</name>
@@ -37,7 +37,7 @@
     <connection>scm:git:https://github.com/apache/royale-typedefs.git</connection>
     <developerConnection>scm:git:https://github.com/apache/royale-typedefs.git</developerConnection>
     <url>scm:git:https://github.com/apache/royale-typedefs.git</url>
-    <tag>HEAD</tag>
+    <tag>release/0.9.6</tag>
   </scm>
 
   <properties>
