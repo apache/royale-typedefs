@@ -230,6 +230,8 @@
             failonerror="true">
             <arg value="+royalelib=externs/frameworks" />
             <arg value="-debug" />
+            <arg value="-metadata.date=&quot;2/10/19 9:06 -0800&quot;" />
+            <arg value="-metadata.dateFormat=&quot;MM/dd/yy HH:mm Z&quot;" />
             <arg value="-external-library-path+=${basedir}/../js/target/js.swc" />
             <arg value="-load-config=${basedir}/target/compile-as-config.xml" />
             <arg value="-output=${basedir}/target/node.swc" />
