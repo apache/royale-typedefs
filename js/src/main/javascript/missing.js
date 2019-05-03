@@ -63,16 +63,6 @@ function performance() {};
 performance.now = function() {};
 
 /**
-* @constructor
-*/
-function dialogPolyfill() {};
-
-/**
-* @param {!Element} element to upgrade, if necessary
-*/
-dialogPolyfill.registerDialog = function(element) {};
-
-/**
  * @constructor
  */
 function Navigator() {}
