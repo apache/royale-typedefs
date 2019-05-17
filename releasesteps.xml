@@ -158,7 +158,7 @@
         <delete file="${artifactfolder}/swcs.txt" />
         <!-- this is a comma-delimited, no spaces, no-line-breaks list used to decide which swcs
          to skip in the rat-check of the binaries and which swcs to examine before approval -->
-        <property name="swcs-list" value="ace,cordova,createjs,gcl,google_maps,jasmine,jquery,js,node"/>
+        <property name="swcs-list" value="cordova,createjs,gcl,google_maps,jasmine,jquery,js,node"/>
         <echo file="${artifactfolder}/swcs.txt" message="${swcs-list}"/>
     </target>
     
@@ -190,6 +190,10 @@
         <loadfile srcFile="${artifactfolder}/loop1.txt" property="echoFile" />
         <replaceregexp file="${artifactfolder}/loop1.txt" match="^(.*),(.*)" replace="\2" />
         <loadfile srcFile="${artifactfolder}/loop1.txt" property="thisFile" />
+        <condition property="artifactid" value="googlemaps">
+            <equals arg1="${thisFile}" arg2="google_maps" />
+        </condition>
+        <property name="artifactid" value="${thisFile}" />
         <antcall target="compare_files" />
         <replaceregexp file="${artifactfolder}/loop.txt" match="^(.*),(.*)" replace="\1" />
         <ant antfile="releasesteps.xml" target="loopOnce" inheritAll="false">
@@ -200,32 +204,33 @@
     </target>
     <target name="lastone" if="islast">
         <loadfile srcFile="${artifactfolder}/loop1.txt" property="thisFile" />
+        <property name="artifactid" value="${thisFile}" />
         <antcall target="compare_files" />
         <delete file="${artifactfolder}/loop.txt" />
         <delete file="${artifactfolder}/loop1.txt" />
     </target>
     
     <target name="compare_files">
-        <echo>comparing royale-typedefs-${thisFile}-${release.version}-typedefs.swc</echo>
-        <fail message="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/${thisFile}/${release.version}/royale-typedefs-${thisFile}-${release.version}-typedefs.swc does not exist" >
+        <echo>comparing royale-typedefs-${artifactid}-${release.version}-typedefs.swc</echo>
+        <fail message="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-${artifactid}/${release.version}/royale-typedefs-${artifactid}-${release.version}-typedefs.swc does not exist" >
             <condition>
                 <not>
-                    <resourceexists><file file="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-${thisFile}/${release.version}/royale-typedefs-${thisFile}-${release.version}-typedefs.swc"/></resourceexists>
+                    <resourceexists><file file="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-${artifactid}/${release.version}/royale-typedefs-${artifactid}-${release.version}-typedefs.swc"/></resourceexists>
                 </not>
             </condition>
         </fail>
-        <fail message="${artifactfolder}/sources/${thisFile}/target/royale-typedefs-${thisFile}-${release.version}-extern.swc does not exist" >
+        <fail message="${artifactfolder}/sources/${thisFile}/target/royale-typedefs-${artifactid}-${release.version}-extern.swc does not exist" >
             <condition>
                 <not>
-                    <resourceexists><file file="${artifactfolder}/sources/${thisFile}/target/royale-typedefs-${thisFile}-${release.version}-extern.swc"/></resourceexists>
+                    <resourceexists><file file="${artifactfolder}/sources/${thisFile}/target/royale-typedefs-${artifactid}-${release.version}-extern.swc"/></resourceexists>
                 </not>
             </condition>
         </fail>
         <condition property="filesmatch" value="true">
-            <filesmatch file1="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-${thisFile}/${release.version}/royale-typedefs-${thisFile}-${release.version}-typedefs.swc"
-            file2="${artifactfolder}/sources/${thisFile}/target/royale-typedefs-${thisFile}-${release.version}-extern.swc" />
+            <filesmatch file1="${artifactfolder}/artifacts/archive/target/checkout/release-dir/org/apache/royale/typedefs/royale-typedefs-${artifactid}/${release.version}/royale-typedefs-${artifactid}-${release.version}-typedefs.swc"
+            file2="${artifactfolder}/sources/${thisFile}/target/royale-typedefs-${artifactid}-${release.version}-extern.swc" />
         </condition>
-        <fail message="royale-typedefs-${thisFile}-${release.version}-typedefs.swc does not match" unless="filesmatch" />
+        <fail message="royale-typedefs-${artifactid}-${release.version}-typedefs.swc does not match" unless="filesmatch" />
     </target>
     
     <target name="Release_Step_007_Sign" depends="get-artifact-folder">
