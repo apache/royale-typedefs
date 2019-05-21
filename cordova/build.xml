@@ -79,6 +79,11 @@
         </and>
     </condition>
     
+    <tstamp>
+        <format property="royale.swc-date" pattern="MM/dd/yy HH:mm Z"/>
+    </tstamp>
+    <echo>swc-date is ${royale.swc-date}</echo>
+
     <target name="main" depends="preprocess, externc, postprocess, compc" />
 
     <!-- we need to insert a line near the beginning of the file to make the
@@ -107,6 +112,8 @@
             <arg value="-debug" />
             <arg value="-external-library-path+=${basedir}/../js/target/js.swc" />
             <arg value="-load-config=${basedir}/target/compile-as-config.xml" />
+            <arg value="-metadata.date=&quot;${royale.swc-date}&quot;" />
+            <arg value="-metadata.dateFormat=&quot;MM/dd/yy HH:mm Z&quot;" />
             <arg value="-output=${basedir}/target/cordova.swc" />
         </java>
     </target>
