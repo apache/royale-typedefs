@@ -224,8 +224,8 @@
             failonerror="true">
             <arg value="+royalelib=externs/frameworks" />
             <arg value="-load-config=${basedir}/target/compile-as-config.xml" />
-            <arg value="-metadata.date=&quot;${royale.swc-date}&quot;" />
-            <arg value="-metadata.dateFormat=&quot;MM/dd/yy HH:mm Z&quot;" />
+            <arg line="-metadata.date=&quot;${royale.swc-date}&quot;" />
+            <arg line="-metadata.dateFormat=&quot;MM/dd/yy HH:mm Z&quot;" />
             <arg value="-output=${basedir}/target/js.swc" />
         </java>
     </target>

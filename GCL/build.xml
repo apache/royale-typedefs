@@ -103,8 +103,8 @@
             <arg value="+royalelib=externs/frameworks" />
             <arg value="-external-library-path+=${basedir}/../js/target/js.swc" />
             <arg value="-load-config=${basedir}/target/compile-as-config.xml" />
-            <arg value="-metadata.date=&quot;${royale.swc-date}&quot;" />
-            <arg value="-metadata.dateFormat=&quot;MM/dd/yy HH:mm Z&quot;" />
+            <arg line="-metadata.date=&quot;${royale.swc-date}&quot;" />
+            <arg line="-metadata.dateFormat=&quot;MM/dd/yy HH:mm Z&quot;" />
             <arg value="-output=${basedir}/target/GCL.swc" />
         </java>
     </target>
