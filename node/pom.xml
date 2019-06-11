@@ -32,6 +32,10 @@
 
   <name>Apache Royale: TypeDefs: Node</name>
 
+  <properties>
+    <closure.version>20181210</closure.version>
+  </properties>
+  
   <build>
     <plugins>
       <!-- Download JavaScript form GitHub -->
@@ -47,12 +51,12 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://github.com/google/closure-compiler/archive/master.zip</url>
+                <url>https://github.com/google/closure-compiler/archive/v${closure.version}.zip</url>
               <!--
                   Give it a number matching the date so we can
                   trigger a new download by updating the date
               -->
-              <outputFileName>closure-compiler-20170626.zip</outputFileName>
+              <outputFileName>closure-compiler-${closure.version}.zip</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
               <unpack>true</unpack>
             </configuration>
@@ -75,7 +79,7 @@
               </includes>
             </fileSet>
             <fileSet>
-              <directory>${project.basedir}/target/downloads/closure-compiler-master/contrib/nodejs</directory>
+              <directory>${project.basedir}/target/downloads/closure-compiler-${closure.version}/contrib/nodejs</directory>
               <includes>
                 <include>**/*.js</include>
               </includes>
@@ -100,115 +104,115 @@
             </include-file>
             <include-file>
               <name>externs/assert.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/assert.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/assert.js</path>
             </include-file>
             <include-file>
               <name>externs/buffer.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/buffer.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/buffer.js</path>
             </include-file>
             <include-file>
               <name>externs/child_process.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/child_process.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/child_process.js</path>
             </include-file>
             <include-file>
               <name>externs/cluster.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/cluster.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/cluster.js</path>
             </include-file>
             <include-file>
               <name>externs/crypto.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/crypto.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/crypto.js</path>
             </include-file>
             <include-file>
               <name>externs/dgram.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/dgram.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/dgram.js</path>
             </include-file>
             <include-file>
               <name>externs/dns.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/dns.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/dns.js</path>
             </include-file>
             <include-file>
               <name>externs/domain.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/domain.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/domain.js</path>
             </include-file>
             <include-file>
               <name>externs/events.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/events.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/events.js</path>
             </include-file>
             <include-file>
               <name>externs/fs.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/fs.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/fs.js</path>
             </include-file>
             <include-file>
               <name>externs/globals.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/globals.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/globals.js</path>
             </include-file>
             <include-file>
               <name>externs/http.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/http.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/http.js</path>
             </include-file>
             <include-file>
               <name>externs/https.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/https.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/https.js</path>
             </include-file>
             <include-file>
               <name>externs/net.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/net.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/net.js</path>
             </include-file>
             <include-file>
               <name>externs/os.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/os.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/os.js</path>
             </include-file>
             <include-file>
               <name>externs/path.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/path.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/path.js</path>
             </include-file>
             <include-file>
               <name>externs/punycode.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/punycode.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/punycode.js</path>
             </include-file>
             <include-file>
               <name>externs/querystring.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/querystring.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/querystring.js</path>
             </include-file>
             <include-file>
               <name>externs/readline.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/readline.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/readline.js</path>
             </include-file>
             <include-file>
               <name>externs/repl.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/repl.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/repl.js</path>
             </include-file>
             <include-file>
               <name>externs/stream.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/stream.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/stream.js</path>
             </include-file>
             <include-file>
               <name>externs/string_decoder.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/string_decoder.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/string_decoder.js</path>
             </include-file>
             <include-file>
               <name>externs/tls.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/tls.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/tls.js</path>
             </include-file>
             <include-file>
               <name>externs/tty.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/tty.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/tty.js</path>
             </include-file>
             <include-file>
               <name>externs/url.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/url.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/url.js</path>
             </include-file>
             <include-file>
               <name>externs/util.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/util.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/util.js</path>
             </include-file>
             <include-file>
               <name>externs/vm.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/vm.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/vm.js</path>
             </include-file>
             <include-file>
               <name>externs/zlib.js</name>
-              <path>downloads/closure-compiler-master/contrib/nodejs/zlib.js</path>
+              <path>downloads/closure-compiler-${closure.version}/contrib/nodejs/zlib.js</path>
             </include-file>
           </includeFiles>
           <skipSwc>true</skipSwc>
