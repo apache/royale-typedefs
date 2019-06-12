@@ -122,6 +122,14 @@
             <excludes>
                 <!-- Patch files aren't supposed to have headers -->
                 <exclude>**/*.patch</exclude>
+                <!--
+                 Exclude any eventually existing content of target directories.
+                 Some times when building with a bigger maven reactor and then
+                 with a smaller one, RAT will complain about stuff still in the
+                 target directories. We don't want that.
+                 -->
+                <exclude>**/target/**</exclude>
+                <exclude>**/release-dir/**</exclude>
             </excludes>
         </configuration>
         <dependencies>
