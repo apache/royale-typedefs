@@ -467,3 +467,132 @@ AnimationEffectTiming.prototype.direction;
 
 /** @type {string} */
 AnimationEffectTiming.prototype.easing;
+
+/**
+ * @fileoverview Definitions for URL and URLSearchParams from the spec at
+ * https://url.spec.whatwg.org.
+ *
+ * @externs
+ * @author rdcronin@google.com (Devlin Cronin)
+ */
+
+/**
+ * @constructor
+ * @implements {Iterable<!Array<string>>}
+ * @param {(string|!URLSearchParams)=} init
+ */
+function URLSearchParams(init) {}
+
+/**
+ * @param {string} name
+ * @param {string} value
+ * @return {undefined}
+ */
+URLSearchParams.prototype.append = function(name, value) {};
+
+/**
+ * @param {string} name
+ * @return {undefined}
+ */
+URLSearchParams.prototype.delete = function(name) {};
+
+/**
+ * @param {string} name
+ * @return {?string}
+ */
+URLSearchParams.prototype.get = function(name) {};
+
+/**
+ * @param {string} name
+ * @return {!Array<string>}
+ */
+URLSearchParams.prototype.getAll = function(name) {};
+
+/**
+ * @param {string} name
+ * @return {boolean}
+ */
+URLSearchParams.prototype.has = function(name) {};
+
+/**
+ * @param {string} name
+ * @param {string} value
+ * @return {undefined}
+ */
+URLSearchParams.prototype.set = function(name, value) {};
+
+/**
+ * @see https://url.spec.whatwg.org
+ * @constructor
+ * @param {string} url
+ * @param {(string|!URL)=} base
+ */
+function URL(url, base) {}
+
+/** @type {string} */
+URL.prototype.href;
+
+/**
+ * @const
+ * @type {string}
+ */
+URL.prototype.origin;
+
+/** @type {string} */
+URL.prototype.protocol;
+
+/** @type {string} */
+URL.prototype.username;
+
+/** @type {string} */
+URL.prototype.password;
+
+/** @type {string} */
+URL.prototype.host;
+
+/** @type {string} */
+URL.prototype.hostname;
+
+/** @type {string} */
+URL.prototype.port;
+
+/** @type {string} */
+URL.prototype.pathname;
+
+/** @type {string} */
+URL.prototype.search;
+
+/**
+ * @const
+ * @type {!URLSearchParams}
+ */
+URL.prototype.searchParams;
+
+/** @type {string} */
+URL.prototype.hash;
+
+/**
+ * @param {string} domain
+ * @return {string}
+ */
+URL.domainToASCII = function(domain) {};
+
+/**
+ * @param {string} domain
+ * @return {string}
+ */
+URL.domainToUnicode = function(domain) {};
+
+/**
+ * @see http://www.w3.org/TR/FileAPI/#dfn-createObjectURL
+ * @param {!File|!Blob|!MediaSource|!MediaStream} obj
+ * @return {string}
+ */
+URL.createObjectURL = function(obj) {};
+
+/**
+ * @see http://www.w3.org/TR/FileAPI/#dfn-revokeObjectURL
+ * @param {string} url
+ * @return {undefined}
+ */
+URL.revokeObjectURL = function(url) {};
