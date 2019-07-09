@@ -114,7 +114,6 @@
         <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_dom2.js" dest="${basedir}/target/downloads/browser/w3c_dom2.js" ignoreerrors="true" skipexisting="false"/>
         <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/html5.js" dest="${basedir}/target/downloads/browser/html5.js" ignoreerrors="true" skipexisting="false"/>
 		<get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/url.js" dest="${basedir}/target/downloads/browser/url.js" ignoreerrors="true" skipexisting="false"/>
-		<get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/web-animations.js" dest="${basedir}/target/downloads/browser/web-animations.js" ignoreerrors="true" skipexisting="false"/>
         <antcall target="get-from-cache-if-needed" >
             <param name="srcFile" value="svg.js" />
             <param name="destFile" value="svg.js" />
@@ -158,11 +157,6 @@
 		<antcall target="get-from-cache-if-needed" >
             <param name="srcFile" value="url.js" />
             <param name="destFile" value="url.js" />
-            <param name="destDir" value="${basedir}/target/downloads/browser" />
-        </antcall>
-		<antcall target="get-from-cache-if-needed" >
-            <param name="srcFile" value="web-animations.js" />
-            <param name="destFile" value="web-animations.js" />
             <param name="destDir" value="${basedir}/target/downloads/browser" />
         </antcall>
         <antcall target="fail-if-not-found" >
