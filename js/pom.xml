@@ -180,7 +180,7 @@
               <overwrite>true</overwrite>
             </configuration>
           </execution>
-		  <execution>
+		      <execution>
             <id>get-url</id>
             <phase>validate</phase>
             <goals>
@@ -189,6 +189,20 @@
             <configuration>
               <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/url.js</url>
               <outputFileName>url.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
+            </configuration>
+          </execution>
+		      <execution>
+            <id>get-web-animations</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/web-animations.js</url>
+              <outputFileName>web-animations.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
               <skipCache>true</skipCache>
               <overwrite>true</overwrite>
@@ -229,7 +243,8 @@
                 <include>browser/webgl.js</include>
                 <include>browser/webstorage.js</include>
                 <include>browser/whatwg_encoding.js</include>
-				<include>browser/url.js</include>
+				        <include>browser/url.js</include>
+				        <include>browser/web-animations.js</include>
                 <include>es6_collections.js</include>
               </includes>
               <excludes>
