@@ -355,3 +355,115 @@ BaseAudioContext.prototype.removeEventListener = function(
  */
 BaseAudioContext.prototype.dispatchEvent = function(evt) {};
 
+
+// WEB-ANIMATIONS-API
+
+/**
+ * @fileoverview Basic externs for the Web Animations API. This is not
+ * nessecarily exhaustive. For more information, see the spec-
+ *   https://drafts.csswg.org/web-animations/
+ * @externs
+ */
+
+
+/**
+ * @param {!Array<!Object>} frames
+ * @param {(number|AnimationEffectTimingProperties)=} opt_options
+ * @return {!Animation}
+ */
+Element.prototype.animate = function(frames, opt_options) {};
+
+
+/**
+ * @interface
+ * @extends {EventTarget}
+ */
+var Animation = function() {};
+
+/**
+ * @return {undefined}
+ */
+Animation.prototype.cancel = function() {};
+
+/**
+ * @return {undefined}
+ */
+Animation.prototype.finish = function() {};
+
+/**
+ * @return {undefined}
+ */
+Animation.prototype.reverse = function() {};
+
+/**
+ * @return {undefined}
+ */
+Animation.prototype.pause = function() {};
+
+/**
+ * @return {undefined}
+ */
+Animation.prototype.play = function() {};
+
+/** @type {number} */
+Animation.prototype.startTime;
+
+/** @type {number} */
+Animation.prototype.currentTime;
+
+/** @type {number} */
+Animation.prototype.playbackRate;
+
+/** @type {string} */
+Animation.prototype.playState;
+
+/** @type {?function(!Event)} */
+Animation.prototype.oncancel;
+
+/** @type {?function(!Event)} */
+Animation.prototype.onfinish;
+
+
+/**
+ * @typedef {{
+ *   delay: (number|undefined),
+ *   endDelay: (number|undefined),
+ *   fillMode: (string|undefined),
+ *   iterationStart: (number|undefined),
+ *   iterations: (number|undefined),
+ *   duration: (number|string|undefined),
+ *   direction: (string|undefined),
+ *   easing: (string|undefined)
+ * }}
+ */
+var AnimationEffectTimingProperties;
+
+
+/**
+ * @interface
+ */
+var AnimationEffectTiming = function() {};
+
+/** @type {number} */
+AnimationEffectTiming.prototype.delay;
+
+/** @type {number} */
+AnimationEffectTiming.prototype.endDelay;
+
+/** @type {string} */
+AnimationEffectTiming.prototype.fillMode;
+
+/** @type {number} */
+AnimationEffectTiming.prototype.iterationStart;
+
+/** @type {number} */
+AnimationEffectTiming.prototype.iterations;
+
+/** @type {number|string} */
+AnimationEffectTiming.prototype.duration;
+
+/** @type {string} */
+AnimationEffectTiming.prototype.direction;
+
+/** @type {string} */
+AnimationEffectTiming.prototype.easing;
