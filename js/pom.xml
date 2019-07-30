@@ -180,6 +180,20 @@
               <overwrite>true</overwrite>
             </configuration>
           </execution>
+          <execution>
+            <id>get-url</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/url.js</url>
+              <outputFileName>url.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 
@@ -216,6 +230,7 @@
                 <include>browser/webstorage.js</include>
                 <include>browser/whatwg_encoding.js</include>
                 <include>es6_collections.js</include>
+                <include>browser/url.js</include>
               </includes>
               <excludes>
                 <exclude>browser/w3c_dom4.js</exclude>
