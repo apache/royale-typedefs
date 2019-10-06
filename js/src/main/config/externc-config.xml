@@ -217,25 +217,135 @@
          be provided by the extern, but we want true constants in order 
          to allow constants as parameter initializers and other places
          where compile-time constants are required -->
+    
+    <!-- int -->
     <true-constant>
         <class>int</class>
         <name>MAX_VALUE</name>
-        <value>2147483647</value>
+        <value>0x7fffffff</value>
     </true-constant>
     <true-constant>
         <class>int</class>
         <name>MIN_VALUE</name>
-        <value>-2147483648</value>
+        <value>-0x80000000</value>
     </true-constant>
+
+    <!-- uint -->
     <true-constant>
         <class>uint</class>
         <name>MAX_VALUE</name>
-        <value>4294967295</value>
+        <value>0xffffffff</value>
     </true-constant>
     <true-constant>
         <class>uint</class>
         <name>MIN_VALUE</name>
         <value>0</value>
+    </true-constant>
+
+    <!-- Number -->
+    <true-constant>
+        <class>Number</class>
+        <name>NaN</name>
+        <value>0/0</value>
+    </true-constant>
+    <true-constant>
+        <class>Number</class>
+        <name>NEGATIVE_INFINITY</name>
+        <value>-1/0</value>
+    </true-constant>
+    <true-constant>
+        <class>Number</class>
+        <name>POSITIVE_INFINITY</name>
+        <value>1/0</value>
+    </true-constant>
+    <true-constant>
+        <class>Number</class>
+        <name>MIN_VALUE</name>
+        <value>4.9e-324</value>
+    </true-constant>
+    <true-constant>
+        <class>Number</class>
+        <name>MAX_VALUE</name>
+        <value>1.7976931348623158e+308</value>
+    </true-constant>
+    <true-constant>
+        <class>Number</class>
+        <name>MIN_SAFE_INTEGER</name>
+        <value>-9007199254740991</value>
+    </true-constant>
+    <true-constant>
+        <class>Number</class>
+        <name>MAX_SAFE_INTEGER</name>
+        <value>9007199254740991</value>
+    </true-constant>
+
+    <!-- Math -->
+    <true-constant>
+        <class>Math</class>
+        <name>E</name>
+        <value>2.718281828459045</value>
+    </true-constant>
+    <true-constant>
+        <class>Math</class>
+        <name>LN10</name>
+        <value>2.302585092994046</value>
+    </true-constant>
+    <true-constant>
+        <class>Math</class>
+        <name>LN2</name>
+        <value>0.6931471805599453</value>
+    </true-constant>
+    <true-constant>
+        <class>Math</class>
+        <name>LOG10E</name>
+        <value>0.4342944819032518</value>
+    </true-constant>
+    <true-constant>
+        <class>Math</class>
+        <name>LOG2E</name>
+        <value>1.442695040888963387</value>
+    </true-constant>
+    <true-constant>
+        <class>Math</class>
+        <name>PI</name>
+        <value>3.141592653589793</value>
+    </true-constant>
+    <true-constant>
+        <class>Math</class>
+        <name>SQRT1_2</name>
+        <value>0.7071067811865476</value>
+    </true-constant>
+    <true-constant>
+        <class>Math</class>
+        <name>SQRT2</name>
+        <value>1.4142135623730951</value>
+    </true-constant>
+
+    <!-- Array -->
+    <true-constant>
+        <class>Array</class>
+        <name>CASEINSENSITIVE</name>
+        <value>1</value>
+    </true-constant>
+    <true-constant>
+        <class>Array</class>
+        <name>DESCENDING</name>
+        <value>2</value>
+    </true-constant>
+    <true-constant>
+        <class>Array</class>
+        <name>UNIQUESORT</name>
+        <value>4</value>
+    </true-constant>
+    <true-constant>
+        <class>Array</class>
+        <name>RETURNINDEXEDARRAY</name>
+        <value>8</value>
+    </true-constant>
+    <true-constant>
+        <class>Array</class>
+        <name>NUMERIC</name>
+        <value>16</value>
     </true-constant>
     
 </royale-config>

@@ -128,7 +128,7 @@ variables and functions, and don't contain runnable code, they must be placed on
 external-library-path when compiling a Royale application.
 
 The typedefs libraries are packaged into a Royale SDK and are set on the 
-external-librar-path by various config.xml files in a Royale SDK.
+external-library-path by various config.xml files in a Royale SDK.
 
 
 Thanks for using Apache Royale.  Enjoy!

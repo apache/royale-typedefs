@@ -77,6 +77,11 @@
         </and>
     </condition>
     
+    <tstamp>
+        <format property="royale.swc-date" pattern="MM/dd/yy HH:mm Z"/>
+    </tstamp>
+    <echo>swc-date is ${royale.swc-date}</echo>
+    
     <target name="main" depends="preprocess, externc, postprocess, compc" />
 
     <target name="download" >
@@ -97,6 +102,7 @@
                 <exclude name="**/w3c_css.js"/>
                 <exclude name="**/gecko_dom.js"/>
                 <exclude name="**/w3c_dom2.js"/>
+                <exclude name="**/html5.js"/>
             </patternset>
         </unzip>
         <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/svg.js" dest="${basedir}/target/downloads/svg.js" ignoreerrors="true" skipexisting="false"/>
@@ -106,6 +112,7 @@
         <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_css.js" dest="${basedir}/target/downloads/browser/w3c_css.js" ignoreerrors="true" skipexisting="false"/>
         <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/gecko_dom.js" dest="${basedir}/target/downloads/browser/gecko_dom.js" ignoreerrors="true" skipexisting="false"/>
         <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/w3c_dom2.js" dest="${basedir}/target/downloads/browser/w3c_dom2.js" ignoreerrors="true" skipexisting="false"/>
+        <get src="https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/html5.js" dest="${basedir}/target/downloads/browser/html5.js" ignoreerrors="true" skipexisting="false"/>
         <antcall target="get-from-cache-if-needed" >
             <param name="srcFile" value="svg.js" />
             <param name="destFile" value="svg.js" />
@@ -139,6 +146,11 @@
         <antcall target="get-from-cache-if-needed" >
             <param name="srcFile" value="w3c_dom2.js" />
             <param name="destFile" value="w3c_dom2.js" />
+            <param name="destDir" value="${basedir}/target/downloads/browser" />
+        </antcall>
+        <antcall target="get-from-cache-if-needed" >
+            <param name="srcFile" value="html5.js" />
+            <param name="destFile" value="html5.js" />
             <param name="destDir" value="${basedir}/target/downloads/browser" />
         </antcall>
         <antcall target="fail-if-not-found" >
@@ -211,8 +223,9 @@
         <java jar="${ROYALE_COMPILER_HOME}/lib/compiler-compc.jar" fork="true"
             failonerror="true">
             <arg value="+royalelib=externs/frameworks" />
-            <arg value="-debug" />
             <arg value="-load-config=${basedir}/target/compile-as-config.xml" />
+            <arg line="-metadata.date=&quot;${royale.swc-date}&quot;" />
+            <arg line="-metadata.dateFormat=&quot;MM/dd/yy HH:mm Z&quot;" />
             <arg value="-output=${basedir}/target/js.swc" />
         </java>
     </target>

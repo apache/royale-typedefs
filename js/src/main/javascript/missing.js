@@ -63,16 +63,6 @@ function performance() {};
 performance.now = function() {};
 
 /**
-* @constructor
-*/
-function dialogPolyfill() {};
-
-/**
-* @param {!Element} element to upgrade, if necessary
-*/
-dialogPolyfill.registerDialog = function(element) {};
-
-/**
  * @constructor
  */
 function Navigator() {}
@@ -338,3 +328,271 @@ Date.prototype.time;
  */
 Date.prototype.timezoneOffset;
 
+/**
+ * @param {string} type
+ * @param {EventListener|function(!Event):*} listener
+ * @param {(boolean|!AddEventListenerOptions)=} opt_options
+ * @return {undefined}
+ * @see https://dom.spec.whatwg.org/#dom-eventtarget-addeventlistener
+ */
+BaseAudioContext.prototype.addEventListener = function(type, listener, opt_options) {
+};
+
+/**
+ * @param {string} type
+ * @param {EventListener|function(!Event):*} listener
+ * @param {(boolean|!EventListenerOptions)=} opt_options
+ * @return {undefined}
+ * @see https://dom.spec.whatwg.org/#dom-eventtarget-removeeventlistener
+ */
+BaseAudioContext.prototype.removeEventListener = function(
+    type, listener, opt_options) {};
+	
+/**
+ * @param {!Event} evt
+ * @return {boolean}
+ * @see https://dom.spec.whatwg.org/#dom-eventtarget-dispatchevent
+ */
+BaseAudioContext.prototype.dispatchEvent = function(evt) {};
+
+
+// WEB-ANIMATIONS-API
+
+/**
+ * @fileoverview Basic externs for the Web Animations API. This is not
+ * nessecarily exhaustive. For more information, see the spec-
+ *   https://drafts.csswg.org/web-animations/
+ * @externs
+ */
+
+
+/**
+ * @param {!Array<!Object>} frames
+ * @param {(number|AnimationEffectTimingProperties)=} opt_options
+ * @return {!Animation}
+ */
+Element.prototype.animate = function(frames, opt_options) {};
+
+
+/**
+ * @interface
+ * @extends {EventTarget}
+ */
+var Animation = function() {};
+
+/**
+ * @return {undefined}
+ */
+Animation.prototype.cancel = function() {};
+
+/**
+ * @return {undefined}
+ */
+Animation.prototype.finish = function() {};
+
+/**
+ * @return {undefined}
+ */
+Animation.prototype.reverse = function() {};
+
+/**
+ * @return {undefined}
+ */
+Animation.prototype.pause = function() {};
+
+/**
+ * @return {undefined}
+ */
+Animation.prototype.play = function() {};
+
+/** @type {number} */
+Animation.prototype.startTime;
+
+/** @type {number} */
+Animation.prototype.currentTime;
+
+/** @type {number} */
+Animation.prototype.playbackRate;
+
+/** @type {string} */
+Animation.prototype.playState;
+
+/** @type {?function(!Event)} */
+Animation.prototype.oncancel;
+
+/** @type {?function(!Event)} */
+Animation.prototype.onfinish;
+
+
+/**
+ * @typedef {{
+ *   delay: (number|undefined),
+ *   endDelay: (number|undefined),
+ *   fillMode: (string|undefined),
+ *   iterationStart: (number|undefined),
+ *   iterations: (number|undefined),
+ *   duration: (number|string|undefined),
+ *   direction: (string|undefined),
+ *   easing: (string|undefined)
+ * }}
+ */
+var AnimationEffectTimingProperties;
+
+
+/**
+ * @interface
+ */
+var AnimationEffectTiming = function() {};
+
+/** @type {number} */
+AnimationEffectTiming.prototype.delay;
+
+/** @type {number} */
+AnimationEffectTiming.prototype.endDelay;
+
+/** @type {string} */
+AnimationEffectTiming.prototype.fillMode;
+
+/** @type {number} */
+AnimationEffectTiming.prototype.iterationStart;
+
+/** @type {number} */
+AnimationEffectTiming.prototype.iterations;
+
+/** @type {number|string} */
+AnimationEffectTiming.prototype.duration;
+
+/** @type {string} */
+AnimationEffectTiming.prototype.direction;
+
+/** @type {string} */
+AnimationEffectTiming.prototype.easing;
+
+/**
+ * @fileoverview Definitions for URL and URLSearchParams from the spec at
+ * https://url.spec.whatwg.org.
+ *
+ * @externs
+ * @author rdcronin@google.com (Devlin Cronin)
+ */
+
+/**
+ * @constructor
+ * @implements {Iterable<!Array<string>>}
+ * @param {(string|!URLSearchParams)=} init
+ */
+function URLSearchParams(init) {}
+
+/**
+ * @param {string} name
+ * @param {string} value
+ * @return {undefined}
+ */
+URLSearchParams.prototype.append = function(name, value) {};
+
+/**
+ * @param {string} name
+ * @return {undefined}
+ */
+URLSearchParams.prototype.delete = function(name) {};
+
+/**
+ * @param {string} name
+ * @return {?string}
+ */
+URLSearchParams.prototype.get = function(name) {};
+
+/**
+ * @param {string} name
+ * @return {!Array<string>}
+ */
+URLSearchParams.prototype.getAll = function(name) {};
+
+/**
+ * @param {string} name
+ * @return {boolean}
+ */
+URLSearchParams.prototype.has = function(name) {};
+
+/**
+ * @param {string} name
+ * @param {string} value
+ * @return {undefined}
+ */
+URLSearchParams.prototype.set = function(name, value) {};
+
+/**
+ * @see https://url.spec.whatwg.org
+ * @constructor
+ * @param {string} url
+ * @param {(string|!URL)=} base
+ */
+function URL(url, base) {}
+
+/** @type {string} */
+URL.prototype.href;
+
+/**
+ * @const
+ * @type {string}
+ */
+URL.prototype.origin;
+
+/** @type {string} */
+URL.prototype.protocol;
+
+/** @type {string} */
+URL.prototype.username;
+
+/** @type {string} */
+URL.prototype.password;
+
+/** @type {string} */
+URL.prototype.host;
+
+/** @type {string} */
+URL.prototype.hostname;
+
+/** @type {string} */
+URL.prototype.port;
+
+/** @type {string} */
+URL.prototype.pathname;
+
+/** @type {string} */
+URL.prototype.search;
+
+/**
+ * @const
+ * @type {!URLSearchParams}
+ */
+URL.prototype.searchParams;
+
+/** @type {string} */
+URL.prototype.hash;
+
+/**
+ * @param {string} domain
+ * @return {string}
+ */
+URL.domainToASCII = function(domain) {};
+
+/**
+ * @param {string} domain
+ * @return {string}
+ */
+URL.domainToUnicode = function(domain) {};
+
+/**
+ * @see http://www.w3.org/TR/FileAPI/#dfn-createObjectURL
+ * @param {!File|!Blob|!MediaSource|!MediaStream} obj
+ * @return {string}
+ */
+URL.createObjectURL = function(obj) {};
+
+/**
+ * @see http://www.w3.org/TR/FileAPI/#dfn-revokeObjectURL
+ * @param {string} url
+ * @return {undefined}
+ */
+URL.revokeObjectURL = function(url) {};
