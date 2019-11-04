@@ -23,7 +23,7 @@
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
-    <version>18</version>
+    <version>21</version>
   </parent>
 
   <groupId>org.apache.royale.typedefs</groupId>
@@ -45,8 +45,11 @@
     <project.reporting.outputencoding>UTF-8</project.reporting.outputencoding>
     <maven.version>3.3.1</maven.version>
 
-    <royale.compiler.version>0.9.7-SNAPSHOT</royale.compiler.version>
+    <!-- Timestamp for the reproducible builds -->
+    <project.build.outputTimestamp>2019-11-01T10:30:00Z</project.build.outputTimestamp>
+
     <royale.build-tools.version>1.1.0</royale.build-tools.version>
+    <royale.compiler.version>0.9.7-SNAPSHOT</royale.compiler.version>
     <royale.swc-date>9/24/19 9:06 -0800</royale.swc-date>
 
     <git.executable>git</git.executable>
@@ -89,26 +92,24 @@
     </mailingList>
   </mailingLists>
 
+  <modules>
+    <module>cordova</module>
+    <module>createjs</module>
+    <module>GCL</module>
+    <module>google_maps</module>
+    <module>jasmine</module>
+    <module>jquery</module>
+    <module>js</module>
+    <module>node</module>
+  </modules>
+
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <configuration>
-          <skip>${skipgpg}</skip><!--true to skip gpg if building release on CI server -->
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.sonarsource.scanner.maven</groupId>
-        <artifactId>sonar-maven-plugin</artifactId>
-        <version>3.2</version>
-      </plugin>
-
       <!-- Check if all source files have the required apache license headers -->
       <plugin>
         <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
-        <version>0.12</version>
+        <version>0.13</version>
         <executions>
           <execution>
             <id>license-check</id>
@@ -116,10 +117,8 @@
             <goals>
               <goal>check</goal>
             </goals>
-          </execution>
-        </executions>
-        <configuration>
-            <excludes>
+            <configuration>
+              <excludes>
                 <!-- Patch files aren't supposed to have headers -->
                 <exclude>**/*.patch</exclude>
                 <!--
@@ -130,147 +129,48 @@
                  -->
                 <exclude>**/target/**</exclude>
                 <exclude>**/release-dir/**</exclude>
-            </excludes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.maven.doxia</groupId>
-            <artifactId>doxia-core</artifactId>
-            <version>1.6</version>
-            <exclusions>
-              <exclusion>
-                <groupId>xerces</groupId>
-                <artifactId>xercesImpl</artifactId>
-              </exclusion>
-            </exclusions>
-          </dependency>
-        </dependencies>
-      </plugin>
-
-      <!-- Configure the Site generation -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.4</version>
-        <configuration>
-          <generateReports>true</generateReports>
-          <generateSitemap>true</generateSitemap>
-          <relativizeDecorationLinks>false</relativizeDecorationLinks>
-          <locales>en</locales>
-          <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
-          <outputEncoding>${project.reporting.outputencoding}</outputEncoding>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.asciidoctor</groupId>
-            <artifactId>asciidoctor-maven-plugin</artifactId>
-            <version>1.5.3</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-
-      <plugin>
-        <groupId>org.asciidoctor</groupId>
-        <artifactId>asciidoctor-maven-plugin</artifactId>
-        <version>1.5.3</version>
-        <dependencies>
-          <dependency>
-            <groupId>org.asciidoctor</groupId>
-            <artifactId>asciidoctorj-diagram</artifactId>
-            <version>1.5.9</version>
-          </dependency>
-        </dependencies>
-        <configuration>
-          <requires>
-            <require>asciidoctor-diagram</require>
-          </requires>
-          <attributes>
-            <!-- Example below shows how to specify in this pom instead of System's PATH, the location of dot command of Graphviz, required by PlantUML libraries -->
-            <!-- Windows:
-                <graphvizdot>C:\Program Files (x86)\Graphviz2.38\bin\dot.exe</graphvizdot>
-            -->
-            <!-- *nix :
-                <graphvizdot>/usr/local/bin/dot</graphvizdot>
-            -->
-          </attributes>
-        </configuration>
-      </plugin>
-      <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>2.5.3</version>
-          <configuration>
-              <providerImplementations>
-                  <git>jgit</git>
-              </providerImplementations>
-          </configuration>
-          <dependencies>
-              <dependency>
-                  <groupId>org.apache.maven.scm</groupId>
-                  <artifactId>maven-scm-provider-jgit</artifactId>
-                  <version>1.11.2-SNAPSHOT</version>
-              </dependency>
-              <dependency>
-                  <groupId>org.apache.maven.scm</groupId>
-                  <artifactId>maven-scm-api</artifactId>
-                  <version>1.11.2-SNAPSHOT</version>
-              </dependency>
-          </dependencies>
+              </excludes>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
+
     <pluginManagement>
       <plugins>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-scm-plugin</artifactId>
-          <version>1.10.0</version>
+          <groupId>org.apache.royale.compiler</groupId>
+          <artifactId>royale-maven-plugin</artifactId>
+          <version>${royale.compiler.version}</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.royale.compiler</groupId>
+              <artifactId>compiler-jx</artifactId>
+              <version>${royale.compiler.version}</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.1.0</version>
+          <groupId>org.apache.royale.compiler</groupId>
+          <artifactId>compiler-build-tools</artifactId>
+          <version>${royale.build-tools.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>com.googlecode.maven-download-plugin</groupId>
+          <artifactId>download-maven-plugin</artifactId>
+          <version>1.4.2</version>
         </plugin>
       </plugins>
     </pluginManagement>
   </build>
 
-  <reporting>
-    <plugins>
-      <!-- Process the asciidoctor resources in the src/site/asciidoc directory -->
-      <plugin>
-        <groupId>org.asciidoctor</groupId>
-        <artifactId>asciidoctor-maven-plugin</artifactId>
-        <version>1.5.3</version>
-        <configuration>
-          <attributes>
-            <icons>font</icons>
-            <source-highlighter>coderay</source-highlighter>
-            <coderay-css>style</coderay-css>
-            <toclevels>2</toclevels>
-          </attributes>
-        </configuration>
-      </plugin>
-
-      <!-- Generates a changelog report from GIT commits -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-changelog-plugin</artifactId>
-        <version>2.3</version>
-        <configuration>
-          <!-- Automatically link Jira issues -->
-          <issueLinkUrl>https://issues.apache.org/jira/browse/%ISSUE%</issueLinkUrl>
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>
-
-  <!--
-      We only need the git executable in the externs in order to apply patches.
-      On Windows machines we need to execute "git.exe" instead of "git".
-  -->
   <profiles>
+    <!--
+        We only need the git executable in the externs in order to apply patches.
+        On Windows machines we need to execute "git.exe" instead of "git".
+    -->
     <profile>
-      <id>windows-machine</id>
+      <id>os-windows</id>
       <activation>
         <os>
           <family>Windows</family>
@@ -280,46 +180,13 @@
         <git.executable>git.exe</git.executable>
       </properties>
     </profile>
+
+    <!--
+      When doing a release we want to set the date in the swc
+      to the date defined as release-date by the release plugin.
+    -->
     <profile>
-        <id>main</id>
-        <activation>
-            <activeByDefault>true</activeByDefault>
-        </activation>
-        <modules>
-            <module>cordova</module>
-            <module>createjs</module>
-            <module>GCL</module>
-            <module>google_maps</module>
-            <module>jasmine</module>
-            <module>jquery</module>
-            <module>js</module>
-            <module>node</module>
-        </modules>        
-    </profile>
-    <profile>
-        <id>upload-release-to-staging</id>
-        <activation>
-            <activeByDefault>false</activeByDefault>
-        </activation>
-        <modules><!-- only run on top-level, not for each module -->
-        </modules>
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>wagon-maven-plugin</artifactId>
-                    <version>2.0.0</version>
-                    <configuration>
-                        <includes>**</includes>
-                        <serverId>apache.releases.https</serverId>
-                        <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
-    </profile>
-    <profile>
-        <id>release-swcs</id>
+        <id>apache-release</id>
         <build>
             <plugins>
                 <plugin>
@@ -328,59 +195,13 @@
                     <version>${royale.compiler.version}</version>
                     <extensions>true</extensions>
                     <configuration>
-                        <additionalCompilerOptions>-metadata.date="${royale.swc-date}";-metadata.dateFormat="MM/dd/yy HH:mm Z"</additionalCompilerOptions>
+                        <additionalCompilerOptions>-metadata.date=${project.build.outputTimestamp};-metadata.dateFormat=yyyy-MM-dd'T'HH:mm:ss'Z'</additionalCompilerOptions>
                     </configuration>
                 </plugin>
             </plugins>
         </build>
     </profile>
   </profiles>
-
-  <repositories>
-    <repository>
-      <id>apache-release</id>
-      <url>https://repository.apache.org/content/repositories/releases</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>apache-snapshots</id>
-      <url>https://repository.apache.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>apache-plugins-release</id>
-      <url>https://repository.apache.org/content/repositories/releases</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-    <pluginRepository>
-      <id>apache-plugins-snapshots</id>
-      <url>https://repository.apache.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
 
 </project>
 

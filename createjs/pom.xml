@@ -42,7 +42,6 @@
       <plugin>
         <groupId>org.apache.royale.compiler</groupId>
         <artifactId>royale-maven-plugin</artifactId>
-        <version>${royale.compiler.version}</version>
         <extensions>true</extensions>
         <configuration>
           <includeSources>true</includeSources>
@@ -224,13 +223,6 @@
           </includeFiles>
           <skipSwc>true</skipSwc>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.royale.compiler</groupId>
-            <artifactId>compiler-jx</artifactId>
-            <version>${royale.compiler.version}</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>
