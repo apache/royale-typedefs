@@ -17,7 +17,8 @@
   limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -166,20 +167,27 @@
       to the date defined as release-date by the release plugin.
     -->
     <profile>
-        <id>apache-release</id>
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.royale.compiler</groupId>
-                    <artifactId>royale-maven-plugin</artifactId>
-                    <version>${royale.compiler.version}</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <additionalCompilerOptions>-metadata.date=${project.build.outputTimestamp};-metadata.dateFormat=yyyy-MM-dd'T'HH:mm:ss'Z'</additionalCompilerOptions>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
+      <id>reproducible-build</id>
+      <activation>
+        <property>
+          <name>project.build.outputTimestamp</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.royale.compiler</groupId>
+            <artifactId>royale-maven-plugin</artifactId>
+            <version>${royale.compiler.version}</version>
+            <extensions>true</extensions>
+            <configuration>
+              <additionalCompilerOptions>
+                -metadata.date=${project.build.outputTimestamp};-metadata.dateFormat=yyyy-MM-dd'T'HH:mm:ss'Z'
+              </additionalCompilerOptions>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
   </profiles>
 
