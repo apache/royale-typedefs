@@ -51,11 +51,6 @@
 
     <royale.build-tools.version>1.1.0</royale.build-tools.version>
     <royale.compiler.version>0.9.7-SNAPSHOT</royale.compiler.version>
-
-    <!-- URL of the ASF SonarQube server -->
-    <sonar.host.url>https://builds.apache.org/analysis</sonar.host.url>
-    <!-- Exclude all generated code -->
-    <sonar.exclusions>file:**/generated-sources/**</sonar.exclusions>
   </properties>
 
   <!-- Only configure the site distribution as the rest is handled by the apache parent -->
@@ -167,7 +162,7 @@
       to the date defined as release-date by the release plugin.
     -->
     <profile>
-      <id>reproducible-build</id>
+      <id>_reproducible-build</id>
       <activation>
         <property>
           <name>project.build.outputTimestamp</name>
