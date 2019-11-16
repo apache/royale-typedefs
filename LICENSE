@@ -217,3 +217,10 @@ The createjs.js file in createjs/src/main/javascript is
 a non-copyrightable subset of EaselJS and TweenJS from 
 https://github.com/CreateJS 
 
+The files:
+.mvn/wrapper/MavenWrapperDownloader.java
+mvnw
+mvnw.cmd
+Are provided from the Github Project: https://github.com/takari/maven-wrapper
+which is distributed under the Apache 2.0 license.
+
