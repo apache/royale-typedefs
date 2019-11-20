@@ -113,9 +113,10 @@
     <target name="compc" >
         <copy file="${basedir}/src/main/config/compile-as-config.xml"
         todir="${basedir}/target" />
-        <java jar="${ROYALE_COMPILER_HOME}/lib/compiler-compc.jar" fork="true"
+        <java jar="${ROYALE_TRANSPILER_HOME}/lib/compc.jar" fork="true"
             failonerror="true">
             <arg value="+royalelib=externs/frameworks" />
+            <arg value="-targets=SWF" />
             <arg value="-external-library-path+=${basedir}/../js/target/js.swc" />
             <arg value="-load-config=${basedir}/target/compile-as-config.xml" />
             <arg line="-metadata.date=&quot;${royale.swc-date}&quot;" />

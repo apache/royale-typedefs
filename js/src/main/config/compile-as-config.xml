@@ -32,6 +32,7 @@
         
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
+    <warn-public-vars>false</warn-public-vars>
     
     <include-sources>
         <path-element>../src/main/royale</path-element>
