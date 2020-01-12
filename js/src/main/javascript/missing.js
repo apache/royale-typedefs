@@ -42,6 +42,11 @@ var window;
 Window.prototype.document;
 
 /**
+ * @type {!SpeechSynthesis}
+ */
+Window.prototype.speechSynthesis;
+
+/**
  * resolveLocalFileSystemURI has been deprecated; this is the replacement.
  * @see http://www.w3.org/TR/file-system-api/#widl-LocalFileSystem-resolveLocalFileSystemURL
  * @param {string} url
