@@ -24,7 +24,7 @@
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
-    <version>22</version>
+    <version>23</version>
   </parent>
 
   <groupId>org.apache.royale.typedefs</groupId>
