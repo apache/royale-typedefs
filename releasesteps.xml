@@ -135,8 +135,7 @@
         <exec executable="${mvn}" dir="${artifactfolder}/sources" failonerror="true" >
             <arg value="clean" />
             <arg value="install" />
-            <arg value="-P" />
-            <arg value="release-swcs,main" />
+            <arg value="-Proyale-release,apache-release" />
         </exec>
     </target>
     
@@ -333,8 +332,9 @@
             <arg value="wagon:upload" />
             <arg value="-X" />
             <arg value="-Dwagon.fromDir=${artifactfolder}/artifacts/archive/target/local-release-dir" />
-            <arg value="-P" />
-            <arg value="_releasesteps-upload-release-to-staging" />
+            <arg value="-Dwagon.url=https://repository.apache.org/service/local/staging/deploy/maven2" />
+            <arg value="-Dwagon.serverId=apache.releases.https" />
+            <arg value="-Dwagon.includes=**" />
         </exec>
     </target>
     
