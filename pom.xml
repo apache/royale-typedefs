@@ -28,7 +28,7 @@
 
   <groupId>org.apache.royale.typedefs</groupId>
   <artifactId>royale-typedefs-parent</artifactId>
-  <version>0.9.8-SNAPSHOT</version>
+  <version>0.9.7-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Apache Royale: TypeDefs: Parent</name>
@@ -182,34 +182,6 @@
 
   <profiles>
     <!--
-      When doing a release we want to set the date in the swc
-      to the date defined as release-date by the release plugin.
-    -->
-    <profile>
-      <id>_reproducible-build</id>
-      <activation>
-        <property>
-          <name>project.build.outputTimestamp</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.royale.compiler</groupId>
-            <artifactId>royale-maven-plugin</artifactId>
-            <version>${royale.compiler.version}</version>
-            <extensions>true</extensions>
-            <configuration>
-              <additionalCompilerOptions>
-                -metadata.date=${project.build.outputTimestamp};-metadata.dateFormat=yyyy-MM-dd'T'HH:mm:ss'Z'
-              </additionalCompilerOptions>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <!--
       This profile enables the changes required to do releases on the Royale CI server.
       It should not be used otherwise.
     -->
@@ -279,30 +251,6 @@
       </build>
     </profile>
 
-    <profile>
-      <id>_reproducible-build</id>
-      <activation>
-        <property>
-          <name>project.build.outputTimestamp</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.royale.compiler</groupId>
-            <artifactId>royale-maven-plugin</artifactId>
-            <version>${royale.compiler.version}</version>
-            <extensions>true</extensions>
-            <configuration>
-              <additionalCompilerOptions>
-                -metadata.date=${project.build.outputTimestamp};-metadata.dateFormat=yyyy-MM-dd'T'HH:mm:ss'Z'
-              </additionalCompilerOptions>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
     <!-- Make the release-plugin use the new reproducible build plugin extension -->
     <profile>
       <id>apache-release</id>
@@ -312,12 +260,28 @@
             <groupId>com.theoryinpractise</groupId>
             <artifactId>reproducible-maven-plugin</artifactId>
           </plugin>
+          <!--
+            Configure the release plugin to add the ${project.build.outputTimestamp} in the release prepare
+            phase and to remove it again when preparing the next development iteration
+          -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-release-plugin</artifactId>
             <configuration>
               <preparationGoals>clean com.theoryinpractise:reproducible-maven-plugin:apply install</preparationGoals>
               <completionGoals>com.theoryinpractise:reproducible-maven-plugin:clear</completionGoals>
+            </configuration>
+          </plugin>
+          <!-- Make the release build use the reproducible build feature -->
+          <plugin>
+            <groupId>org.apache.royale.compiler</groupId>
+            <artifactId>royale-maven-plugin</artifactId>
+            <version>${royale.compiler.version}</version>
+            <extensions>true</extensions>
+            <configuration>
+              <additionalCompilerOptions>
+                -metadata.date=${project.build.outputTimestamp};-metadata.dateFormat=yyyy-MM-dd'T'HH:mm:ss'Z'
+              </additionalCompilerOptions>
             </configuration>
           </plugin>
           <!--
