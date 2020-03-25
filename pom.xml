@@ -37,7 +37,7 @@
     <connection>scm:git:https://github.com/apache/royale-typedefs.git</connection>
     <developerConnection>scm:git:https://github.com/apache/royale-typedefs.git</developerConnection>
     <url>scm:git:https://github.com/apache/royale-typedefs.git</url>
-    <tag>HEAD</tag>
+    <tag>release/0.9.7</tag>
   </scm>
 
   <properties>
