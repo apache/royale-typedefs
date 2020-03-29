@@ -34,9 +34,9 @@
   <name>Apache Royale: TypeDefs: Parent</name>
 
   <scm>
-    <connection>scm:git:https://github.com/apache/royale-typedefs.git</connection>
-    <developerConnection>scm:git:https://github.com/apache/royale-typedefs.git</developerConnection>
-    <url>scm:git:https://github.com/apache/royale-typedefs.git</url>
+    <connection>scm:git:https://gitbox.apache.org/repos/asf/royale-typedefs.git</connection>
+    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/royale-typedefs.git</developerConnection>
+    <url>https://github.com/apache/royale-typedefs</url>
     <tag>HEAD</tag>
   </scm>
 
