@@ -151,6 +151,20 @@
             </configuration>
           </execution>
           <execution>
+            <id>get-ie_dom</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/ie_dom.js</url>
+              <outputFileName>ie_dom.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
+            </configuration>
+          </execution>
+          <execution>
             <id>get-w3c_dom2</id>
             <phase>validate</phase>
             <goals>
