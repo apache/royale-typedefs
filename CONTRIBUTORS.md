@@ -21,6 +21,18 @@
 
 #### Contributors
 
- * Christopher Dutz (https://github.com/chrisdutz)
- * Justin Mclean (https://github.com/justinmclean)
  * Andrew Dufilie (https://github.com/adufilie)
+ * Alex Harui (https://github.com/aharui)
+ * Omprakash Muppirala (https://github.com/bigosmallm)
+ * Carlos Rovira (https://github.com/carlosrovira)
+ * Christofer Dutz (https://github.com/chrisdutz)
+ * Andrew Wetmore (https://github.com/cottage14)
+ * Frédéric Thomas (https://github.com/doublefx)
+ * Erik DeBruin (https://github.com/erikdebruin)
+ * Harbs (https://github.com/harbs)
+ * Josh Tynjala (https://github.com/joshtynjala)
+ * Justin Mclean (https://github.com/justinmclean)
+ * Peter Ent (https://github.com/pentapache)
+ * Piotr Zarzycki (https://github.com/piotrzarzycki21)
+ * Yishay Weiss (https://github.com/yishayw)
+
