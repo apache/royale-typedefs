@@ -22,11 +22,11 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.7</version>
+    <version>0.9.8-SNAPSHOT</version>
   </parent>
 
   <artifactId>royale-typedefs-js</artifactId>
-  <version>0.9.7</version>
+  <version>0.9.8-SNAPSHOT</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: JS</name>
@@ -337,4 +337,4 @@
     </plugins>
   </build>
 
-<properties><project.build.outputTimestamp>2020-04-26T13:47:09Z</project.build.outputTimestamp></properties></project>
+<properties /></project>
