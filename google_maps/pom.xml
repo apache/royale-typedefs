@@ -22,18 +22,18 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.7</version>
+    <version>0.9.8-SNAPSHOT</version>
   </parent>
 
   <artifactId>royale-typedefs-googlemaps</artifactId>
-  <version>0.9.7</version>
+  <version>0.9.8-SNAPSHOT</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: GoogleMaps</name>
 
   <properties>
     <googlemaps.version>v3_11</googlemaps.version>
-  <project.build.outputTimestamp>2020-05-05T15:56:18Z</project.build.outputTimestamp></properties>
+  </properties>
 
   <build>
     <plugins>
@@ -88,7 +88,7 @@
     <dependency>
       <groupId>org.apache.royale.typedefs</groupId>
       <artifactId>royale-typedefs-js</artifactId>
-      <version>0.9.7</version>
+      <version>0.9.8-SNAPSHOT</version>
       <type>swc</type>
       <classifier>typedefs</classifier>
       <scope>runtime</scope>
