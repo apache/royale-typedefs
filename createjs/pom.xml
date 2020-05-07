@@ -22,11 +22,11 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.7</version>
+    <version>0.9.8-SNAPSHOT</version>
   </parent>
 
   <artifactId>royale-typedefs-createjs</artifactId>
-  <version>0.9.7</version>
+  <version>0.9.8-SNAPSHOT</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: CreateJS</name>
@@ -34,7 +34,7 @@
   <properties>
     <createjs.version>0.8.0</createjs.version>
     <tweenjs.version>0.6.2</tweenjs.version>
-  <project.build.outputTimestamp>2020-05-07T16:03:38Z</project.build.outputTimestamp></properties>
+  </properties>
 
   <build>
     <plugins>
@@ -230,7 +230,7 @@
     <dependency>
       <groupId>org.apache.royale.typedefs</groupId>
       <artifactId>royale-typedefs-js</artifactId>
-      <version>0.9.7</version>
+      <version>0.9.8-SNAPSHOT</version>
       <type>swc</type>
       <classifier>typedefs</classifier>
       <scope>runtime</scope>
