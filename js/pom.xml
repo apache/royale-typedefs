@@ -16,18 +16,17 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+--><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.6</version>
+    <version>0.9.7</version>
   </parent>
 
   <artifactId>royale-typedefs-js</artifactId>
-  <version>0.9.6</version>
+  <version>0.9.7</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: JS</name>
@@ -38,7 +37,6 @@
       <plugin>
         <groupId>org.apache.royale.compiler</groupId>
         <artifactId>compiler-build-tools</artifactId>
-        <version>${royale.build-tools.version}</version>
         <executions>
           <execution>
             <id>unpack-closure-externs</id>
@@ -67,7 +65,6 @@
       <plugin>
         <groupId>com.googlecode.maven-download-plugin</groupId>
         <artifactId>download-maven-plugin</artifactId>
-        <version>1.2.1</version>
         <executions>
           <execution>
             <id>get-svg</id>
@@ -153,6 +150,20 @@
             </configuration>
           </execution>
           <execution>
+            <id>get-ie_dom</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/ie_dom.js</url>
+              <outputFileName>ie_dom.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
+            </configuration>
+          </execution>
+          <execution>
             <id>get-w3c_dom2</id>
             <phase>validate</phase>
             <goals>
@@ -180,13 +191,26 @@
               <overwrite>true</overwrite>
             </configuration>
           </execution>
+          <execution>
+            <id>get-webstorage</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/externs/browser/webstorage.js</url>
+              <outputFileName>webstorage.js</outputFileName>
+              <outputDirectory>${project.build.directory}/downloads/browser</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 
       <plugin>
         <groupId>org.apache.royale.compiler</groupId>
         <artifactId>royale-maven-plugin</artifactId>
-        <version>${royale.compiler.version}</version>
         <extensions>true</extensions>
         <configuration>
           <includeSources>true</includeSources>
@@ -309,15 +333,8 @@
           </includeFiles>
           <skipSwc>true</skipSwc>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.royale.compiler</groupId>
-            <artifactId>compiler-jx</artifactId>
-            <version>${royale.compiler.version}</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>
 
-</project>
+<properties><project.build.outputTimestamp>2020-05-07T16:03:38Z</project.build.outputTimestamp></properties></project>

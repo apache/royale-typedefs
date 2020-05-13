@@ -34,6 +34,7 @@
         
         <warn-no-constructor>false</warn-no-constructor>
     </compiler>
+    <warn-public-vars>false</warn-public-vars>
     
     <include-sources>
         <path-element>generated-sources/externc/constants</path-element>

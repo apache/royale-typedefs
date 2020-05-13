@@ -62,6 +62,7 @@
         <path-element>../../../target/downloads/browser/w3c_screen_orientation.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_selectors.js</path-element>
         <!-- path-element>../../../target/downloads/browser/w3c_serviceworker.js</path-element>-->
+        <path-element>../../../target/downloads/browser/w3c_speech.js</path-element>
         <path-element>../../../target/downloads/browser/w3c_touch_event.js</path-element>
         <!-- path-element>../../../target/downloads/browser/w3c_webcrypto.js</path-element>-->
         <path-element>../../../target/downloads/browser/w3c_xml.js</path-element>

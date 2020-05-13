@@ -207,7 +207,7 @@ public class EventTarget extends Disposable implements Listenable {
      * @see [eventtarget]
      * @returns {boolean} If anyone called preventDefault on the event object (or if any of the listeners returns false) this will also return false.
      */
-    public static function dispatchEventInternal_(target:Object, e:Object, opt_ancestorsTree:Array = null):Boolean {  return false }
+    public static var dispatchEventInternal_:Function;
 
     /**
      * @see [eventtarget]

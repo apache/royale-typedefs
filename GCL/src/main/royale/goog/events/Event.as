@@ -60,6 +60,10 @@ public class Event {
     public function stopPropagation():void {}
     public function preventDefault():void {}
 
+    public function get propagationStopped_():Boolean{
+        return false;
+    }
+
     /**
      * Stops the propagation of the event. It is equivalent to
      * {@code e.stopPropagation()}, but can be used as the callback argument of
