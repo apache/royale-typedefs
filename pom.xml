@@ -91,6 +91,7 @@
   </mailingLists>
 
   <modules>
+    <module>ace</module>
     <module>cordova</module>
     <module>createjs</module>
     <module>GCL</module>
