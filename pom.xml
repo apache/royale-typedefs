@@ -100,6 +100,8 @@
     <module>jquery</module>
     <module>js</module>
     <module>node</module>
+    <module>airglobal</module>
+    <module>playerglobal</module>
   </modules>
 
   <build>
