@@ -25,14 +25,14 @@
     <version>0.9.8</version>
   </parent>
 
-  <artifactId>royale-typedefs-jquery</artifactId>
+  <artifactId>royale-typedefs-ace</artifactId>
   <version>0.9.8</version>
   <packaging>swc</packaging>
 
-  <name>Apache Royale: TypeDefs: JQuery</name>
+  <name>Apache Royale: TypeDefs: Ace</name>
 
   <properties>
-    <jquery.version>1.9</jquery.version>
+    <ace.version>1.2.3</ace.version>
   <project.build.outputTimestamp>2021-08-27T12:53:59Z</project.build.outputTimestamp></properties>
 
   <build>
@@ -49,8 +49,9 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/jquery-${jquery.version}.js</url>
-              <outputFileName>jquery-${jquery.version}.js</outputFileName>
+              <skipCache>true</skipCache>
+              <url>https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/ace-${ace.version}.js</url>
+              <outputFileName>ace-${ace.version}.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
             </configuration>
           </execution>
@@ -71,77 +72,10 @@
               </includes>
             </fileSet>
           </externcInput>
-          <externcConfig>
-            <!-- JQuery -->
-            <!--class-to-function><class>$</class></class-to-function-->
-
-            <class-excludes>
-              <class-exclude>
-                <className>Deferred</className>
-              </class-exclude>
-              <class-exclude>
-                <className>jQuery.deferred</className>
-              </class-exclude>
-              <class-exclude>
-                <className>jQuery.Event</className>
-              </class-exclude>
-              <class-exclude>
-                <className>jQuery.Deferred</className>
-              </class-exclude>
-              <class-exclude>
-                <className>$.Event</className>
-              </class-exclude>
-              <class-exclude>
-                <className>$.Deferred</className>
-              </class-exclude>
-              <class-exclude>
-                <className>$.deferred</className>
-              </class-exclude>
-            </class-excludes>
-
-            <excludes>
-              <exclude>
-                <className>jQuery</className>
-                <name>is</name>
-              </exclude>
-              <exclude>
-                <className>jQuery</className>
-                <name>promise</name>
-              </exclude>
-              <exclude>
-                <className>jQuery</className>
-                <name>getJSON</name>
-              </exclude>
-              <exclude>
-                <className>jQuery</className>
-                <name>ajax</name>
-              </exclude>
-              <exclude>
-                <className>jQuery</className>
-                <name>when</name>
-              </exclude>
-              <exclude>
-                <className>jQuery</className>
-                <name>post</name>
-              </exclude>
-              <exclude>
-                <className>jQuery</className>
-                <name>getScript</name>
-              </exclude>
-              <exclude>
-                <className>jQuery</className>
-                <name>Callbacks</name>
-              </exclude>
-              <exclude>
-                <className>jQuery.jqXHR</className>
-                <name>onreadystatechange</name>
-              </exclude>
-            </excludes>
-          </externcConfig>
           <includeFiles>
             <include-file>
-              <name>externs/jquery-1.9.js</name>
-              <path>downloads/jquery-1.9.js</path>
+              <name>externs/ace-${ace.version}.js</name>
+              <path>downloads/ace-${ace.version}.js</path>
             </include-file>
           </includeFiles>
           <skipSwc>true</skipSwc>

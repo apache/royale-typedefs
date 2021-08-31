@@ -25,36 +25,34 @@
     <version>0.9.8</version>
   </parent>
 
-  <artifactId>royale-typedefs-gcl</artifactId>
+  <artifactId>royale-typedefs-playerglobal</artifactId>
   <version>0.9.8</version>
   <packaging>swc</packaging>
 
-  <name>Apache Royale: TypeDefs: GCL</name>
+  <name>Apache Royale: TypeDefs: playerglobal</name>
+
+  <properties>
+  <project.build.outputTimestamp>2021-08-27T12:53:59Z</project.build.outputTimestamp></properties>
 
   <build>
-    <sourceDirectory>src/main/royale</sourceDirectory>
+    <sourceDirectory>../airglobal/src/main/royale</sourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.royale.compiler</groupId>
         <artifactId>royale-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
+          <playerglobalSourceDirectory>../airglobal/src/main/playerglobal</playerglobalSourceDirectory>
+          <playerglobalAir>false</playerglobalAir>
           <includeSources>true</includeSources>
           <skipSwc>true</skipSwc>
+          <skipExtern>true</skipExtern>
         </configuration>
       </plugin>
     </plugins>
   </build>
 
   <dependencies>
-    <dependency>
-      <groupId>org.apache.royale.typedefs</groupId>
-      <artifactId>royale-typedefs-js</artifactId>
-      <version>0.9.8</version>
-      <type>swc</type>
-      <classifier>typedefs</classifier>
-      <scope>runtime</scope>
-    </dependency>
   </dependencies>
 
-<properties><project.build.outputTimestamp>2021-08-27T12:53:59Z</project.build.outputTimestamp></properties></project>
+</project>
