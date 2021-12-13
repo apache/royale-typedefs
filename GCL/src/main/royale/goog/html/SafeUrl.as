@@ -47,7 +47,6 @@ package goog.html
  * @see goog.html.SafeUrl#fromConstant
  * @see goog.html.SafeUrl#from
  * @see goog.html.SafeUrl#sanitize
- * @externs
  * @final
  * @struct
  * @implements {goog.i18n.bidi.DirectionalString}
@@ -55,11 +54,11 @@ package goog.html
  */
 	public class SafeUrl
 	{
-		public native function SafeUrl(value:String, token:Object);
-		public native static function unwrap(safeUrl:SafeUrl):String;
-		public native static function sanitize(url:String):SafeUrl;
-		public native static function isSafeMimeType(mimeType:String):Boolean;
-		public native static function fromBlob(blob:Blob):SafeUrl;
-		public native static function fromMediaSource(mediaSource:MediaSource):SafeUrl;
+		public function SafeUrl(value:String, token:Object){}
+		public static function unwrap(safeUrl:SafeUrl):String{return ""}
+		public static function sanitize(url:String):SafeUrl{return null}
+		public static function isSafeMimeType(mimeType:String):Boolean{return true}
+		public static function fromBlob(blob:Blob):SafeUrl{return null}
+		public static function fromMediaSource(mediaSource:MediaSource):SafeUrl{return null}
 	}
 }

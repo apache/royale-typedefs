@@ -13,13 +13,10 @@
 // limitations under the License.
 package goog.html
 {
-	/**
-	 * @externs
-	 */
 	public class SafeHtml
 	{
-		public native function SafeHtml();
-		public native static function unwrap(safeHtml:SafeHtml):String;
+		public function SafeHtml(){}
+		public static function unwrap(safeHtml:SafeHtml):String{return ""}
 
 	}
 }

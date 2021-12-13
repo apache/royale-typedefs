@@ -13,13 +13,12 @@
 // limitations under the License.
 package goog.html.sanitizer
 {
-	/**
-	 * @externs
-	 */
+	import goog.html.SafeHtml;
+
 	public class HtmlSanitizer
 	{
-		public native function HtmlSanitizer();
-		public native static function sanitize(html:String):SafeUrl;
+		public function HtmlSanitizer(){}
+		public static function sanitize(html:String):SafeHtml{return null}
 
 	}
 }
