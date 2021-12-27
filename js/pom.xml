@@ -231,6 +231,7 @@
                 <include>browser/gecko_*.js</include>
                 <include>browser/webkit_*.js</include>
                 <include>browser/iphone.js</include>
+                <include>browser/mediasource.js</include>
                 <!-- <include>browser/chrome.js</include> -->
                 <include>browser/flash.js</include>
                 <include>browser/page_visibility.js</include>
