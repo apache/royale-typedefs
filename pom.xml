@@ -27,7 +27,7 @@
 
   <groupId>org.apache.royale.typedefs</groupId>
   <artifactId>royale-typedefs-parent</artifactId>
-  <version>0.9.9</version>
+  <version>0.9.10-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Apache Royale: TypeDefs: Parent</name>
@@ -36,7 +36,7 @@
     <connection>scm:git:https://gitbox.apache.org/repos/asf/royale-typedefs.git</connection>
     <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/royale-typedefs.git</developerConnection>
     <url>https://github.com/apache/royale-typedefs</url>
-    <tag>org.apache.royale.typedefs-0.9.9-rc3</tag>
+    <tag>release/0.9.9</tag>
   </scm>
 
   <properties>
@@ -57,7 +57,7 @@
     <maven.wagon.http.retryHandler.class>standard</maven.wagon.http.retryHandler.class>
     <!-- Try at most 6 times to deploy every artifact -->
     <maven.wagon.http.retryHandler.count>6</maven.wagon.http.retryHandler.count>
-  <project.build.outputTimestamp>2022-03-10T16:18:06Z</project.build.outputTimestamp></properties>
+  </properties>
 
   <!-- Only configure the site distribution as the rest is handled by the apache parent -->
   <distributionManagement>
