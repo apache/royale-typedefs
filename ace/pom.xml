@@ -43,16 +43,17 @@
         <artifactId>download-maven-plugin</artifactId>
         <executions>
           <execution>
-            <id>get-createjs</id>
+            <id>get-ace</id>
             <phase>validate</phase>
             <goals>
               <goal>wget</goal>
             </goals>
             <configuration>
-              <skipCache>true</skipCache>
               <url>https://raw.githubusercontent.com/google/closure-compiler/master/contrib/externs/ace-${ace.version}.js</url>
               <outputFileName>ace-${ace.version}.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
             </configuration>
           </execution>
         </executions>

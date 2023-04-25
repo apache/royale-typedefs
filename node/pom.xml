@@ -57,6 +57,8 @@
               <outputFileName>node-externs.zip</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
               <unpack>true</unpack>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
             </configuration>
           </execution>
         </executions>

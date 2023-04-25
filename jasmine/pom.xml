@@ -43,7 +43,7 @@
         <artifactId>download-maven-plugin</artifactId>
         <executions>
           <execution>
-            <id>get-createjs</id>
+            <id>get-jasmine</id>
             <phase>validate</phase>
             <goals>
               <goal>wget</goal>
@@ -52,6 +52,8 @@
               <url>https://raw.githubusercontent.com/royale-extras/closure-compiler/royale/contrib/externs/jasmine-${jasmine.version}.js</url>
               <outputFileName>jasmine-${jasmine.version}.js</outputFileName>
               <outputDirectory>${project.build.directory}/downloads</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
             </configuration>
           </execution>
         </executions>
