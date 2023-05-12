@@ -22,18 +22,18 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.10</version>
+    <version>0.9.11-SNAPSHOT</version>
   </parent>
 
   <artifactId>royale-typedefs-cordova</artifactId>
-  <version>0.9.10</version>
+  <version>0.9.11-SNAPSHOT</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: Cordova</name>
 
   <properties>
     <cordova.version>4.11</cordova.version>
-  <project.build.outputTimestamp>2023-05-12T05:14:25Z</project.build.outputTimestamp></properties>
+  </properties>
 
   <build>
     <plugins>
@@ -67,7 +67,7 @@
     <dependency>
       <groupId>org.apache.royale.typedefs</groupId>
       <artifactId>royale-typedefs-js</artifactId>
-      <version>0.9.10</version>
+      <version>0.9.11-SNAPSHOT</version>
       <type>swc</type>
       <classifier>typedefs</classifier>
       <scope>runtime</scope>
