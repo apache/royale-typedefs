@@ -242,6 +242,7 @@
                 <include>browser/webstorage.js</include>
                 <include>browser/whatwg_encoding.js</include>
                 <include>es6_collections.js</include>
+                <include>intersection_observer.js</include>
               </includes>
               <excludes>
                 <exclude>browser/w3c_dom4.js</exclude>
