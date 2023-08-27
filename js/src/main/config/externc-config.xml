@@ -82,6 +82,7 @@
         <path-element>../../../target/downloads/browser/ie_dom.js</path-element>
         <path-element>../../../target/downloads/browser/ie_event.js</path-element>
         <path-element>../../../target/downloads/browser/ie_vml.js</path-element>
+        <path-element>../../../target/downloads/browser/intersection_observer.js</path-element>
         <path-element>../../../target/downloads/browser/intl.js</path-element>
         <path-element>../../../target/downloads/browser/iphone.js</path-element>
         <path-element>../../../target/downloads/browser/mediasource.js</path-element>
