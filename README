@@ -46,7 +46,7 @@ Building the Apache Royale Typedefs with Apache Maven
     SOFTWARE                                
     ==================================================================================
 
-    Java SDK 1.7 or greater (*1)            
+    Java SDK 11 or greater (*1)            
 
     Maven 3.8.1 or greater (*1)              
 
