@@ -33,7 +33,7 @@
     <as-root>../../../target/generated-sources/externc</as-root>
 	
     <!-- JQuery -->
-    <class-to-function><class>$</class></class-to-function>
+    <class-callable-instances><class>jQuery</class></class-callable-instances>
 
     <exclude><class>jQuery</class><name>is</name></exclude>
     <exclude><class>jQuery</class><name>promise</name></exclude>
