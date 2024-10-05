@@ -22,17 +22,17 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.11-SNAPSHOT</version>
+    <version>0.9.11</version>
   </parent>
 
   <artifactId>royale-typedefs-playerglobal</artifactId>
-  <version>0.9.11-SNAPSHOT</version>
+  <version>0.9.11</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: playerglobal</name>
 
   <properties>
-  </properties>
+  <project.build.outputTimestamp>2024-10-05T09:24:45Z</project.build.outputTimestamp></properties>
 
   <build>
     <sourceDirectory>../airglobal/src/main/royale</sourceDirectory>
