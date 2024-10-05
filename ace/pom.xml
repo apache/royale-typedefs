@@ -22,18 +22,18 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>0.9.11</version>
+    <version>0.9.12-SNAPSHOT</version>
   </parent>
 
   <artifactId>royale-typedefs-ace</artifactId>
-  <version>0.9.11</version>
+  <version>0.9.12-SNAPSHOT</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: Ace</name>
 
   <properties>
     <ace.version>1.2.3</ace.version>
-  <project.build.outputTimestamp>2024-10-05T09:24:45Z</project.build.outputTimestamp></properties>
+  </properties>
 
   <build>
     <plugins>
@@ -89,7 +89,7 @@
     <dependency>
       <groupId>org.apache.royale.typedefs</groupId>
       <artifactId>royale-typedefs-js</artifactId>
-      <version>0.9.11</version>
+      <version>0.9.12-SNAPSHOT</version>
       <type>swc</type>
       <classifier>typedefs</classifier>
       <scope>runtime</scope>
