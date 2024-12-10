@@ -74,7 +74,7 @@ public class BrowserEvent extends goog.events.Event {
      * @see [browserevent]
      * @returns {boolean} True if button was pressed.
      */
-    public function isButton(button:goog.events.BrowserEvent.MouseButton):Boolean {  return null; }
+    public function isButton(button:goog.events.BrowserEvent.MouseButton):Boolean { return false; }
 
     /**
      * Whether this has an "action"-producing mouse button.
@@ -85,7 +85,7 @@ public class BrowserEvent extends goog.events.Event {
      * @see [browserevent]
      * @returns {boolean} The result.
      */
-    public function isMouseActionButton():Boolean {  return null; }
+    public function isMouseActionButton():Boolean { return false; }
 
 
     /**

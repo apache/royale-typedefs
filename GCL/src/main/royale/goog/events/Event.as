@@ -51,7 +51,7 @@ public class Event {
     }
     public function get defaultPrevented():Boolean
     {
-        return null;
+        return false;
     }
     public function set defaultPrevented(value:Boolean):void
     {

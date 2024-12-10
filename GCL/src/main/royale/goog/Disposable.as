@@ -64,7 +64,7 @@ public class Disposable implements goog.disposable.IDisposable {
      * @see [disposable]
      * @returns {boolean} True if we can verify the object is disposed.
      */
-    public static function isDisposed(obj:*):Boolean {  return null; }
+    public static function isDisposed(obj:*):Boolean { return false; }
 
     /**
      * Associates a disposable object with this object so that they will be disposed
