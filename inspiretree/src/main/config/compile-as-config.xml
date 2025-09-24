@@ -1,0 +1,52 @@
+<!--
+
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+-->
+<royale-config>
+    <compiler>
+        <accessible>true</accessible>
+        
+        <!-- <js-external-library-path>
+            <path-element>../../../js/target/royale-typedefs-js-${project.version}-typedefs.swc</path-element>
+        </js-external-library-path> -->
+
+        <external-library-path>
+            <!-- vacío: típicamente el build padre setea libs externas -->
+        </external-library-path>
+
+        <!-- Donde externc dejó clases e interfaces -->
+        <source-path>
+            <path-element>generated-sources/externc/classes</path-element>
+            <path-element>generated-sources/externc/typedefs</path-element>
+        </source-path>
+
+        <warn-no-constructor>false</warn-no-constructor>
+    </compiler>
+    <warn-public-vars>false</warn-public-vars>
+
+    <!-- Incluir las fuentes AS generadas en el SWC -->
+    <include-sources>
+        <path-element>generated-sources/externc/classes</path-element>
+        <path-element>generated-sources/externc/typedefs</path-element>
+    </include-sources>
+
+    <!-- (Opcional pero útil) Empaqueta el extern original dentro del SWC -->
+    <include-file>
+        <name>externs/inspire-tree-combined-externs.js</name>
+        <path>../src/main/javascript/inspire-tree-combined-externs.js</path>
+    </include-file>
+</royale-config>
