@@ -102,6 +102,7 @@
     <module>node</module>
     <module>airglobal</module>
     <module>playerglobal</module>
+    <module>inspiretree</module>
   </modules>
 
   <build>

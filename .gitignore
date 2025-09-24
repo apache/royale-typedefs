@@ -42,6 +42,7 @@ externs/createjs/externs
 externs/createjs/in
 externs/google_maps/externs
 externs/node/externs
+externs/inspiretree/externs
 
 # debugger output folders
 debugger/bin/

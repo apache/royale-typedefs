@@ -38,6 +38,7 @@
         <ant dir="ace" target="clean"/>
         <ant dir="airglobal" target="clean"/>
         <ant dir="playerglobal" target="clean"/>
+        <ant dir="inspiretree" target="clean"/>
     </target>
 
     <target name="wipe" description="Wipes out everything that didn't come from Git.">
@@ -52,6 +53,7 @@
         <ant dir="ace" target="wipe"/>
         <ant dir="airglobal" target="wipe"/>
         <ant dir="playerglobal" target="wipe"/>
+        <ant dir="inspiretree" target="wipe"/>
         <delete dir="${basedir}" failonerror="false">
             <include name="**/*.log"/>
             <include name="**/*.mdmp"/>
@@ -70,6 +72,7 @@
         <ant dir="ace" />
         <ant dir="airglobal" />
         <ant dir="playerglobal" />
+        <ant dir="inspiretree" />
     </target>
 
 </project>
