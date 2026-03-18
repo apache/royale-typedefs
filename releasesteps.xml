@@ -157,7 +157,7 @@
         <delete file="${artifactfolder}/swcs.txt" />
         <!-- this is a comma-delimited, no spaces, no-line-breaks list used to decide which swcs
          to skip in the rat-check of the binaries and which swcs to examine before approval -->
-        <property name="swcs-list" value="cordova,createjs,gcl,google_maps,jasmine,jquery,js,node"/>
+        <property name="swcs-list" value="ace,cordova,createjs,gcl,google_maps,jasmine,jquery,js,node"/>
         <echo file="${artifactfolder}/swcs.txt" message="${swcs-list}"/>
     </target>
     
