@@ -29,6 +29,7 @@
     <target name="clean" description="Cleans the build output but leaves any downloaded JARs.">
         <ant dir="js" target="clean"/>
         <ant dir="GCL" target="clean"/>
+        <ant dir="pretext" target="clean"/>
         <ant dir="cordova" target="clean"/>
         <ant dir="createjs" target="clean"/>
         <ant dir="jasmine" target="clean"/>
@@ -43,6 +44,7 @@
     <target name="wipe" description="Wipes out everything that didn't come from Git.">
         <ant dir="js" target="wipe"/>
         <ant dir="GCL" target="wipe"/>
+        <ant dir="pretext" target="wipe"/>
         <ant dir="cordova" target="wipe"/>
         <ant dir="createjs" target="wipe"/>
         <ant dir="jasmine" target="wipe"/>
@@ -61,6 +63,7 @@
     <target name="main" description="Build everything">
         <ant dir="js" />
         <ant dir="GCL" />
+        <ant dir="pretext" />
         <ant dir="cordova" />
         <ant dir="createjs" />
         <ant dir="jasmine" />

@@ -157,7 +157,7 @@
         <delete file="${artifactfolder}/swcs.txt" />
         <!-- this is a comma-delimited, no spaces, no-line-breaks list used to decide which swcs
          to skip in the rat-check of the binaries and which swcs to examine before approval -->
-        <property name="swcs-list" value="ace,cordova,createjs,gcl,google_maps,jasmine,jquery,js,node"/>
+        <property name="swcs-list" value="ace,cordova,createjs,gcl,google_maps,jasmine,jquery,js,node,pretext"/>
         <echo file="${artifactfolder}/swcs.txt" message="${swcs-list}"/>
     </target>
     
@@ -312,6 +312,16 @@
         </antcall>
         <antcall target="sign-file" >
             <param name="file" value="${artifactfolder}/artifacts/archive/target/local-release-dir/org/apache/royale/typedefs/royale-typedefs-node/${release.version}/royale-typedefs-node-${release.version}.pom" />
+        </antcall>
+
+        <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/local-release-dir/org/apache/royale/typedefs/royale-typedefs-pretext/${release.version}/royale-typedefs-pretext-${release.version}-sources.jar" />
+        </antcall>
+        <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/local-release-dir/org/apache/royale/typedefs/royale-typedefs-pretext/${release.version}/royale-typedefs-pretext-${release.version}-typedefs.swc" />
+        </antcall>
+        <antcall target="sign-file" >
+            <param name="file" value="${artifactfolder}/artifacts/archive/target/local-release-dir/org/apache/royale/typedefs/royale-typedefs-pretext/${release.version}/royale-typedefs-pretext-${release.version}.pom" />
         </antcall>
 
         <antcall target="sign-file" >
