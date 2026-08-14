@@ -45,7 +45,7 @@
     <maven.version>3.8.1</maven.version>
 
     <royale.build-tools.version>1.2.2</royale.build-tools.version>
-    <royale.compiler.version>1.0.0-SNAPSHOT</royale.compiler.version>
+    <royale.compiler.version>1.0.0</royale.compiler.version>
 
     <release-profiles>apache-release</release-profiles>
 
