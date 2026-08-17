@@ -22,11 +22,11 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
 
   <artifactId>royale-typedefs-gcl</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: GCL</name>
@@ -50,11 +50,11 @@
     <dependency>
       <groupId>org.apache.royale.typedefs</groupId>
       <artifactId>royale-typedefs-js</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>1.0.0</version>
       <type>swc</type>
       <classifier>typedefs</classifier>
       <scope>runtime</scope>
     </dependency>
   </dependencies>
 
-<properties /></project>
+<properties><project.build.outputTimestamp>2026-08-17T12:10:06Z</project.build.outputTimestamp></properties></project>
