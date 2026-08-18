@@ -2,6 +2,7 @@ Apache Royale Typedefs 1.0.0
 ============================
 
 - Fixed warnings for returning or assigning `null` to types that are not allowed to be `null`.
+- Added Pretext 0.0.8 typedefs as `royale-typedefs-pretext`.
 
 Apache Royale Typedefs 0.9.9
 ============================
