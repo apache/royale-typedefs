@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
 
   Licensed to the Apache Software Foundation (ASF) under one or more
@@ -22,11 +23,11 @@
   <parent>
     <groupId>org.apache.royale.typedefs</groupId>
     <artifactId>royale-typedefs-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>royale-typedefs-pretext</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>swc</packaging>
 
   <name>Apache Royale: TypeDefs: Pretext</name>
@@ -50,7 +51,7 @@
     <dependency>
       <groupId>org.apache.royale.typedefs</groupId>
       <artifactId>royale-typedefs-js</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.0-SNAPSHOT</version>
       <type>swc</type>
       <classifier>typedefs</classifier>
       <scope>runtime</scope>
@@ -59,5 +60,5 @@
 
   <properties>
     <pretext.version>0.0.8</pretext.version>
-  <project.build.outputTimestamp>2026-08-18T12:51:22Z</project.build.outputTimestamp></properties>
+  </properties>
 </project>
